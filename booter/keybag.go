@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-zsw "github.com/zhongshuwen/zswchain-go"
-	eoscvault "github.com/eoscanada/eosc/vault"
+	zsw "github.com/zhongshuwen/zswchain-go"
+	eoscvault "github.com/zhongshuwen/eosc/vault"
 	"github.com/spf13/viper"
 )
 

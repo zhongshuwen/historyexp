@@ -82,6 +82,7 @@ require (
 	github.com/tidwall/gjson v1.6.7
 	github.com/tidwall/sjson v1.0.4
 	github.com/urfave/negroni v1.0.0 // indirect
+	github.com/zhongshuwen/eosc v0.1.0 // indirect
 	github.com/zhongshuwen/eosws-go v0.0.7
 	github.com/zhongshuwen/zswchain-go v1.9.3
 	go.opencensus.io v0.22.5

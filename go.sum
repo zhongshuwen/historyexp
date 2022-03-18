@@ -992,6 +992,8 @@ github.com/yudai/pp v2.0.1+incompatible/go.mod h1:PuxR/8QJ7cyCkFp/aUDS+JY727OFEZ
 github.com/yuin/goldmark v1.1.25/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
+github.com/zhongshuwen/eosc v0.1.0 h1:fL5GTsCC/lfhO9TEHObI41K7Rvm3hEWedIJmHjTYLTA=
+github.com/zhongshuwen/eosc v0.1.0/go.mod h1:FVmgN3mF/Vk5Z+GF+a/9e8aFEo5di4DiC1mcl0GleM8=
 github.com/zhongshuwen/eosws-go v0.0.7 h1:rJwXwdd7rNiAX1NyoE+wIMv9nGGEYmeqO7KiXrIaF3I=
 github.com/zhongshuwen/eosws-go v0.0.7/go.mod h1:Z0euurVdlKf5mjDATLrho5XHIjf5EUnDnHe9hwrFxWE=
 github.com/zhongshuwen/gmsm v1.7.0 h1:ZXBBeBOKwGQ7wKDmhd0OS5b/g38R3C63orZrOdlLxhE=
