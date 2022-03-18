@@ -30,7 +30,7 @@ import (
 	"github.com/dfuse-io/kvdb"
 	pbblockmeta "github.com/dfuse-io/pbgo/dfuse/blockmeta/v1"
 	"github.com/dfuse-io/shutter"
-	eosgozsw "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 
@@ -132,7 +132,7 @@ func (l *TrxDBLoader) BuildPipelineLive(allowLiveOnEmptyTable bool) error {
 			}
 
 			handler = bstream.NewBlockIDGate(startBlockID, bstream.GateExclusive, h, bstream.GateOptionWithLogger(zlog))
-			blockNum = uint64(eosgo.BlockNum(startBlockID))
+			blockNum = uint64(zsw.BlockNum(startBlockID))
 		}
 
 		liveSourceFactory := bstream.SourceFactory(func(subHandler bstream.Handler) bstream.Source {
