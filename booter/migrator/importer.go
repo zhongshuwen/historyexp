@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	rice "github.com/GeertJohan/go.rice"
-	bootops "github.com/dfuse-io/eosio-boot/ops"
+	bootops "github.com/zhongshuwen/eosio-boot/ops"
 zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/zswchain-go/ecc"
 	"github.com/zhongshuwen/zswchain-go/system"

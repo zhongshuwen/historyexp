@@ -3,8 +3,8 @@ package migrator
 import (
 	"fmt"
 
-	"github.com/dfuse-io/eosio-boot/config"
-	bootops "github.com/dfuse-io/eosio-boot/ops"
+	"github.com/zhongshuwen/eosio-boot/config"
+	bootops "github.com/zhongshuwen/eosio-boot/ops"
 	"github.com/zhongshuwen/zswchain-go/ecc"
 )
 
