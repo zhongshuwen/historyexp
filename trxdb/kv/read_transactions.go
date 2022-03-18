@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/dfuse-io/dfuse-eosio/codec"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
-	pbtrxdb "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/trxdb/v1"
+	"github.com/zhongshuwen/historyexp/codec"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
+	pbtrxdb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/trxdb/v1"
 	"github.com/dfuse-io/kvdb/store"
 	"github.com/eoscanada/eos-go"
 )

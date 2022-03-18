@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"testing"
 
-	ct "github.com/dfuse-io/dfuse-eosio/codec/testing"
-	"github.com/dfuse-io/dfuse-eosio/trxdb"
+	ct "github.com/zhongshuwen/historyexp/codec/testing"
+	"github.com/zhongshuwen/historyexp/trxdb"
 	"github.com/dfuse-io/kvdb"
 	"github.com/eoscanada/eos-go"
 	"github.com/eoscanada/eos-go/system"

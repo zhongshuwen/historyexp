@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"testing"
 
-	ct "github.com/dfuse-io/dfuse-eosio/codec/testing"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	ct "github.com/zhongshuwen/historyexp/codec/testing"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/fluxdb"
 	"github.com/dfuse-io/jsonpb"
 	eos "github.com/eoscanada/eos-go"

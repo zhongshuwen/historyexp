@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/dfuse-io/dfuse-eosio/abicodec"
-	"github.com/dfuse-io/dfuse-eosio/trxdb"
+	"github.com/zhongshuwen/historyexp/abicodec"
+	"github.com/zhongshuwen/historyexp/trxdb"
 	"github.com/dfuse-io/dgrpc"
 	"github.com/dfuse-io/dstore"
 	pbhealth "github.com/dfuse-io/pbgo/grpc/health/v1"

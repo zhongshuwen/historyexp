@@ -22,7 +22,7 @@ import (
 	"net/url"
 
 	"github.com/dfuse-io/derr"
-	"github.com/dfuse-io/dfuse-eosio/statedb"
+	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/validator"
 	eos "github.com/eoscanada/eos-go"

@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	pbaccounthist "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/accounthist/v1"
+	pbaccounthist "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/accounthist/v1"
 	"github.com/golang/protobuf/proto"
 
 	"github.com/dfuse-io/kvdb/store"

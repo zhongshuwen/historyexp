@@ -18,7 +18,7 @@ import (
 	"errors"
 	"testing"
 
-	pbtrxdb "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/trxdb/v1"
+	pbtrxdb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/trxdb/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

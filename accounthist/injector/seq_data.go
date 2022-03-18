@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/dfuse-io/dfuse-eosio/accounthist"
+	"github.com/zhongshuwen/historyexp/accounthist"
 	"github.com/dfuse-io/kvdb/store"
 	"go.uber.org/zap"
 )

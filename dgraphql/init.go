@@ -15,7 +15,7 @@
 package dgraphql
 
 import (
-	"github.com/dfuse-io/dfuse-eosio/dgraphql/schema"
+	"github.com/zhongshuwen/historyexp/dgraphql/schema"
 	"github.com/dfuse-io/dgraphql"
 )
 

@@ -26,12 +26,12 @@ import (
 	"strings"
 	"testing"
 
-	_ "github.com/dfuse-io/dfuse-eosio/codec"
+	_ "github.com/zhongshuwen/historyexp/codec"
 	_ "github.com/dfuse-io/kvdb/store/badger"
 
 	"github.com/dfuse-io/bstream"
-	ct "github.com/dfuse-io/dfuse-eosio/codec/testing"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	ct "github.com/zhongshuwen/historyexp/codec/testing"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/fluxdb/store"
 	fluxdbKV "github.com/dfuse-io/fluxdb/store/kv"
 	"github.com/dfuse-io/logging"

@@ -1,7 +1,7 @@
 package cli
 
 import (
-	eosqApp "github.com/dfuse-io/dfuse-eosio/eosq/app/eosq"
+	eosqApp "github.com/zhongshuwen/historyexp/eosq/app/eosq"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -16,7 +16,7 @@ func init() {
 		Title:       "Eosq",
 		Description: "EOSIO Block Explorer",
 		MetricsID:   "eosq",
-		Logger:      launcher.NewLoggingDef("github.com/dfuse-io/dfuse-eosio/eosq.*", nil),
+		Logger:      launcher.NewLoggingDef("github.com/zhongshuwen/historyexp/eosq.*", nil),
 		InitFunc:    nil,
 		RegisterFlags: func(cmd *cobra.Command) error {
 			cmd.Flags().String("eosq-http-listen-addr", EosqHTTPServingAddr, "Auth URL used to configure the dfuse js client")

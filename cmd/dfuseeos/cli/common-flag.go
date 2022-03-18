@@ -3,7 +3,7 @@ package cli
 import (
 	"time"
 
-	eosSearch "github.com/dfuse-io/dfuse-eosio/search"
+	eosSearch "github.com/zhongshuwen/historyexp/search"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/spf13/cobra"
 )

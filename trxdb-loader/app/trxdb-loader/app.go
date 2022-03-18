@@ -22,9 +22,9 @@ import (
 	"time"
 
 	"github.com/dfuse-io/bstream"
-	"github.com/dfuse-io/dfuse-eosio/trxdb"
-	trxdbloader "github.com/dfuse-io/dfuse-eosio/trxdb-loader"
-	"github.com/dfuse-io/dfuse-eosio/trxdb-loader/metrics"
+	"github.com/zhongshuwen/historyexp/trxdb"
+	trxdbloader "github.com/zhongshuwen/historyexp/trxdb-loader"
+	"github.com/zhongshuwen/historyexp/trxdb-loader/metrics"
 	"github.com/dfuse-io/dmetrics"
 	"github.com/dfuse-io/dstore"
 	pbblockmeta "github.com/dfuse-io/pbgo/dfuse/blockmeta/v1"

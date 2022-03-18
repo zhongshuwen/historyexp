@@ -31,7 +31,7 @@ date.
 * Flag `--common-include-filter-expr`, `--common-exclude-filter-expr`, `--common-system-actions-include-filter-expr` can optionally specify multiple values, separated by `;;;` and prefixed by `#123;` where 123 is a block number at which we stat applying that filter
 * Added `accounthist` tools allows you to scan and read accounts `zswlishi tools accounthist read ...` `zswlishi tools accounthist scan ...`
 * Flag `--search-router-truncation-low-block-num` to make the router aware of lower-block-truncation and serve requests accordingly
-* Flag `--mindreader-oneblock-suffix` that mindreaders can each write their own file per block without competing for writes. https://github.com/dfuse-io/dfuse-eosio/issues/140
+* Flag `--mindreader-oneblock-suffix` that mindreaders can each write their own file per block without competing for writes. https://github.com/zhongshuwen/historyexp/issues/140
 * Flag `--eosws-disabled-messages` a comma separated list of ws messages to disable.
 * Flag `--common-system-shutdown-signal-delay`, a delay that will be applied between receiving SIGTERM signal and shutting down the apps. Health-check for `eosws` and `dgraphql` will respond 'not healthy' during that period.
 
@@ -211,11 +211,11 @@ Here are the flags and config modifications required for switching to `fluxdb` t
 
 # [v0.1.0-beta4] 2020-06-23
 
-See [release notes](https://github.com/dfuse-io/dfuse-eosio/releases/tag/v0.1.0-beta4).
+See [release notes](https://github.com/zhongshuwen/historyexp/releases/tag/v0.1.0-beta4).
 
 ## [v0.1.0-beta3] 2020-05-13
 
-See [release notes](https://github.com/dfuse-io/dfuse-eosio/releases/tag/v0.1.0-beta3).
+See [release notes](https://github.com/zhongshuwen/historyexp/releases/tag/v0.1.0-beta3).
 
 ## [v0.1.0-beta2] 2020-04-27
 

@@ -4,11 +4,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/dfuse-io/dfuse-eosio/accounthist"
+	"github.com/zhongshuwen/historyexp/accounthist"
 
-	"github.com/dfuse-io/dfuse-eosio/accounthist/keyer"
+	"github.com/zhongshuwen/historyexp/accounthist/keyer"
 
-	pbaccounthist "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/accounthist/v1"
+	pbaccounthist "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/accounthist/v1"
 	"github.com/dfuse-io/kvdb/store"
 	"github.com/golang/protobuf/proto"
 )

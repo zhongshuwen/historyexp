@@ -26,8 +26,8 @@ import (
 	"github.com/dfuse-io/derr"
 	"github.com/dfuse-io/dmetering"
 	"github.com/eoscanada/eos-go"
-	"github.com/dfuse-io/dfuse-eosio/eosws"
-	"github.com/dfuse-io/dfuse-eosio/eosws/mdl"
+	"github.com/zhongshuwen/historyexp/eosws"
+	"github.com/zhongshuwen/historyexp/eosws/mdl"
 )
 
 func SimpleSearchHandler(db eosws.DB, blockmetaClient *pbblockmeta.Client) http.Handler {

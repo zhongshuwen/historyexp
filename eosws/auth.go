@@ -19,7 +19,7 @@ import (
 
 	"github.com/dfuse-io/derr"
 	eos "github.com/eoscanada/eos-go"
-	"github.com/dfuse-io/dfuse-eosio/eosws/wsmsg"
+	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
 	"go.uber.org/zap"
 )
 

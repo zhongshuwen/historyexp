@@ -22,8 +22,8 @@ import (
 	"github.com/dfuse-io/logging"
 
 	"github.com/dfuse-io/derr"
-	"github.com/dfuse-io/dfuse-eosio/eosws/metrics"
-	"github.com/dfuse-io/dfuse-eosio/eosws/wsmsg"
+	"github.com/zhongshuwen/historyexp/eosws/metrics"
+	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
 	"github.com/dfuse-io/shutter"
 )
 

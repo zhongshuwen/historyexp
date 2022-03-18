@@ -21,8 +21,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/dfuse-io/dfuse-eosio/codec"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	"github.com/zhongshuwen/historyexp/codec"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	v0 "github.com/dfuse-io/eosws-go/mdl/v0"
 	v1 "github.com/dfuse-io/eosws-go/mdl/v1"
 	eos "github.com/eoscanada/eos-go"

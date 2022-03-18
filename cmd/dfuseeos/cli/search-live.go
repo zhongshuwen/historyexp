@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	eosSearch "github.com/dfuse-io/dfuse-eosio/search"
+	eosSearch "github.com/zhongshuwen/historyexp/search"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	liveApp "github.com/dfuse-io/search/app/live"
 	"github.com/spf13/cobra"

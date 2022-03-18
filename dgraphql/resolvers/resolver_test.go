@@ -20,9 +20,9 @@ import (
 	"os"
 	"testing"
 
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
-	pbsearcheos "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/search/v1"
-	"github.com/dfuse-io/dfuse-eosio/trxdb"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
+	pbsearcheos "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/search/v1"
+	"github.com/zhongshuwen/historyexp/trxdb"
 	"github.com/dfuse-io/dgraphql"
 	"github.com/dfuse-io/dtracing"
 	"github.com/dfuse-io/logging"

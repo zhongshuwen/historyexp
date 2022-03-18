@@ -23,7 +23,7 @@ import (
 	"github.com/eoscanada/eos-go"
 
 	"github.com/dfuse-io/derr"
-	"github.com/dfuse-io/dfuse-eosio/statedb"
+	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/validator"
 	"go.uber.org/zap"

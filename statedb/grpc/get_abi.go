@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/dfuse-io/derr"
-	pbstatedb "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/statedb/v1"
-	"github.com/dfuse-io/dfuse-eosio/statedb"
+	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
+	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/validator"
 	"go.uber.org/zap"

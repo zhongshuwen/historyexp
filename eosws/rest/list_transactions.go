@@ -19,7 +19,7 @@ import (
 	"strconv"
 
 	"github.com/dfuse-io/derr"
-	"github.com/dfuse-io/dfuse-eosio/eosws"
+	"github.com/zhongshuwen/historyexp/eosws"
 	"github.com/dfuse-io/dmetering"
 )
 

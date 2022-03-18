@@ -1,7 +1,7 @@
 package cli
 
 import (
-	dgraphqlEosio "github.com/dfuse-io/dfuse-eosio/dgraphql"
+	dgraphqlEosio "github.com/zhongshuwen/historyexp/dgraphql"
 	dgraphqlApp "github.com/dfuse-io/dgraphql/app/dgraphql"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/spf13/cobra"

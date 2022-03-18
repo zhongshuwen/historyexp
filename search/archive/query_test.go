@@ -31,7 +31,7 @@ import (
 	"github.com/blevesearch/bleve/document"
 	"github.com/blevesearch/bleve/index"
 	"github.com/blevesearch/bleve/index/scorch"
-	eosioSearch "github.com/dfuse-io/dfuse-eosio/search"
+	eosioSearch "github.com/zhongshuwen/historyexp/search"
 	"github.com/dfuse-io/dmesh"
 	pb "github.com/dfuse-io/pbgo/dfuse/search/v1"
 	"github.com/dfuse-io/search"

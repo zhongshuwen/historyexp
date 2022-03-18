@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/dfuse-io/bstream"
-	"github.com/dfuse-io/dfuse-eosio/codec"
-	"github.com/dfuse-io/dfuse-eosio/node-manager/superviser"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	"github.com/zhongshuwen/historyexp/codec"
+	"github.com/zhongshuwen/historyexp/node-manager/superviser"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/dfuse-io/logging"
 	nodeManager "github.com/dfuse-io/node-manager"
@@ -26,7 +26,7 @@ import (
 
 func init() {
 	appLogger := zap.NewNop()
-	logging.Register("github.com/dfuse-io/dfuse-eosio/mindreader", &appLogger)
+	logging.Register("github.com/zhongshuwen/historyexp/mindreader", &appLogger)
 
 	launcher.RegisterApp(&launcher.AppDef{
 		ID:          "mindreader",
@@ -34,7 +34,7 @@ func init() {
 		Description: "Blocks reading node",
 		MetricsID:   "mindreader",
 		// Now that we also have a `mindreader_stdin` registered logger, we need to pay attention to the actual regexp to ensure we match only our packages!
-		Logger: launcher.NewLoggingDef("github.com/dfuse-io/dfuse-eosio/mindreader$", []zapcore.Level{zap.WarnLevel, zap.WarnLevel, zap.InfoLevel, zap.DebugLevel}),
+		Logger: launcher.NewLoggingDef("github.com/zhongshuwen/historyexp/mindreader$", []zapcore.Level{zap.WarnLevel, zap.WarnLevel, zap.InfoLevel, zap.DebugLevel}),
 		RegisterFlags: func(cmd *cobra.Command) error {
 			cmd.Flags().String("mindreader-manager-api-addr", MindreaderHTTPServingAddr, "The dfuse Node Manager API address")
 			cmd.Flags().String("mindreader-nodeos-api-addr", MindreaderNodeosAPIAddr, "Target API address to communicate with underlying nodeos")

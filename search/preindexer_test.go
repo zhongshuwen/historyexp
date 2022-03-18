@@ -21,8 +21,8 @@ import (
 	"testing"
 
 	"github.com/dfuse-io/bstream"
-	_ "github.com/dfuse-io/dfuse-eosio/codec"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	_ "github.com/zhongshuwen/historyexp/codec"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	pbbstream "github.com/dfuse-io/pbgo/dfuse/bstream/v1"
 	"github.com/dfuse-io/search"
 	eos "github.com/eoscanada/eos-go"

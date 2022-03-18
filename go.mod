@@ -1,4 +1,4 @@
-module github.com/dfuse-io/dfuse-eosio
+module github.com/zhongshuwen/historyexp
 
 go 1.14
 
@@ -83,23 +83,20 @@ require (
 	github.com/tidwall/gjson v1.6.7
 	github.com/tidwall/sjson v1.0.4
 	github.com/urfave/negroni v1.0.0 // indirect
-	go.etcd.io/etcd v0.5.0-alpha.5.0.20200425165423-262c93980547 // indirect
-	go.etcd.io/etcd/pkg/v3 v3.5.0-alpha.0 // indirect
 	go.opencensus.io v0.22.5
 	go.uber.org/atomic v1.7.0
-	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.16.1-0.20210329175301-c23abee72d19
 	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	golang.org/x/term v0.0.0-20201210144234-2321bbc49cbf // indirect
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0
 	google.golang.org/grpc v1.37.0
-	google.golang.org/grpc/examples v0.0.0-20210526223527-2de42fcbbce3 // indirect
 	gopkg.in/olivere/elastic.v3 v3.0.75
 	gopkg.in/yaml.v2 v2.4.0
 	gotest.tools v2.2.0+incompatible
-	honnef.co/go/tools v0.0.1-2020.1.4 // indirect
 )
+
+replace google.golang.org/grpc => google.golang.org/grpc v1.29.1
 
 // to solve "github.com/ugorji/go/codec: ambiguous import: found package github.com/ugorji/go/codec in multiple modules:"
 replace github.com/ugorji/go/codec => github.com/ugorji/go v1.1.2
@@ -113,3 +110,6 @@ replace github.com/ShinyTrinkets/overseer => github.com/maoueh/overseer v0.2.1-0
 // The go-testing-interface version matches the Golang version to compile against, in this case, we want
 // compatibility with 1.14 which is our minimum version. So we enforce a strict version to v1.14.1 now.
 replace github.com/mitchellh/go-testing-interface => github.com/mitchellh/go-testing-interface v1.14.1
+
+//replace google.golang.org/grpc => google.golang.org/grpc v1.29.1
+replace google.golang.org/grpc/examples => google.golang.org/grpc v1.29.1

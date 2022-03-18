@@ -20,8 +20,8 @@ import (
 	"strconv"
 
 	"github.com/dfuse-io/derr"
-	"github.com/dfuse-io/dfuse-eosio/eosws"
-	"github.com/dfuse-io/dfuse-eosio/eosws/mdl"
+	"github.com/zhongshuwen/historyexp/eosws"
+	"github.com/zhongshuwen/historyexp/eosws/mdl"
 	"github.com/dfuse-io/dmetering"
 	"github.com/dfuse-io/validator"
 	"github.com/gorilla/mux"

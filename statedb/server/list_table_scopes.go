@@ -22,7 +22,7 @@ import (
 	"strconv"
 
 	"github.com/dfuse-io/derr"
-	"github.com/dfuse-io/dfuse-eosio/statedb"
+	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/fluxdb"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/validator"

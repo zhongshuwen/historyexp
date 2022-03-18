@@ -15,7 +15,7 @@
 package cli
 
 import (
-	"github.com/dfuse-io/dfuse-eosio/booter/migrator"
+	"github.com/zhongshuwen/historyexp/booter/migrator"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

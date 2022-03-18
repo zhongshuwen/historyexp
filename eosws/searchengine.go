@@ -25,8 +25,8 @@ import (
 	"strings"
 
 	"github.com/dfuse-io/derr"
-	"github.com/dfuse-io/dfuse-eosio/eosws/mdl"
-	pbsearcheos "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/search/v1"
+	"github.com/zhongshuwen/historyexp/eosws/mdl"
+	pbsearcheos "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/search/v1"
 	"github.com/dfuse-io/dmetering"
 	"github.com/dfuse-io/dtracing"
 	v1 "github.com/dfuse-io/eosws-go/mdl/v1"

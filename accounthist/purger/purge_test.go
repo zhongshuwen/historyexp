@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/dfuse-io/dfuse-eosio/accounthist"
-	"github.com/dfuse-io/dfuse-eosio/accounthist/injector"
+	"github.com/zhongshuwen/historyexp/accounthist"
+	"github.com/zhongshuwen/historyexp/accounthist/injector"
 	"github.com/dfuse-io/kvdb/store"
 	_ "github.com/dfuse-io/kvdb/store/badger"
 	"github.com/eoscanada/eos-go"

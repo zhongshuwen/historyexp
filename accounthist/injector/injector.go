@@ -6,14 +6,14 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/dfuse-io/dfuse-eosio/accounthist/metrics"
+	"github.com/zhongshuwen/historyexp/accounthist/metrics"
 
 	"github.com/dfuse-io/dmetrics"
 
-	"github.com/dfuse-io/dfuse-eosio/accounthist"
+	"github.com/zhongshuwen/historyexp/accounthist"
 
 	"github.com/dfuse-io/bstream"
-	pbaccounthist "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/accounthist/v1"
+	pbaccounthist "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/accounthist/v1"
 	"github.com/dfuse-io/dstore"
 	"github.com/dfuse-io/kvdb/store"
 	"github.com/dfuse-io/shutter"

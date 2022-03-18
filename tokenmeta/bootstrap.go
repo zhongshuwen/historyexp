@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/dfuse-io/bstream"
-	pbstatedb "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/statedb/v1"
-	pbtokenmeta "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/tokenmeta/v1"
-	"github.com/dfuse-io/dfuse-eosio/tokenmeta/cache"
+	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
+	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
+	"github.com/zhongshuwen/historyexp/tokenmeta/cache"
 	"github.com/eoscanada/eos-go"
 	"github.com/tidwall/gjson"
 	"go.uber.org/zap"

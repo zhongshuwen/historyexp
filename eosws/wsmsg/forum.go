@@ -16,7 +16,7 @@ package wsmsg
 
 import (
 	"github.com/eoscanada/eos-go/forum"
-	"github.com/dfuse-io/dfuse-eosio/eosws/mdl"
+	"github.com/zhongshuwen/historyexp/eosws/mdl"
 )
 
 func init() {

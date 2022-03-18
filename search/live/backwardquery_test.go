@@ -21,9 +21,9 @@ import (
 	"testing"
 
 	"github.com/dfuse-io/derr"
-	_ "github.com/dfuse-io/dfuse-eosio/codec"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
-	eosSearch "github.com/dfuse-io/dfuse-eosio/search"
+	_ "github.com/zhongshuwen/historyexp/codec"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
+	eosSearch "github.com/zhongshuwen/historyexp/search"
 	pb "github.com/dfuse-io/pbgo/dfuse/search/v1"
 	"github.com/dfuse-io/search"
 	searchLive "github.com/dfuse-io/search/live"

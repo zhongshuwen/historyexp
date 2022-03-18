@@ -44,12 +44,12 @@ Guidelines for bug reports:
    reported.
 
 1. **Check if the issue has been fixed** &mdash; look for
-   [closed issues in the current milestone](https://github.com/dfuse-io/dfuse-eosio/issues?q=is%3Aissue+is%3Aclosed)
+   [closed issues in the current milestone](https://github.com/zhongshuwen/historyexp/issues?q=is%3Aissue+is%3Aclosed)
    or try to reproduce it using the latest `develop` branch.
 
 A good bug report shouldn't leave others needing to chase you up for more information. Be sure to include the details of your environment and relevant tests that demonstrate the failure.
 
-[Report a bug](https://github.com/dfuse-io/dfuse-eosio/issues/new?title=Bug%3A)
+[Report a bug](https://github.com/zhongshuwen/historyexp/issues/new?title=Bug%3A)
 
 ### Feature Requests
 
@@ -69,7 +69,7 @@ Change requests cover both architectural and functional changes to how dfuse wor
 
 ## Working on dfuse
 
-Code contributions are welcome and encouraged! If you are looking for a good place to start, check out the [good first issue](https://github.com/dfuse-io/dfuse-eosio/labels/good%20first%20issue) label in GitHub issues.
+Code contributions are welcome and encouraged! If you are looking for a good place to start, check out the [good first issue](https://github.com/zhongshuwen/historyexp/labels/good%20first%20issue) label in GitHub issues.
 
 Also, please follow these guidelines when submitting code:
 

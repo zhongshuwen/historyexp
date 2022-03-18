@@ -3,7 +3,7 @@ package cli
 import (
 	"time"
 
-	eoswsApp "github.com/dfuse-io/dfuse-eosio/eosws/app/eosws"
+	eoswsApp "github.com/zhongshuwen/historyexp/eosws/app/eosws"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -16,7 +16,7 @@ func init() {
 		Title:       "EOSWS",
 		Description: "Serves websocket and http queries to clients",
 		MetricsID:   "eosws",
-		Logger:      launcher.NewLoggingDef("github.com/dfuse-io/dfuse-eosio/eosws.*", nil),
+		Logger:      launcher.NewLoggingDef("github.com/zhongshuwen/historyexp/eosws.*", nil),
 		RegisterFlags: func(cmd *cobra.Command) error {
 			cmd.Flags().String("eosws-http-listen-addr", EoswsHTTPServingAddr, "Address to listen for incoming http requests")
 			cmd.Flags().String("eosws-nodeos-rpc-addr", NodeosAPIAddr, "RPC endpoint of the nodeos instance")

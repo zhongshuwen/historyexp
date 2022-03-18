@@ -5,8 +5,8 @@ import (
 	"io"
 
 	"github.com/dfuse-io/bstream"
-	"github.com/dfuse-io/dfuse-eosio/codec"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	"github.com/zhongshuwen/historyexp/codec"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/dfuse-io/logging"
 	nodeManager "github.com/dfuse-io/node-manager"
@@ -21,14 +21,14 @@ import (
 
 func init() {
 	appLogger := zap.NewNop()
-	logging.Register("github.com/dfuse-io/dfuse-eosio/mindreader_stdin", &appLogger)
+	logging.Register("github.com/zhongshuwen/historyexp/mindreader_stdin", &appLogger)
 
 	launcher.RegisterApp(&launcher.AppDef{
 		ID:          "mindreader-stdin",
 		Title:       "deep-mind reader node (stdin)",
 		Description: "Blocks reading node, unmanaged, reads deep mind from standard input",
 		MetricsID:   "mindreader-stdin",
-		Logger:      launcher.NewLoggingDef("github.com/dfuse-io/dfuse-eosio/mindreader_stdin$", []zapcore.Level{zap.WarnLevel, zap.WarnLevel, zap.InfoLevel, zap.DebugLevel}),
+		Logger:      launcher.NewLoggingDef("github.com/zhongshuwen/historyexp/mindreader_stdin$", []zapcore.Level{zap.WarnLevel, zap.WarnLevel, zap.InfoLevel, zap.DebugLevel}),
 		RegisterFlags: func(cmd *cobra.Command) error {
 			return nil
 		},
