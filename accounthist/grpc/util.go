@@ -1,6 +1,6 @@
 package grpc
 
-importzsw "github.com/zhongshuwen/zswchain-go"
+import zsw "github.com/zhongshuwen/zswchain-go"
 
 type EOSName uint64
 
