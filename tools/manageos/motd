@@ -1,0 +1,26 @@
+ _____  ______       __   __  ___      __                  
+/__  / / ___| |     / /  / / / (______/ /_____  _______  __
+  / /  \__ \| | /| / /  / /_/ / / ___/ __/ __ \/ ___/ / / /
+ / /_____/ /| |/ |/ /  / __  / (__  / /_/ /_/ / /  / /_/ / 
+/____/____/ |__/|__/  /_/ /_/_/____/\__/\____/_/   \__, /  
+                                                  /____/   
+Welcome to this node manager pod, common commands:
+ - Show version           zswlishi --version
+
+Node manager commands (zsw-... <tab> to show all):
+ - Check HEAD & LIB info              cleos get info
+ - Check if producing                 zsw-isproducing
+ - Check if has peers                 zsw-haspeers
+
+ - List all backups                   zsw-listbackups
+ - Restore from backup                zsw-restore-from-pitreos [<backupName>]
+ - Restore from snapshot              zsw-restore-snapshot [<snapshotName>]
+ - Perform a backup                   zsw-backup
+
+ - Rewind Nodeos instance to LIB      zsw-rewind-to-lib
+ - Reset continuity checker file      zsw-reset-continuity-check
+
+ - Stop Nodeos instance               zsw-maintenance
+ - Start or restart Nodeos instance   zsw-resume
+
+**Important** If you see this, it's because the image was not built with lastest workflow!
