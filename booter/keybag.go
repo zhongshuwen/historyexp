@@ -26,7 +26,9 @@ func (b *booter) newKeyBagFromVault(vaultFile string) (*zsw.KeyBag, error) {
 
 	if err := vault.Open(boxer); err != nil {
 		return nil, err
+	
 	}
+	return nil, fmt.Errorf("not supported")
 
-	return vault.KeyBag, nil
+	//return vault.KeyBag, nil
 }
