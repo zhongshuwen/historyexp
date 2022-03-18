@@ -11,7 +11,7 @@ import (
 	"github.com/dfuse-io/dgraphql"
 	commonTypes "github.com/dfuse-io/dgraphql/types"
 	"github.com/dfuse-io/dmetering"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/proto"
 )
 
@@ -602,9 +602,9 @@ const (
 
 func assetToString(amount uint64, precision uint32, symbol string, args *AssetArgs) string {
 	if args == nil || args.Format == AssetFormatAsset {
-		return eos.Asset{
-			Amount: eos.Int64(amount),
-			Symbol: eos.Symbol{
+		return zsw.Asset{
+			Amount: zsw.Int64(amount),
+			Symbol: zsw.Symbol{
 				Precision: uint8(precision),
 				Symbol:    symbol,
 			},

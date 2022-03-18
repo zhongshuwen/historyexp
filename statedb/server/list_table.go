@@ -20,7 +20,7 @@ import (
 	"net/url"
 	"strconv"
 
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 
 	"github.com/dfuse-io/derr"
 	"github.com/zhongshuwen/historyexp/statedb"
@@ -62,7 +62,7 @@ func (srv *EOSServer) listTableRowsHandler(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	var abi *eos.ABI
+	var abi *zsw.ABI
 	if serializationInfo != nil && request.WithABI {
 		abi = serializationInfo.abi
 	}

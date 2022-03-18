@@ -20,7 +20,7 @@ import (
 
 	"github.com/dfuse-io/bstream"
 	"github.com/dfuse-io/fluxdb"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/stretchr/testify/require"
 )
 
@@ -28,15 +28,15 @@ func writeBatchOfRequests(t *testing.T, db *fluxdb.FluxDB, requests ...*fluxdb.W
 	require.NoError(t, db.WriteBatch(context.Background(), requests))
 }
 
-func writeABI(t *testing.T, blockID string, contract string, abi *eos.ABI) *fluxdb.WriteRequest {
-	packedABI, err := eos.MarshalBinary(abi)
+func writeABI(t *testing.T, blockID string, contract string, abi *zsw.ABI) *fluxdb.WriteRequest {
+	packedABI, err := zsw.MarshalBinary(abi)
 	require.NoError(t, err, "marshal binary abi")
 
 	return writePackedABI(t, blockID, contract, packedABI)
 }
 
 func writeEmptyABI(t *testing.T, blockID string, contract string) *fluxdb.WriteRequest {
-	return writeABI(t, blockID, contract, &eos.ABI{})
+	return writeABI(t, blockID, contract, &zsw.ABI{})
 }
 
 func writePackedABI(t *testing.T, blockID string, contract string, packedABI []byte) *fluxdb.WriteRequest {

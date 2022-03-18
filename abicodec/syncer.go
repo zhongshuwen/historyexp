@@ -30,7 +30,7 @@ import (
 	"github.com/dfuse-io/dgrpc"
 	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
 	"github.com/dfuse-io/shutter"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 
@@ -165,8 +165,8 @@ func (s *ABISyncer) handleABIAction(blockRef bstream.BlockRef, trxID string, act
 		return nil // do not return the error. Worker will retry otherwise
 	}
 
-	var abi *eos.ABI
-	err = eos.UnmarshalBinary(abiData, &abi)
+	var abi *zsw.ABI
+	err = zsw.UnmarshalBinary(abiData, &abi)
 	if err != nil {
 		abiHexCutAt := math.Min(50, float64(len(hexData)))
 

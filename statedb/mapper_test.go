@@ -22,14 +22,14 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/fluxdb"
 	"github.com/dfuse-io/jsonpb"
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/proto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
 func TestBlockMapper(t *testing.T) {
-	validABI := &eos.ABI{}
+	validABI := &zsw.ABI{}
 
 	tests := []struct {
 		name            string

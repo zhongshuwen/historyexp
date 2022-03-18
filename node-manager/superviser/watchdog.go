@@ -19,7 +19,7 @@ import (
 	"time"
 
 	"github.com/dfuse-io/node-manager/metrics"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 
@@ -82,7 +82,7 @@ func (cw *connectionWatchdog) Start() {
 	}
 }
 
-func (cw *connectionWatchdog) processConnection(conn *eos.NetConnectionsResp, logger *zap.Logger) {
+func (cw *connectionWatchdog) processConnection(conn *zsw.NetConnectionsResp, logger *zap.Logger) {
 	if conn.Peer == "" {
 		return
 	}

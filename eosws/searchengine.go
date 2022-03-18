@@ -191,7 +191,7 @@ func (s *SearchEngine) fillSearchClientResponse(
 			return nil, err
 		}
 
-		eosMatch := eosMatchAny.Message.(*pbsearcheos.Match)
+		eosMatch := eosMatchAny.Message.(*pbsearchzsw.Match)
 
 		actions[match.TrxIdPrefix] = eosMatch.ActionIndexes
 		trxIDS[i] = match.TrxIdPrefix

@@ -6,7 +6,7 @@ import (
 
 	"github.com/zhongshuwen/historyexp/accounthist"
 	ct "github.com/zhongshuwen/historyexp/codec/testing"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -34,7 +34,7 @@ func Test_shardSummary(t *testing.T) {
 		),
 	)
 
-	summary, err := s.FacetShardsSummary(context.Background(), accounthist.AccountFacet(eos.MustStringToName("a")))
+	summary, err := s.FacetShardsSummary(context.Background(), accounthist.AccountFacet(zsw.MustStringToName("a")))
 	require.NoError(t, err)
 	assert.Equal(t, []*FacetShardSummary{
 		{ShardNum: 0, SeqData: accounthist.SequenceData{CurrentOrdinal: 5, LastGlobalSeq: 7}},

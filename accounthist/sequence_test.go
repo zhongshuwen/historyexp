@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/dfuse-io/kvdb/store"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -14,7 +14,7 @@ func TestShardNewestSequenceData(t *testing.T) {
 	kvStore, cleanup := getKVTestFactory(t)
 	defer cleanup()
 	ctx := context.Background()
-	accountUint := eos.MustStringToName("a")
+	accountUint := zsw.MustStringToName("a")
 	accountKey := AccountFacet(accountUint)
 
 	kvStore.Put(ctx, accountKey.Row(0, 1), []byte{0x02})

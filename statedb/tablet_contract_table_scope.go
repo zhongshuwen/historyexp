@@ -6,7 +6,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/fluxdb"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/proto"
 )
 
@@ -56,7 +56,7 @@ type ContractTableScopeRow struct {
 func NewContractTableScopeRow(blockNum uint64, op *pbcodec.TableOp) (row *ContractTableScopeRow, err error) {
 	var value []byte
 	if op.Operation != pbcodec.TableOp_OPERATION_REMOVE {
-		pb := pbstatedb.ContractTableScopeValue{Payer: eos.MustStringToName(op.Payer)}
+		pb := pbstatedb.ContractTableScopeValue{Payer: zsw.MustStringToName(op.Payer)}
 
 		if value, err = proto.Marshal(&pb); err != nil {
 			return nil, fmt.Errorf("marshal proto: %w", err)
@@ -77,7 +77,7 @@ func (r *ContractTableScopeRow) Payer() (string, error) {
 		return "", err
 	}
 
-	return eos.NameToString(pb.Payer), nil
+	return zsw.NameToString(pb.Payer), nil
 }
 
 func (r *ContractTableScopeRow) String() string {

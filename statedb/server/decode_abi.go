@@ -25,7 +25,7 @@ import (
 	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/validator"
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/francoispqt/gojay"
 	"go.uber.org/zap"
 )
@@ -90,16 +90,16 @@ func (srv *EOSServer) decodeABIHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 type decodeABIRequest struct {
-	Account  eos.AccountName `json:"account"`
-	Table    eos.TableName   `json:"table"`
+	Account  zsw.AccountName `json:"account"`
+	Table    zsw.TableName   `json:"table"`
 	HexRows  []string        `json:"hex_rows"`
 	BlockNum uint64          `json:"block_num"`
 }
 
 type decodeABIResponse struct {
 	BlockNum    uint64          `json:"block_num"`
-	Account     eos.AccountName `json:"account"`
-	Table       eos.TableName   `json:"table"`
+	Account     zsw.AccountName `json:"account"`
+	Table       zsw.TableName   `json:"table"`
 	DecodedRows []string        `json:"rows"` // The slice elements are valid JSON string
 }
 

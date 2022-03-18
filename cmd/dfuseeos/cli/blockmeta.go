@@ -7,7 +7,7 @@ import (
 	dblockmeta "github.com/zhongshuwen/historyexp/blockmeta"
 	"github.com/zhongshuwen/historyexp/trxdb"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -33,13 +33,13 @@ func init() {
 				if !strings.HasPrefix(addr, "http") {
 					addr = "http://" + addr
 				}
-				dblockmeta.APIs = append(dblockmeta.APIs, eos.New(addr))
+				dblockmeta.APIs = append(dblockmeta.APIs, zsw.New(addr))
 			}
 			for _, addr := range viper.GetStringSlice("blockmeta-eos-api-extra-addr") {
 				if !strings.HasPrefix(addr, "http") {
 					addr = "http://" + addr
 				}
-				dblockmeta.ExtraAPIs = append(dblockmeta.ExtraAPIs, eos.New(addr))
+				dblockmeta.ExtraAPIs = append(dblockmeta.ExtraAPIs, zsw.New(addr))
 			}
 
 			dfuseDataDir := runtime.AbsDataDir

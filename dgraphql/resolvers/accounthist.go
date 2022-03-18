@@ -14,7 +14,7 @@ import (
 	"github.com/dfuse-io/dmetering"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/opaque"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/proto"
 	"go.uber.org/zap"
 )
@@ -49,7 +49,7 @@ func (r *Root) QueryGetAccountHistoryActions(ctx context.Context, args GetAccoun
 		return nil, err
 	}
 
-	accountUint, err := eos.StringToName(args.Account)
+	accountUint, err := zsw.StringToName(args.Account)
 	if err != nil {
 		return nil, err
 	}
@@ -77,7 +77,7 @@ func (r *Root) QueryGetAccountHistoryActions(ctx context.Context, args GetAccoun
 
 	var res *AccountHistoryActionsConnection
 	if args.Contract != nil {
-		contractUint, err := eos.StringToName(*args.Contract)
+		contractUint, err := zsw.StringToName(*args.Contract)
 		if err != nil {
 			return nil, err
 		}

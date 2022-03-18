@@ -24,7 +24,7 @@ import (
 	"github.com/dfuse-io/jsonpb"
 	"github.com/dfuse-io/kvdb/store"
 	"github.com/dustin/go-humanize"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
@@ -660,7 +660,7 @@ func checkTrxdbBlocksE(cmd *cobra.Command, args []string) error {
 			it := it.Item()
 
 			blockID := kv.Keys.UnpackIrrBlocksKey(it.Key)
-			blockNum := uint64(eos.BlockNum(blockID))
+			blockNum := uint64(zsw.BlockNum(blockID))
 
 			if blockNum%100000 == 0 {
 				fmt.Println("✅ Reading irr block", blockNum)

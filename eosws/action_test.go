@@ -34,7 +34,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/dstore"
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/gorilla/websocket"
 	"github.com/stretchr/testify/require"
@@ -245,7 +245,7 @@ type archiveFiles struct {
 }
 
 type ABIAccountName struct {
-	accountName eos.AccountName
+	accountName zsw.AccountName
 	abiString   string
 }
 
@@ -362,7 +362,7 @@ func encode(t *testing.T, i interface{}) []byte {
 	t.Helper()
 
 	buf := new(bytes.Buffer)
-	enc := eos.NewEncoder(buf)
+	enc := zsw.NewEncoder(buf)
 	require.NoError(t, enc.Encode(i))
 
 	return buf.Bytes()

@@ -7,13 +7,13 @@ import (
 
 	"github.com/dfuse-io/blockmeta"
 	pbheadinfo "github.com/dfuse-io/pbgo/dfuse/headinfo/v1"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/ptypes"
 	"go.uber.org/zap"
 )
 
-var APIs []*eos.API
-var ExtraAPIs []*eos.API
+var APIs []*zsw.API
+var ExtraAPIs []*zsw.API
 
 func init() {
 	blockmeta.BlockNumToIDFromAPI = blockNumToIDFromAPI

@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	eossnapshot "github.com/zhongshuwen/zswchain-go/snapshot"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -81,7 +81,7 @@ func TestSnapshot_processAccount(t *testing.T) {
 			name: "golden path",
 			input: eossnapshot.AccountObject{
 				Name: "battlefield3",
-				CreationDate: eos.BlockTimestamp{
+				CreationDate: zsw.BlockTimestamp{
 					Time: time.Now(),
 				},
 				RawABI: ABI,
@@ -98,7 +98,7 @@ func TestSnapshot_processAccount(t *testing.T) {
 		t.Run(test.name, func(t *testing.T) {
 			e := exporter{
 				logger:   zlog,
-				accounts: map[eos.AccountName]*Account{},
+				accounts: map[zsw.AccountName]*Account{},
 			}
 			err := e.processAccountObject(test.input)
 			if test.expectError {

@@ -7,7 +7,7 @@ import (
 
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/fluxdb"
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/proto"
 )
 
@@ -99,7 +99,7 @@ func (r *KeyAccountRow) Payer() (string, error) {
 		return "", err
 	}
 
-	return eos.NameToString(pb.Payer), nil
+	return zsw.NameToString(pb.Payer), nil
 }
 
 func (r *KeyAccountRow) Explode() (account, permission string) {

@@ -24,7 +24,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/jsonpb"
 	"github.com/dfuse-io/logging"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	proto "github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/stretchr/testify/require"
@@ -47,7 +47,7 @@ func testBlock(t *testing.T, id, previousID, producer string, libNum uint64, trx
 
 	pbblock := &pbcodec.Block{
 		Id:     id,
-		Number: eos.BlockNum(id),
+		Number: zsw.BlockNum(id),
 		Header: &pbcodec.BlockHeader{
 			Previous:  previousID,
 			Producer:  producer,
