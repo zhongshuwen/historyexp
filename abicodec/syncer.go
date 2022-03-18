@@ -30,7 +30,7 @@ import (
 	"github.com/dfuse-io/dgrpc"
 	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
 	"github.com/dfuse-io/shutter"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

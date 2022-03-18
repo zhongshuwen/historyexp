@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/dfuse-io/kvdb/store"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

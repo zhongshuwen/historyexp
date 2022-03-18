@@ -11,7 +11,7 @@ import (
 	"github.com/dfuse-io/dgraphql"
 	commonTypes "github.com/dfuse-io/dgraphql/types"
 	"github.com/dfuse-io/dmetering"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/proto"
 )
 

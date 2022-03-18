@@ -9,7 +9,7 @@ import (
 
 	"github.com/dfuse-io/bstream"
 	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 
@@ -197,7 +197,7 @@ func (c *DefaultCache) AccountBalances(account eos.AccountName, opts ...AccountB
 						Owner: ass.Owner,
 						Asset: &eos.ExtendedAsset{
 							Contract: ass.Asset.Contract,
-							Asset:    eos.NewEOSAsset(int64(ass.Asset.Asset.Amount) + value),
+							Asset:    eos.NewZSWAsset(int64(ass.Asset.Asset.Amount) + value),
 						},
 					})
 					continue
@@ -241,7 +241,7 @@ func (c *DefaultCache) TokenBalances(contract eos.AccountName, opts ...TokenBala
 						Owner: ass.Owner,
 						Asset: &eos.ExtendedAsset{
 							Contract: contract,
-							Asset:    eos.NewEOSAsset(int64(ass.Asset.Asset.Amount) + c.getStakeForAccount(ass.Owner)),
+							Asset:    eos.NewZSWAsset(int64(ass.Asset.Asset.Amount) + c.getStakeForAccount(ass.Owner)),
 						},
 					})
 					continue

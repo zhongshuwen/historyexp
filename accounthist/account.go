@@ -3,7 +3,7 @@ package accounthist
 import (
 	"fmt"
 
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 
 	"github.com/zhongshuwen/historyexp/accounthist/keyer"
 )

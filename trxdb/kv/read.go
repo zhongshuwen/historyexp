@@ -25,7 +25,7 @@ import (
 	pbtrxdb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/trxdb/v1"
 	"github.com/dfuse-io/kvdb"
 	"github.com/dfuse-io/kvdb/store"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

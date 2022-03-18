@@ -7,7 +7,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	eossnapshot "github.com/zhongshuwen/zswchain-go/snapshot"
 	"go.uber.org/zap"
 )

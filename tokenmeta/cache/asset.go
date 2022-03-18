@@ -4,7 +4,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 )
 
 type OwnedAsset struct {

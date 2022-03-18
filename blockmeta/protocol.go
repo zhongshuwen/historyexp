@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/dfuse-io/blockmeta"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 )
 
 func init() {

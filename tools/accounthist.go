@@ -17,7 +17,7 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/dfuse-io/kvdb/store"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

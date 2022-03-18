@@ -18,7 +18,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

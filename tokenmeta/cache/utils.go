@@ -2,7 +2,7 @@ package cache
 
 import (
 	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 )
 
 func ProtoEOSAccountBalanceToOwnedAsset(bal *pbtokenmeta.AccountBalance) *OwnedAsset {

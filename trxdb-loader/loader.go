@@ -30,7 +30,7 @@ import (
 	"github.com/dfuse-io/kvdb"
 	pbblockmeta "github.com/dfuse-io/pbgo/dfuse/blockmeta/v1"
 	"github.com/dfuse-io/shutter"
-	eosgo "github.com/zhongshuwen/zswchain-go"
+	eosgoeos "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 
