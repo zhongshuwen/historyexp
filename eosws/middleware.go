@@ -119,7 +119,7 @@ func (middleware *AuthFeatureMiddleware) Handler(next http.Handler) http.Handler
 		ctx := r.Context()
 		credentials := authenticator.GetCredentials(ctx)
 		if credentials == nil {
-			derr.WriteError(ctx, w, "credentials unavailable from context but should have been", zswerr.UnexpectedError(ctx, nil))
+			derr.WriteError(ctx, w, "credentials unavailable from context but should have been", derr.UnexpectedError(ctx, nil))
 			return
 		}
 
