@@ -18,7 +18,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	v0 "github.com/dfuse-io/eosws-go/mdl/v0"
+	v0 "github.com/zhongshuwen/eosws-go/mdl/v0"
 	"time"
 
 	zsw "github.com/zhongshuwen/zswchain-go"

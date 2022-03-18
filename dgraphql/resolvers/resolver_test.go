@@ -41,7 +41,7 @@ func init() {
 }
 
 func newSearchMatchArchive(trxID string) *pbsearch.SearchMatch {
-	cs, err := ptypes.MarshalAny(&pbsearchzsw.Match{})
+	cs, err := ptypes.MarshalAny(&pbsearcheos.Match{})
 	if err != nil {
 		panic(err)
 	}
@@ -57,8 +57,8 @@ func newSearchMatchArchive(trxID string) *pbsearch.SearchMatch {
 }
 
 func newSearchMatchLive(trxID string, idx int) *pbsearch.SearchMatch {
-	cs, err := ptypes.MarshalAny(&pbsearchzsw.Match{
-		Block: &pbsearchzsw.BlockTrxPayload{
+	cs, err := ptypes.MarshalAny(&pbsearcheos.Match{
+		Block: &pbsearcheos.BlockTrxPayload{
 			Trace: &pbcodec.TransactionTrace{Index: uint64(idx)},
 		},
 	})

@@ -29,7 +29,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/dtracing"
-	v1 "github.com/dfuse-io/eosws-go/mdl/v1"
+	v1 "github.com/zhongshuwen/eosws-go/mdl/v1"
 	"github.com/dfuse-io/logging"
 	zsw "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"

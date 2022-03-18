@@ -1229,12 +1229,12 @@ type PermissionLevel struct {
 func (t *PermissionLevel) Actor() string      { return t.pl.Actor }
 func (t *PermissionLevel) Permission() string { return t.pl.Permission }
 
-func searchSpecificMatchToEOSMatch(match *pbsearch.SearchMatch) (*pbsearchzsw.Match, error) {
+func searchSpecificMatchToEOSMatch(match *pbsearch.SearchMatch) (*pbsearcheos.Match, error) {
 	var eosMatchAny ptypes.DynamicAny
 	err := ptypes.UnmarshalAny(match.GetChainSpecific(), &eosMatchAny)
 	if err != nil {
 		return nil, err
 	}
 
-	return eosMatchAny.Message.(*pbsearchzsw.Match), nil
+	return eosMatchAny.Message.(*pbsearcheos.Match), nil
 }

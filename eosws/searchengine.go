@@ -29,7 +29,7 @@ import (
 	pbsearcheos "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/search/v1"
 	"github.com/dfuse-io/dmetering"
 	"github.com/dfuse-io/dtracing"
-	v1 "github.com/dfuse-io/eosws-go/mdl/v1"
+	v1 "github.com/zhongshuwen/eosws-go/mdl/v1"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/opaque"
 	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
@@ -191,7 +191,7 @@ func (s *SearchEngine) fillSearchClientResponse(
 			return nil, err
 		}
 
-		eosMatch := eosMatchAny.Message.(*pbsearchzsw.Match)
+		eosMatch := eosMatchAny.Message.(*pbsearcheos.Match)
 
 		actions[match.TrxIdPrefix] = eosMatch.ActionIndexes
 		trxIDS[i] = match.TrxIdPrefix
