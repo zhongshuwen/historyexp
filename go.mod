@@ -34,7 +34,6 @@ require (
 	github.com/dfuse-io/dstore v0.1.1-0.20210507180120-88a95674809f
 	github.com/dfuse-io/dtracing v0.0.0-20200417133307-c09302668d0c
 	github.com/dfuse-io/eosio-boot v0.0.0-20210521175518-3c6bd783fa90
-	github.com/dfuse-io/eosws-go v0.0.0-20211029134651-1e4090163784 // indirect
 	github.com/dfuse-io/firehose v0.1.1-0.20210424034522-6e5c05a23323
 	github.com/dfuse-io/fluxdb v0.0.0-20210528171211-9df379b9a4e1
 	github.com/dfuse-io/jsonpb v0.0.0-20200819202948-831ad3282037

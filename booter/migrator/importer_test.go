@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"testing"
 
-	bootops "github.com/dfuse-io/eosio-boot/ops"
+	bootops "github.com/invisible-train-40/eosio-boot/ops"
 	"github.com/zhongshuwen/zswchain-go/ecc"
 
 	"github.com/dfuse-io/logging"
