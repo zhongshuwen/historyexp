@@ -24,7 +24,7 @@ import (
 	"github.com/dfuse-io/dauth/authenticator"
 	"github.com/dfuse-io/derr"
 	"github.com/dfuse-io/logging"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"github.com/eoscanada/eos-go/eoserr"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"

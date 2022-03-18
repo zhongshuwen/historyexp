@@ -20,7 +20,7 @@ import (
 	"time"
 
 	"github.com/dfuse-io/opaque"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/timestamp"
 	graphql "github.com/graph-gophers/graphql-go"

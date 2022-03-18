@@ -25,7 +25,7 @@ import (
 	pbblockmeta "github.com/dfuse-io/pbgo/dfuse/blockmeta/v1"
 	"github.com/dfuse-io/derr"
 	"github.com/dfuse-io/dmetering"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/historyexp/eosws"
 	"github.com/zhongshuwen/historyexp/eosws/mdl"
 )

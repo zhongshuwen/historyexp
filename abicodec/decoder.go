@@ -20,7 +20,7 @@ import (
 
 	"github.com/dfuse-io/derr"
 	pbabicodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/abicodec/v1"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"
 )

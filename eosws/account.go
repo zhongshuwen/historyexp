@@ -23,7 +23,7 @@ import (
 	"github.com/zhongshuwen/historyexp/eosws/metrics"
 	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
 	"github.com/dfuse-io/kvdb"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 )
 
 var AccountGetterInstance AccountGetter

@@ -23,7 +23,7 @@ import (
 	"github.com/zhongshuwen/historyexp/eosws/metrics"
 	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/atomic"
 	"go.uber.org/zap"
 )

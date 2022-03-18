@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/eoscanada/eos-go"
-	eossnapshot "github.com/eoscanada/eos-go/snapshot"
+	"github.com/zhongshuwen/zswchain-go"
+	eossnapshot "github.com/zhongshuwen/zswchain-go/snapshot"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"

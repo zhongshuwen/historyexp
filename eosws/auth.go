@@ -18,7 +18,7 @@ import (
 	"context"
 
 	"github.com/dfuse-io/derr"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
 	"go.uber.org/zap"
 )

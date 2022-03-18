@@ -15,7 +15,7 @@
 package wsmsg
 
 import (
-	"github.com/eoscanada/eos-go/forum"
+	"github.com/zhongshuwen/zswchain-go/forum"
 	"github.com/zhongshuwen/historyexp/eosws/mdl"
 )
 

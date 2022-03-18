@@ -22,7 +22,7 @@ import (
 
 	"github.com/dfuse-io/bstream"
 	"github.com/zhongshuwen/historyexp/statedb"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 )
 
 //

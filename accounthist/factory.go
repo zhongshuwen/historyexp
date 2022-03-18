@@ -4,7 +4,7 @@ import (
 	"github.com/dfuse-io/bstream"
 	"github.com/zhongshuwen/historyexp/accounthist/keyer"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 )
 
 type AccountFactory struct {

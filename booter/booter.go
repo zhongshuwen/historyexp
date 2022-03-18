@@ -13,7 +13,7 @@ import (
 	_ "github.com/zhongshuwen/historyexp/booter/migrator"
 	eosboot "github.com/dfuse-io/eosio-boot"
 	"github.com/dfuse-io/shutter"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

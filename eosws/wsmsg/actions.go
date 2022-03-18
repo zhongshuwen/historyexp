@@ -21,7 +21,7 @@ import (
 	v0 "github.com/dfuse-io/eosws-go/mdl/v0"
 	"time"
 
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 )
 
 func init() {

@@ -6,7 +6,7 @@ import (
 
 	"github.com/zhongshuwen/historyexp/accounthist"
 	ct "github.com/zhongshuwen/historyexp/codec/testing"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
