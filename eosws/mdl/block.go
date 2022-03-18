@@ -19,7 +19,7 @@ import (
 
 	"github.com/zhongshuwen/historyexp/codec"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 )
 
 // BlockSummary is the dfuse summary information for a given block

@@ -19,8 +19,8 @@ import (
 	"github.com/dfuse-io/bstream/forkable"
 	"github.com/dfuse-io/bstream/hub"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	eos "github.com/eoscanada/eos-go"
-	"github.com/eoscanada/eos-go/system"
+	eos "github.com/zhongshuwen/zswchain-go"
+	"github.com/zhongshuwen/zswchain-go/system"
 	"go.uber.org/zap"
 )
 

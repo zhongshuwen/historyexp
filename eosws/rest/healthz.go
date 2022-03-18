@@ -32,7 +32,7 @@ import (
 	"github.com/dfuse-io/dstore"
 	"github.com/dfuse-io/logging"
 	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

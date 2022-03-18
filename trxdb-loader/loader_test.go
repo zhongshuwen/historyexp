@@ -32,7 +32,7 @@ import (
 
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/jsonpb"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

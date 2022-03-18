@@ -24,7 +24,7 @@ import (
 	"path"
 	"testing"
 
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"github.com/gavv/httpexpect/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

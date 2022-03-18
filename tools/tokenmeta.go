@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 
 	"github.com/spf13/viper"
 

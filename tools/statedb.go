@@ -18,7 +18,7 @@ import (
 	"github.com/dfuse-io/fluxdb"
 	"github.com/dfuse-io/kvdb/store"
 	"github.com/dustin/go-humanize"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"github.com/klauspost/compress/zstd"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

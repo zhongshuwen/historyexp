@@ -25,7 +25,7 @@ import (
 	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/validator"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

@@ -25,7 +25,7 @@ import (
 	"strings"
 
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"github.com/tidwall/gjson"
 	"go.uber.org/zap"
 )

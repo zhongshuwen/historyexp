@@ -33,7 +33,7 @@ import (
 	"github.com/dfuse-io/kvdb"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/opaque"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

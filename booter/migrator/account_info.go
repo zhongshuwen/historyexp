@@ -1,7 +1,7 @@
 package migrator
 
 import (
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 )
 
 type PermissionObject struct {

@@ -25,7 +25,7 @@ import (
 	"github.com/zhongshuwen/historyexp/eosws/metrics"
 	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	_ "github.com/eoscanada/eos-go/forum"
+	_ "github.com/zhongshuwen/zswchain-go/forum"
 	"github.com/golang/protobuf/ptypes"
 )
 

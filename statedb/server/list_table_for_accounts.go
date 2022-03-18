@@ -23,7 +23,7 @@ import (
 
 	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/dhammer"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 
 	"github.com/dfuse-io/derr"
 	"github.com/dfuse-io/logging"

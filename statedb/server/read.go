@@ -24,7 +24,7 @@ import (
 	"github.com/dfuse-io/dtracing"
 	"github.com/dfuse-io/fluxdb"
 	"github.com/dfuse-io/logging"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 	"go.opencensus.io/trace"
 	"go.uber.org/zap"
 )

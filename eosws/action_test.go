@@ -34,7 +34,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/dstore"
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/gorilla/websocket"
 	"github.com/stretchr/testify/require"

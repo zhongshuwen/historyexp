@@ -34,7 +34,7 @@ import (
 	"github.com/zhongshuwen/historyexp/eosws/mdl"
 	"github.com/zhongshuwen/historyexp/eosws/metrics"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"github.com/eoscanada/eos-go/eoserr"
 	"github.com/tidwall/gjson"
 	"go.uber.org/zap"

@@ -1,7 +1,7 @@
 package migrator
 
 import (
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 )
 
 // Inject represents the `inject` struct on `migration` contract.

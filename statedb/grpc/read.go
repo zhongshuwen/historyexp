@@ -12,7 +12,7 @@ import (
 	"github.com/dfuse-io/dtracing"
 	"github.com/dfuse-io/fluxdb"
 	"github.com/dfuse-io/logging"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"go.opencensus.io/trace"
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"

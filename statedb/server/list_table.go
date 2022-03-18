@@ -20,7 +20,7 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 
 	"github.com/dfuse-io/derr"
 	"github.com/zhongshuwen/historyexp/statedb"

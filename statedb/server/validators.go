@@ -18,7 +18,7 @@ import (
 	"fmt"
 
 	"github.com/dfuse-io/validator"
-	"github.com/eoscanada/eos-go/ecc"
+	"github.com/zhongshuwen/zswchain-go/ecc"
 	"github.com/thedevsaddam/govalidator"
 	"go.uber.org/zap"
 )

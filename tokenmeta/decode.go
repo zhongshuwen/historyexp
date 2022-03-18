@@ -8,7 +8,7 @@ import (
 	pbabicodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/abicodec/v1"
 	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
 	"github.com/zhongshuwen/historyexp/tokenmeta/cache"
-	"github.com/eoscanada/eos-go"
+	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

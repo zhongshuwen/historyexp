@@ -13,8 +13,8 @@ import (
 
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/jsonpb"
-	"github.com/eoscanada/eos-go"
-	"github.com/eoscanada/eos-go/system"
+	"github.com/zhongshuwen/zswchain-go"
+	"github.com/zhongshuwen/zswchain-go/system"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/stretchr/testify/assert"
