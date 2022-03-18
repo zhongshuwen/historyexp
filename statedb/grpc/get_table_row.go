@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/dfuse-io/derr"
-	pbstatedb "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/statedb/v1"
-	"github.com/dfuse-io/dfuse-eosio/statedb"
+	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
+	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/logging"
 	pbbstream "github.com/dfuse-io/pbgo/dfuse/bstream/v1"
 	"go.uber.org/zap"

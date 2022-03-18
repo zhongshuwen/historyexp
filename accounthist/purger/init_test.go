@@ -11,11 +11,11 @@ import (
 
 	"github.com/dfuse-io/logging"
 
-	"github.com/dfuse-io/dfuse-eosio/accounthist/keyer"
+	"github.com/zhongshuwen/historyexp/accounthist/keyer"
 
-	"github.com/dfuse-io/dfuse-eosio/accounthist/injector"
+	"github.com/zhongshuwen/historyexp/accounthist/injector"
 
-	"github.com/dfuse-io/dfuse-eosio/accounthist"
+	"github.com/zhongshuwen/historyexp/accounthist"
 
 	"github.com/dfuse-io/kvdb/store"
 	"github.com/stretchr/testify/require"

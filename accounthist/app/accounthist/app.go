@@ -5,9 +5,9 @@ import (
 	"fmt"
 
 	"github.com/dfuse-io/bstream"
-	"github.com/dfuse-io/dfuse-eosio/accounthist"
-	"github.com/dfuse-io/dfuse-eosio/accounthist/grpc"
-	"github.com/dfuse-io/dfuse-eosio/accounthist/injector"
+	"github.com/zhongshuwen/historyexp/accounthist"
+	"github.com/zhongshuwen/historyexp/accounthist/grpc"
+	"github.com/zhongshuwen/historyexp/accounthist/injector"
 	"github.com/dfuse-io/dstore"
 	"github.com/dfuse-io/kvdb/store"
 	"github.com/dfuse-io/shutter"

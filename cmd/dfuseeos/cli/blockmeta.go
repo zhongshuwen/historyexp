@@ -4,8 +4,8 @@ import (
 	"strings"
 
 	blockmetaApp "github.com/dfuse-io/blockmeta/app/blockmeta"
-	dblockmeta "github.com/dfuse-io/dfuse-eosio/blockmeta"
-	"github.com/dfuse-io/dfuse-eosio/trxdb"
+	dblockmeta "github.com/zhongshuwen/historyexp/blockmeta"
+	"github.com/zhongshuwen/historyexp/trxdb"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/eoscanada/eos-go"
 	"github.com/spf13/cobra"

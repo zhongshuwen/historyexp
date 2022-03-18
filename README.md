@@ -23,7 +23,7 @@ development chain by also managing the block producing node for you.
 
 ### From a pre-built release
 
-* Download a tarball from the [GitHub Releases Tab](https://github.com/dfuse-io/dfuse-eosio/releases).
+* Download a tarball from the [GitHub Releases Tab](https://github.com/zhongshuwen/historyexp/releases).
 * Put the binary `zswlishi` in your `PATH`.
 
 ### From source
@@ -58,7 +58,7 @@ Answer `y` (yes) when being prompted for `Do you want ZSWLiShi to run a producin
 Optionally, you can also copy over a boot sequence to have dfuse bootstraps your chain with accounts + system contracts to have a chain ready for development in a matter of seconds:
 
 ```
-wget -O bootseq.yaml https://raw.githubusercontent.com/dfuse-io/dfuse-eosio/develop/devel/standard/bootseq.yaml
+wget -O bootseq.yaml https://raw.githubusercontent.com/zhongshuwen/historyexp/develop/devel/standard/bootseq.yaml
 ```
 
 When you're ready, boot your instance with:
@@ -83,7 +83,7 @@ In this mode, two nodeos instances will now be running on your machine, a block 
 If you chose to sync to an existing chain, only the mindreader node will launch. It may take a while for the initial sync depending on the size of the chain and the services may generate various error logs until it catches up (more options for quickly syncing with an existing chain will be proposed in upcoming releases).
 
 * See [Syncing a chain partially](./PARTIAL_SYNC.md)
-* See the following issue about the complexity of [syncing a large chain](https://github.com/dfuse-io/dfuse-eosio/issues/26)
+* See the following issue about the complexity of [syncing a large chain](https://github.com/zhongshuwen/historyexp/issues/26)
 
 You should also take a look at our Docs:
 * [System Admin Guide](https://docs.dfuse.io/eosio/admin-guide/)

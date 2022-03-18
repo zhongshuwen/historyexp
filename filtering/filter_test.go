@@ -3,8 +3,8 @@ package filtering
 import (
 	"testing"
 
-	ct "github.com/dfuse-io/dfuse-eosio/codec/testing"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	ct "github.com/zhongshuwen/historyexp/codec/testing"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

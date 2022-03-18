@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"os"
 
-	pbtrxdb "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/trxdb/v1"
-	trxdb "github.com/dfuse-io/dfuse-eosio/trxdb/kv"
+	pbtrxdb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/trxdb/v1"
+	trxdb "github.com/zhongshuwen/historyexp/trxdb/kv"
 	"github.com/dfuse-io/jsonpb"
 	"github.com/dfuse-io/kvdb/store"
 	_ "github.com/dfuse-io/kvdb/store/badger"

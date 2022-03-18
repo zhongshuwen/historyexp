@@ -20,7 +20,7 @@ import (
 
 	"github.com/dfuse-io/bstream"
 	"github.com/dfuse-io/bstream/forkable"
-	"github.com/dfuse-io/dfuse-eosio/eosws/wsmsg"
+	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
 )
 
 type ProgressHandler struct {

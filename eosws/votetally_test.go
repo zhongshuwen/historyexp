@@ -21,8 +21,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dfuse-io/dfuse-eosio/eosws/statedb"
-	pbstatedb "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/statedb/v1"
+	"github.com/zhongshuwen/historyexp/eosws/statedb"
+	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

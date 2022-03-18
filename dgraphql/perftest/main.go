@@ -22,8 +22,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/dfuse-io/dfuse-eosio/trxdb"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	"github.com/zhongshuwen/historyexp/trxdb"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/dhammer"
 )
 

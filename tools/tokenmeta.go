@@ -10,7 +10,7 @@ import (
 
 	"github.com/spf13/viper"
 
-	"github.com/dfuse-io/dfuse-eosio/tokenmeta/cache"
+	"github.com/zhongshuwen/historyexp/tokenmeta/cache"
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 )

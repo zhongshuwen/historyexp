@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"time"
 
-	_ "github.com/dfuse-io/dfuse-eosio/booter/migrator"
+	_ "github.com/zhongshuwen/historyexp/booter/migrator"
 	eosboot "github.com/dfuse-io/eosio-boot"
 	"github.com/dfuse-io/shutter"
 	"github.com/eoscanada/eos-go"

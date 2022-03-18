@@ -32,8 +32,8 @@ Different levels are already defined to make it easier to run all
 
 Level:
 
-- INFO `github.com/dfuse-io/dfuse-eosio`
-- INFO `github.com/dfuse-io/dfuse-eosio/cmd/zswlishi`
+- INFO `github.com/zhongshuwen/historyexp`
+- INFO `github.com/zhongshuwen/historyexp/cmd/zswlishi`
 - WARN All others
 
 Formatting:
@@ -47,8 +47,8 @@ Formatting:
 
 Level:
 
-- INFO `github.com/dfuse-io/dfuse-eosio`
-- INFO `github.com/dfuse-io/dfuse-eosio/cmd/zswlishi`
+- INFO `github.com/zhongshuwen/historyexp`
+- INFO `github.com/zhongshuwen/historyexp/cmd/zswlishi`
 - WARN `github.com/dfuse-io/manageos.*`
 - INFO All apps
 - WARN All others
@@ -64,8 +64,8 @@ Formatting:
 
 Level:
 
-- DEBUG `github.com/dfuse-io/dfuse-eosio`
-- DEBUG `github.com/dfuse-io/dfuse-eosio/cmd/zswlishi`
+- DEBUG `github.com/zhongshuwen/historyexp`
+- DEBUG `github.com/zhongshuwen/historyexp/cmd/zswlishi`
 - INFO `github.com/dfuse-io/manageos.*`
 - INFO All apps
 - INFO All others
@@ -123,7 +123,7 @@ DEBUG="mindreader,dgraphql,relayer" INFO="mindreader/nodeos" zswlishi start
 
 which will:
 1. set verbosity of apps `mindreader`, `dgraphql` and relayer to`DEBUG` level.
-2. set verbosity of nodeos module to INFO (the string matches the logger registered as `github.com/dfuse-io/dfuse-eosio/mindreader/nodeos` in the code)
+2. set verbosity of nodeos module to INFO (the string matches the logger registered as `github.com/zhongshuwen/historyexp/mindreader/nodeos` in the code)
 
 Note that logger matching will be applied in this order: WARN, INFO, DEBUG
 

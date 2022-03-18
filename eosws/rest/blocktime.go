@@ -23,7 +23,7 @@ import (
 	"github.com/dfuse-io/derr"
 	"github.com/dfuse-io/dmetering"
 	eos "github.com/eoscanada/eos-go"
-	"github.com/dfuse-io/dfuse-eosio/eosws"
+	"github.com/zhongshuwen/historyexp/eosws"
 )
 
 /*

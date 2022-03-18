@@ -22,5 +22,5 @@ import (
 var zlog = zap.NewNop()
 
 func init() {
-	logging.Register("github.com/dfuse-io/dfuse-eosio/statedb/server", &zlog)
+	logging.Register("github.com/zhongshuwen/historyexp/statedb/server", &zlog)
 }

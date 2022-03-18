@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	pbabicodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/abicodec/v1"
-	pbtokenmeta "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/tokenmeta/v1"
-	"github.com/dfuse-io/dfuse-eosio/tokenmeta/cache"
+	pbabicodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/abicodec/v1"
+	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
+	"github.com/zhongshuwen/historyexp/tokenmeta/cache"
 	"github.com/eoscanada/eos-go"
 	"go.uber.org/zap"
 )

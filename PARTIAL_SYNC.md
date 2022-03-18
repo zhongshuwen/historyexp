@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* A working `zswlishi` command and nodeos installed with 'deep-mind' patch (see https://github.com/dfuse-io/dfuse-eosio/blob/develop/DEPENDENCIES.md#dfuse-instrumented-eosio-prebuilt-binaries)
+* A working `zswlishi` command and nodeos installed with 'deep-mind' patch (see https://github.com/zhongshuwen/historyexp/blob/develop/DEPENDENCIES.md#dfuse-instrumented-eosio-prebuilt-binaries)
 
 ## Get a clean workspace folder, fetch a Kylin snapshot (using EOS Nation snapshots as a source in this example)
 

@@ -1,4 +1,4 @@
-module github.com/dfuse-io/dfuse-eosio
+module github.com/zhongshuwen/historyexp
 
 go 1.14
 

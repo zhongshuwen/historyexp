@@ -26,9 +26,9 @@ import (
 	"strings"
 
 	"github.com/dfuse-io/bstream"
-	"github.com/dfuse-io/dfuse-eosio/eosws/mdl"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
-	"github.com/dfuse-io/dfuse-eosio/trxdb"
+	"github.com/zhongshuwen/historyexp/eosws/mdl"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
+	"github.com/zhongshuwen/historyexp/trxdb"
 	v1 "github.com/dfuse-io/eosws-go/mdl/v1"
 	"github.com/dfuse-io/kvdb"
 	"github.com/dfuse-io/logging"

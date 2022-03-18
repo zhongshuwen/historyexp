@@ -3,7 +3,7 @@ package cli
 import (
 	"time"
 
-	tokenmetaApp "github.com/dfuse-io/dfuse-eosio/tokenmeta/app/tokenmeta"
+	tokenmetaApp "github.com/zhongshuwen/historyexp/tokenmeta/app/tokenmeta"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -15,7 +15,7 @@ func init() {
 		Title:       "Tokenmeta",
 		Description: "Serves token contracts information on a given network",
 		MetricsID:   "tokenmeta",
-		Logger:      launcher.NewLoggingDef("github.com/dfuse-io/dfuse-eosio/tokenmeta.*", nil),
+		Logger:      launcher.NewLoggingDef("github.com/zhongshuwen/historyexp/tokenmeta.*", nil),
 		RegisterFlags: func(cmd *cobra.Command) error {
 			cmd.Flags().String("tokenmeta-grpc-listen-addr", ":14001", "Address to listen for incoming gRPC requests")
 			cmd.Flags().String("tokenmeta-statedb-grpc-addr", StateDBGRPCServingAddr, "StateDB GRPC address")

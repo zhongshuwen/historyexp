@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strconv"
 
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
-	trxdb "github.com/dfuse-io/dfuse-eosio/trxdb"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
+	trxdb "github.com/zhongshuwen/historyexp/trxdb"
 	"github.com/dfuse-io/kvdb"
 	_ "github.com/dfuse-io/kvdb/store/badger"
 	_ "github.com/dfuse-io/kvdb/store/bigkv"

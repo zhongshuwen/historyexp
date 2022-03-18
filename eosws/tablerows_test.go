@@ -24,9 +24,9 @@ import (
 
 	"github.com/dfuse-io/bstream"
 	"github.com/dfuse-io/bstream/forkable"
-	"github.com/dfuse-io/dfuse-eosio/eosws/wsmsg"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
-	pbstatedb "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/statedb/v1"
+	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
+	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/dstore"
 	"github.com/dfuse-io/jsonpb"
 	eos "github.com/eoscanada/eos-go"

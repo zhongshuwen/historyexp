@@ -2,8 +2,8 @@ package accounthist
 
 import (
 	"github.com/dfuse-io/bstream"
-	"github.com/dfuse-io/dfuse-eosio/accounthist/keyer"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	"github.com/zhongshuwen/historyexp/accounthist/keyer"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/eoscanada/eos-go"
 )
 

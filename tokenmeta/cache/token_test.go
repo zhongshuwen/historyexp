@@ -3,7 +3,7 @@ package cache
 import (
 	"testing"
 
-	pbtokenmeta "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/tokenmeta/v1"
+	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
 	"github.com/stretchr/testify/assert"
 )
 

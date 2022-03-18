@@ -82,4 +82,4 @@ setting permanent, edit or create the file `/etc/sysctl.conf` and add the config
 
 ## Can't find a solution?
 
-If your issue isn't listed here, search the [issues](https://github.com/dfuse-io/dfuse-eosio/issues) section for a similar issue. If you can't find anything, open a new issue and someone from the community or the dfuse team will get to it.
+If your issue isn't listed here, search the [issues](https://github.com/zhongshuwen/historyexp/issues) section for a similar issue. If you can't find anything, open a new issue and someone from the community or the dfuse team will get to it.

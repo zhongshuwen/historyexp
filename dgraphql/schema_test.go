@@ -17,7 +17,7 @@ package dgraphql
 import (
 	"testing"
 
-	"github.com/dfuse-io/dfuse-eosio/dgraphql/resolvers"
+	"github.com/zhongshuwen/historyexp/dgraphql/resolvers"
 	"github.com/dfuse-io/dgraphql"
 	"github.com/stretchr/testify/require"
 )

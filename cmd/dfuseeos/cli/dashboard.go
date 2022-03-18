@@ -1,7 +1,7 @@
 package cli
 
 import (
-	_ "github.com/dfuse-io/dfuse-eosio/dashboard"
+	_ "github.com/zhongshuwen/historyexp/dashboard"
 	"github.com/invisible-train-40/zsw-lishi-launcher/dashboard"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/spf13/cobra"

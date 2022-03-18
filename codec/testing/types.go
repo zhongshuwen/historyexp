@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/dfuse-io/bstream"
-	"github.com/dfuse-io/dfuse-eosio/codec"
-	pbcodec "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
+	"github.com/zhongshuwen/historyexp/codec"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/jsonpb"
 	"github.com/dfuse-io/logging"
 	pbbstream "github.com/dfuse-io/pbgo/dfuse/bstream/v1"
@@ -32,7 +32,7 @@ type BlockTimestamp time.Time
 var zlog *zap.Logger
 
 func init() {
-	logging.Register("github.com/dfuse-io/dfuse-eosio/codec/testing", &zlog)
+	logging.Register("github.com/zhongshuwen/historyexp/codec/testing", &zlog)
 }
 
 func (h Hash) Bytes(t testing.T) []byte {

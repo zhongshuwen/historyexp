@@ -3,7 +3,7 @@ package cli
 import (
 	"fmt"
 
-	eosSearch "github.com/dfuse-io/dfuse-eosio/search"
+	eosSearch "github.com/zhongshuwen/historyexp/search"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	routerApp "github.com/dfuse-io/search/app/router"
 	"github.com/spf13/cobra"

@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"sort"
 
-	pbstatedb "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/statedb/v1"
+	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/eoscanada/eos-go"
 )
 

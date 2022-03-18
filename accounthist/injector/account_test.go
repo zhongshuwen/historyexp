@@ -3,7 +3,7 @@ package injector
 import (
 	"testing"
 
-	ct "github.com/dfuse-io/dfuse-eosio/codec/testing"
+	ct "github.com/zhongshuwen/historyexp/codec/testing"
 	"github.com/stretchr/testify/assert"
 )
 

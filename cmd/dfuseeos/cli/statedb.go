@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	statedbApp "github.com/dfuse-io/dfuse-eosio/statedb/app/statedb"
+	statedbApp "github.com/zhongshuwen/historyexp/statedb/app/statedb"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	fluxdbApp "github.com/dfuse-io/fluxdb/app/fluxdb"
 	"github.com/spf13/cobra"

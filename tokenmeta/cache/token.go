@@ -4,7 +4,7 @@ import (
 	"sort"
 	"strings"
 
-	pbtokenmeta "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/tokenmeta/v1"
+	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
 	"go.uber.org/zap"
 )
 

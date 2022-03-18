@@ -22,5 +22,5 @@ import (
 var zlog *zap.Logger
 
 func init() {
-	logging.Register("github.com/dfuse-io/dfuse-eosio/tokenmeta/app/tokenmeta", &zlog)
+	logging.Register("github.com/zhongshuwen/historyexp/tokenmeta/app/tokenmeta", &zlog)
 }

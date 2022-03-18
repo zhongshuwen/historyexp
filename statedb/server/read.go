@@ -20,7 +20,7 @@ import (
 	"fmt"
 
 	"github.com/dfuse-io/bstream"
-	"github.com/dfuse-io/dfuse-eosio/statedb"
+	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/dtracing"
 	"github.com/dfuse-io/fluxdb"
 	"github.com/dfuse-io/logging"

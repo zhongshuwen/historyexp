@@ -1,6 +1,6 @@
 package cli
 
-import "github.com/dfuse-io/dfuse-eosio/tools"
+import "github.com/zhongshuwen/historyexp/tools"
 
 func init() {
 	RootCmd.AddCommand(tools.Cmd)

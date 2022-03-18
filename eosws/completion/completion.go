@@ -22,8 +22,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/dfuse-io/dfuse-eosio/eosws"
-	"github.com/dfuse-io/dfuse-eosio/eosws/mdl"
+	"github.com/zhongshuwen/historyexp/eosws"
+	"github.com/zhongshuwen/historyexp/eosws/mdl"
 
 	"github.com/arpitbbhayani/tripod"
 	"go.uber.org/zap"

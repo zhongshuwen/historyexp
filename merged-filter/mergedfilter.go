@@ -23,8 +23,8 @@ import (
 
 	"github.com/dfuse-io/bstream"
 	"github.com/dfuse-io/derr"
-	"github.com/dfuse-io/dfuse-eosio/codec"
-	"github.com/dfuse-io/dfuse-eosio/filtering"
+	"github.com/zhongshuwen/historyexp/codec"
+	"github.com/zhongshuwen/historyexp/filtering"
 	"github.com/dfuse-io/dstore"
 	"github.com/dfuse-io/shutter"
 	"go.uber.org/zap"

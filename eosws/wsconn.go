@@ -24,7 +24,7 @@ import (
 
 	"github.com/dfuse-io/dauth/authenticator"
 	"github.com/dfuse-io/derr"
-	"github.com/dfuse-io/dfuse-eosio/eosws/wsmsg"
+	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
 	"github.com/dfuse-io/dmetering"
 	"github.com/dfuse-io/dtracing"
 	"github.com/dfuse-io/logging"
