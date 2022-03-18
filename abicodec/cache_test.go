@@ -23,7 +23,7 @@ import (
 	"github.com/davecgh/go-spew/spew"
 	"github.com/dfuse-io/dstore"
 	"github.com/dfuse-io/logging"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"

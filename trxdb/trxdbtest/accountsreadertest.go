@@ -23,7 +23,7 @@ import (
 	ct "github.com/zhongshuwen/historyexp/codec/testing"
 	"github.com/zhongshuwen/historyexp/trxdb"
 	"github.com/dfuse-io/kvdb"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/zswchain-go/system"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

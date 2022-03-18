@@ -14,7 +14,7 @@ import (
 	"github.com/dfuse-io/dmetering"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/opaque"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/proto"
 	"go.uber.org/zap"
 )

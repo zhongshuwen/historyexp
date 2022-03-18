@@ -5,7 +5,7 @@ import (
 
 	"github.com/dfuse-io/bstream"
 	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

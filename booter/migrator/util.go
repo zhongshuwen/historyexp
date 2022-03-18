@@ -8,7 +8,7 @@ import (
 	"os"
 
 	rice "github.com/GeertJohan/go.rice"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 )
 
 var AN = eos.AN

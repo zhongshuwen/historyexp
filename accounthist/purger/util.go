@@ -1,6 +1,6 @@
 package purger
 
-import "github.com/zhongshuwen/zswchain-go"
+importeos "github.com/zhongshuwen/zswchain-go"
 
 type EOSName uint64
 

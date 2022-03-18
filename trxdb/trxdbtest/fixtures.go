@@ -9,7 +9,7 @@ import (
 	"github.com/zhongshuwen/historyexp/codec"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/jsonpb"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/zswchain-go/ecc"
 	"github.com/golang/protobuf/ptypes"
 )

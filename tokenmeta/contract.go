@@ -7,7 +7,7 @@ import (
 
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

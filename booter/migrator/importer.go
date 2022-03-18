@@ -10,7 +10,7 @@ import (
 
 	rice "github.com/GeertJohan/go.rice"
 	bootops "github.com/dfuse-io/eosio-boot/ops"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/zswchain-go/ecc"
 	"github.com/zhongshuwen/zswchain-go/system"
 	"go.uber.org/zap"

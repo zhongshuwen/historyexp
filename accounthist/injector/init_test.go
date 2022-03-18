@@ -19,7 +19,7 @@ import (
 	"github.com/dfuse-io/kvdb/store"
 	_ "github.com/dfuse-io/kvdb/store/badger"
 	"github.com/dfuse-io/logging"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"

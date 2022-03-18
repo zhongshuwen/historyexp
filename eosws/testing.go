@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"go.opencensus.io/trace"
 )
 

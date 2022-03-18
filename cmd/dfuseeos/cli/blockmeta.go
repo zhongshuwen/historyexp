@@ -7,7 +7,7 @@ import (
 	dblockmeta "github.com/zhongshuwen/historyexp/blockmeta"
 	"github.com/zhongshuwen/historyexp/trxdb"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

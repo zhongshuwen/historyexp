@@ -18,7 +18,7 @@ import (
 	"time"
 
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/ptypes"
 )
 

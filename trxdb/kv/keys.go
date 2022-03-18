@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/dfuse-io/kvdb"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 )
 
 const (

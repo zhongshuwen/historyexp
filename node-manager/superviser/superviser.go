@@ -29,7 +29,7 @@ import (
 	logplugin "github.com/dfuse-io/node-manager/log_plugin"
 	"github.com/dfuse-io/node-manager/metrics"
 	"github.com/dfuse-io/node-manager/superviser"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 )

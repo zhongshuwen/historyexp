@@ -6,7 +6,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/fluxdb"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/zswchain-go/system"
 	"github.com/golang/protobuf/proto"
 )

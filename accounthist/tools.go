@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/dfuse-io/kvdb/store"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 

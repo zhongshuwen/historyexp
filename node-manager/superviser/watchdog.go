@@ -19,7 +19,7 @@ import (
 	"time"
 
 	"github.com/dfuse-io/node-manager/metrics"
-	"github.com/zhongshuwen/zswchain-go"
+eos	"github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 
