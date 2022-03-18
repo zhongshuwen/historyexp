@@ -17,10 +17,10 @@ package mdl
 import (
 	"encoding/hex"
 
-	v0 "github.com/dfuse-io/eosws-go/mdl/v0"
+	v0 "github.com/zhongshuwen/eosws-go/mdl/v0"
 
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	v1 "github.com/dfuse-io/eosws-go/mdl/v1"
+	v1 "github.com/zhongshuwen/eosws-go/mdl/v1"
 )
 
 func ToV1DBOps(in []*pbcodec.DBOp) (out []*v1.DBOp) {

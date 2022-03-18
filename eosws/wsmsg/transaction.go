@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 
-	v1 "github.com/dfuse-io/eosws-go/mdl/v1"
+	v1 "github.com/zhongshuwen/eosws-go/mdl/v1"
 )
 
 func init() {

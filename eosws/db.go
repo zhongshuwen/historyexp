@@ -29,7 +29,7 @@ import (
 	"github.com/zhongshuwen/historyexp/eosws/mdl"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/zhongshuwen/historyexp/trxdb"
-	v1 "github.com/dfuse-io/eosws-go/mdl/v1"
+	v1 "github.com/zhongshuwen/eosws-go/mdl/v1"
 	"github.com/dfuse-io/kvdb"
 	"github.com/dfuse-io/logging"
 	"github.com/dfuse-io/opaque"

@@ -23,8 +23,8 @@ import (
 
 	"github.com/zhongshuwen/historyexp/codec"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	v0 "github.com/dfuse-io/eosws-go/mdl/v0"
-	v1 "github.com/dfuse-io/eosws-go/mdl/v1"
+	v0 "github.com/zhongshuwen/eosws-go/mdl/v0"
+	v1 "github.com/zhongshuwen/eosws-go/mdl/v1"
 	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang-collections/collections/stack"
 	"github.com/tidwall/sjson"
