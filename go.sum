@@ -304,6 +304,8 @@ github.com/dfuse-io/dtracing v0.0.0-20200417133307-c09302668d0c h1:G/qxKHQXz8OGY
 github.com/dfuse-io/dtracing v0.0.0-20200417133307-c09302668d0c/go.mod h1:SA/v5q2RIuah2W5uvVldEUwfFprEhGiw66Id0j68rtw=
 github.com/dfuse-io/eosio-boot v0.0.0-20210521175518-3c6bd783fa90 h1:Hy9CNtPw8HzJvdrP7TvTVTepC95NQwB0N1X9TPH/OXM=
 github.com/dfuse-io/eosio-boot v0.0.0-20210521175518-3c6bd783fa90/go.mod h1:u3kgTXC+LtvpiJo03hfhr2G5jHmdYEbiajW1zQHM4fM=
+github.com/dfuse-io/eosws-go v0.0.0-20211029134651-1e4090163784 h1:G3znUNVj+0xf9VgBO0/y0PpTBmWVGwBGuazIAIE6MP4=
+github.com/dfuse-io/eosws-go v0.0.0-20211029134651-1e4090163784/go.mod h1:tNAkcl+/JpMfoS5lh1dyTJzAi6Z3qjYuUVNpq8wdKWY=
 github.com/dfuse-io/firehose v0.1.1-0.20210424034522-6e5c05a23323 h1:EFh6mpK8RwUmlE91zKmBSB7s4ZDGD3zB+x9yhQ22XD8=
 github.com/dfuse-io/firehose v0.1.1-0.20210424034522-6e5c05a23323/go.mod h1:3F/pSkEOiGVWsse/8tyNnag2LM6h3HMrRpJDvSzpXV0=
 github.com/dfuse-io/fluxdb v0.0.0-20210528171211-9df379b9a4e1 h1:AD/bOmV8Lj5k4wU+yg7+gkxogxKQ4MsJfI1cU80n6ZQ=
@@ -377,6 +379,7 @@ github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385/go.mod h1:0vRUJqYpeSZi
 github.com/elastic/gosigar v0.8.1-0.20180330100440-37f05ff46ffa/go.mod h1:cdorVVzy1fhmEqmtgqkoE3bYtCfSCkVyjTyCIo22xvs=
 github.com/envoyproxy/go-control-plane v0.9.4/go.mod h1:6rpuAdCZL397s3pYoYcLgu1mIlRU8Am5FuJP05cCM98=
 github.com/envoyproxy/protoc-gen-validate v0.1.0/go.mod h1:iSmxcyjqTsJpI2R4NaDN7+kN2VEUnK/pcBlmesArF7c=
+github.com/eoscanada/eos-go v0.8.5/go.mod h1:RKrm2XzZEZWxSMTRqH5QOyJ1fb/qKEjs2ix1aQl0sk4=
 github.com/eoscanada/eos-go v0.8.10-0.20190329223853-84b552870f2a/go.mod h1:RKrm2XzZEZWxSMTRqH5QOyJ1fb/qKEjs2ix1aQl0sk4=
 github.com/eoscanada/eos-go v0.9.1-0.20200227221642-1b19518201a1/go.mod h1:6RuJFiRU1figWZ39M33o2cERU2MdL6VllElYLHTZNeo=
 github.com/eoscanada/eos-go v0.9.1-0.20200506160036-5e090ae689ef/go.mod h1:exxz2Fyjqx23FIYF1QlhhhggYZxcbZMGp2H/4h7I34Y=
@@ -930,6 +933,7 @@ github.com/thedevsaddam/govalidator v1.9.6/go.mod h1:Ilx8u7cg5g3LXbSS943cx5kczyN
 github.com/thedevsaddam/govalidator v1.9.9 h1:Vn50EjNtf8qOL+awcXtv2qzvbUfCzyD/R5LYTOG+L00=
 github.com/thedevsaddam/govalidator v1.9.9/go.mod h1:Ilx8u7cg5g3LXbSS943cx5kczyNuUn7LH/cK5MYuE90=
 github.com/tidwall/gjson v1.1.5/go.mod h1:c/nTNbUr0E0OrXEhq1pwa8iEgc2DOt4ZZqAt1HtCkPA=
+github.com/tidwall/gjson v1.2.1/go.mod h1:c/nTNbUr0E0OrXEhq1pwa8iEgc2DOt4ZZqAt1HtCkPA=
 github.com/tidwall/gjson v1.3.2/go.mod h1:P256ACg0Mn+j1RXIDXoss50DeIABTYK1PULOJHhxOls=
 github.com/tidwall/gjson v1.5.0/go.mod h1:P256ACg0Mn+j1RXIDXoss50DeIABTYK1PULOJHhxOls=
 github.com/tidwall/gjson v1.6.5/go.mod h1:zeFuBCIqD4sN/gmqBzZ4j7Jd6UcA2Fc56x7QFsv+8fI=
@@ -938,6 +942,7 @@ github.com/tidwall/gjson v1.6.7/go.mod h1:zeFuBCIqD4sN/gmqBzZ4j7Jd6UcA2Fc56x7QFs
 github.com/tidwall/match v1.0.1/go.mod h1:LujAq0jyVjBy028G1WhWfIzbpQfMO8bBZ6Tyb0+pL9E=
 github.com/tidwall/match v1.0.3 h1:FQUVvBImDutD8wJLN6c5eMzWtjgONK9MwIBCOrUJKeE=
 github.com/tidwall/match v1.0.3/go.mod h1:eRSPERbgtNPcGhD8UCthc6PmLEQXEWd3PRB5JTxsfmM=
+github.com/tidwall/pretty v0.0.0-20180105212114-65a9db5fad51/go.mod h1:XNkn88O1ChpSDQmQeStsy+sBenx6DDtFZJxhVysOjyk=
 github.com/tidwall/pretty v1.0.0/go.mod h1:XNkn88O1ChpSDQmQeStsy+sBenx6DDtFZJxhVysOjyk=
 github.com/tidwall/pretty v1.0.2 h1:Z7S3cePv9Jwm1KwS0513MRaoUe3S01WPbLNV40pwWZU=
 github.com/tidwall/pretty v1.0.2/go.mod h1:XNkn88O1ChpSDQmQeStsy+sBenx6DDtFZJxhVysOjyk=
@@ -995,6 +1000,8 @@ github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9de
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/zhongshuwen/eosws-go v0.0.6 h1:5v39CGjBxbVrCAjLMV32ebZBOAbPQw1mpUCz4MT8Cjs=
 github.com/zhongshuwen/eosws-go v0.0.6/go.mod h1:Z0euurVdlKf5mjDATLrho5XHIjf5EUnDnHe9hwrFxWE=
+github.com/zhongshuwen/eosws-go v0.0.7 h1:rJwXwdd7rNiAX1NyoE+wIMv9nGGEYmeqO7KiXrIaF3I=
+github.com/zhongshuwen/eosws-go v0.0.7/go.mod h1:Z0euurVdlKf5mjDATLrho5XHIjf5EUnDnHe9hwrFxWE=
 github.com/zhongshuwen/gmsm v1.7.0 h1:ZXBBeBOKwGQ7wKDmhd0OS5b/g38R3C63orZrOdlLxhE=
 github.com/zhongshuwen/gmsm v1.7.0/go.mod h1:LVRhbvvuwdY1fpO5kocIeWRIGj4NMi2KGC9TobszP+Q=
 github.com/zhongshuwen/zswchain-go v1.9.3 h1:VhXyY2IaMrLlXf+pCX24BDUzWVGsDqVFudAHxDtizDw=
@@ -1051,6 +1058,7 @@ golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnf
 golang.org/x/crypto v0.0.0-20181029021203-45a5f77698d3/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
 golang.org/x/crypto v0.0.0-20181030102418-4d3f4d9ffa16/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
 golang.org/x/crypto v0.0.0-20181203042331-505ab145d0a9/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
+golang.org/x/crypto v0.0.0-20190228161510-8dd112bcdc25/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190313024323-a1f597ede03a/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
