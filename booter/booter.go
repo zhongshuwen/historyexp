@@ -114,7 +114,7 @@ func (b *booter) cleanUp(err error) {
 
 func (b *booter) waitOnNodeosReady() {
 	for {
-		out, err := b.nodzsw.GetInfo(context.Background())
+		out, err := b.nodeos.GetInfo(context.Background())
 		if err != nil {
 			zlog.Debug("nodeos get info not responding, waiting and trying again")
 			time.Sleep(1 * time.Second)

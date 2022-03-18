@@ -302,8 +302,6 @@ github.com/dfuse-io/dstore v0.1.1-0.20210507180120-88a95674809f/go.mod h1:1dqWgm
 github.com/dfuse-io/dtracing v0.0.0-20200406213603-4b0c0063b125/go.mod h1:SA/v5q2RIuah2W5uvVldEUwfFprEhGiw66Id0j68rtw=
 github.com/dfuse-io/dtracing v0.0.0-20200417133307-c09302668d0c h1:G/qxKHQXz8OGYuyB5fpkLybwlzDRoOFOHfpQehyxNUw=
 github.com/dfuse-io/dtracing v0.0.0-20200417133307-c09302668d0c/go.mod h1:SA/v5q2RIuah2W5uvVldEUwfFprEhGiw66Id0j68rtw=
-github.com/dfuse-io/eosio-boot v0.0.0-20210521175518-3c6bd783fa90 h1:Hy9CNtPw8HzJvdrP7TvTVTepC95NQwB0N1X9TPH/OXM=
-github.com/dfuse-io/eosio-boot v0.0.0-20210521175518-3c6bd783fa90/go.mod h1:u3kgTXC+LtvpiJo03hfhr2G5jHmdYEbiajW1zQHM4fM=
 github.com/dfuse-io/firehose v0.1.1-0.20210424034522-6e5c05a23323 h1:EFh6mpK8RwUmlE91zKmBSB7s4ZDGD3zB+x9yhQ22XD8=
 github.com/dfuse-io/firehose v0.1.1-0.20210424034522-6e5c05a23323/go.mod h1:3F/pSkEOiGVWsse/8tyNnag2LM6h3HMrRpJDvSzpXV0=
 github.com/dfuse-io/fluxdb v0.0.0-20210528171211-9df379b9a4e1 h1:AD/bOmV8Lj5k4wU+yg7+gkxogxKQ4MsJfI1cU80n6ZQ=
@@ -380,7 +378,6 @@ github.com/envoyproxy/protoc-gen-validate v0.1.0/go.mod h1:iSmxcyjqTsJpI2R4NaDN7
 github.com/eoscanada/eos-go v0.8.10-0.20190329223853-84b552870f2a/go.mod h1:RKrm2XzZEZWxSMTRqH5QOyJ1fb/qKEjs2ix1aQl0sk4=
 github.com/eoscanada/eos-go v0.9.1-0.20200227221642-1b19518201a1/go.mod h1:6RuJFiRU1figWZ39M33o2cERU2MdL6VllElYLHTZNeo=
 github.com/eoscanada/eos-go v0.9.1-0.20200506160036-5e090ae689ef/go.mod h1:exxz2Fyjqx23FIYF1QlhhhggYZxcbZMGp2H/4h7I34Y=
-github.com/eoscanada/eos-go v0.9.1-0.20201214174610-c16a0d305823/go.mod h1:6rqBwgLY59dZN1xqoA8SoHDal0gpNvh1L1Qa3ib8QsY=
 github.com/eoscanada/eos-go v0.9.1-0.20210222170049-21697b8969f6 h1:ZcY0wchKkZo6eTE9SEp1EKvniE7qY02OuNSUtRG2t64=
 github.com/eoscanada/eos-go v0.9.1-0.20210222170049-21697b8969f6/go.mod h1:6rqBwgLY59dZN1xqoA8SoHDal0gpNvh1L1Qa3ib8QsY=
 github.com/eoscanada/eosc v1.4.0 h1:wqlRNjrKFwX9Y30sgJfgdNxLol2WuEstYP30wr6jyoc=
@@ -584,6 +581,8 @@ github.com/improbable-eng/grpc-web v0.12.0/go.mod h1:6hRR09jOEG81ADP5wCQju1z71g6
 github.com/inconshreveable/mousetrap v1.0.0 h1:Z8tu5sraLXCXIcARxBp/8cbvlwVa7Z1NHg9XEKhtSvM=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
 github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883/go.mod h1:qZna6X/4elxqT3yI9iZYdZrWWdeFOOprn86kgg4+IzY=
+github.com/invisible-train-40/eosio-boot v0.0.4 h1:+gSgL/LZO/uttDKuDOivEjKiw3ugk4/sgJrR6YgFTvk=
+github.com/invisible-train-40/eosio-boot v0.0.4/go.mod h1:4e067+/j5+yn/IZu3J5Bws3QKrv9ScyMYKRSTys9k8M=
 github.com/invisible-train-40/zsw-lishi-launcher v0.0.0-20220303074923-0a5b1ebc3166 h1:e8zKoWOxeuZvscmEzyeJPUH2zIsZ24Dw/KGIaD8U1gY=
 github.com/invisible-train-40/zsw-lishi-launcher v0.0.0-20220303074923-0a5b1ebc3166/go.mod h1:Z2OfR+sEDb0h5xLxdacY1u0Y3Cx6djQQyBtqV2VilLk=
 github.com/jackpal/go-nat-pmp v1.0.2-0.20160603034137-1fa385a6f458/go.mod h1:QPH045xvCAeXUZOxsnwmrtiCoxIr9eob+4orBN1SBKc=

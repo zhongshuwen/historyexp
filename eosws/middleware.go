@@ -24,8 +24,8 @@ import (
 	"github.com/dfuse-io/dauth/authenticator"
 	"github.com/dfuse-io/derr"
 	"github.com/dfuse-io/logging"
-zsw "github.com/zhongshuwen/zswchain-go"
-	"github.com/eoscanada/eos-go/eoserr"
+	zsw "github.com/zhongshuwen/zswchain-go"
+	"github.com/zhongshuwen/zswchain-go/zswerr"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"go.opencensus.io/plugin/ochttp"
@@ -119,7 +119,7 @@ func (middleware *AuthFeatureMiddleware) Handler(next http.Handler) http.Handler
 		ctx := r.Context()
 		credentials := authenticator.GetCredentials(ctx)
 		if credentials == nil {
-			derr.WriteError(ctx, w, "credentials unavailable from context but should have been", derr.UnexpectedError(ctx, nil))
+			derr.WriteError(ctx, w, "credentials unavailable from context but should have been", zswerr.UnexpectedError(ctx, nil))
 			return
 		}
 
@@ -138,7 +138,8 @@ func DfuseErrorHandler(w http.ResponseWriter, ctx context.Context, err error) {
 }
 
 func EOSChainErrorHandler(w http.ResponseWriter, ctx context.Context, err error) {
-	apiError := zsw.NewAPIError(401, "this feature requires a dfuse API key (https://dfuse.io)", eoserr.ErrUnhandledException)
+	
+	apiError := zsw.NewAPIError(401, "this feature requires a dfuse API key (https://dfuse.io)", zswerr.ErrUnhandledException)
 	zlog.Warn("chain Error", zap.Error(apiError))
 
 	w.WriteHeader(http.StatusUnauthorized)
