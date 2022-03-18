@@ -33,8 +33,7 @@ require (
 	github.com/dfuse-io/dmetrics v0.0.0-20200508170817-3b8cb01fee68
 	github.com/dfuse-io/dstore v0.1.1-0.20210507180120-88a95674809f
 	github.com/dfuse-io/dtracing v0.0.0-20200417133307-c09302668d0c
-	github.com/dfuse-io/eosio-boot v0.0.0-20201007140702-70b54b34c7a2
-	github.com/dfuse-io/eosws-go v0.0.0-20210210152811-b72cc007d60a
+	github.com/dfuse-io/eosio-boot v0.0.0-20210521175518-3c6bd783fa90
 	github.com/dfuse-io/firehose v0.1.1-0.20210424034522-6e5c05a23323
 	github.com/dfuse-io/fluxdb v0.0.0-20210528171211-9df379b9a4e1
 	github.com/dfuse-io/jsonpb v0.0.0-20200819202948-831ad3282037
@@ -83,7 +82,7 @@ require (
 	github.com/tidwall/gjson v1.6.7
 	github.com/tidwall/sjson v1.0.4
 	github.com/urfave/negroni v1.0.0 // indirect
-	github.com/zhongshuwen/eosws-go v0.0.6 // indirect
+	github.com/zhongshuwen/eosws-go v0.0.6
 	github.com/zhongshuwen/zswchain-go v1.9.3
 	go.opencensus.io v0.22.5
 	go.uber.org/atomic v1.7.0
