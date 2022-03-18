@@ -20,7 +20,7 @@ import (
 	"time"
 
 	"github.com/dfuse-io/opaque"
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/timestamp"
 	graphql "github.com/graph-gophers/graphql-go"
@@ -81,16 +81,16 @@ func nameToEncoding(name string, encoding string) string {
 	case "NAME":
 		return name
 	case "DECIMAL":
-		val, _ := eos.StringToName(name)
+		val, _ := zsw.StringToName(name)
 		return fmt.Sprintf(`%d`, val)
 	case "HEXADECIMAL":
-		val, _ := eos.StringToName(name)
+		val, _ := zsw.StringToName(name)
 		return fmt.Sprintf(`%x`, val)
 	case "SYMBOL":
-		val, _ := eos.NameToSymbol(eos.Name(name))
+		val, _ := zsw.NameToSymbol(zsw.Name(name))
 		return val.String()
 	case "SYMBOL_CODE":
-		val, _ := eos.NameToSymbolCode(eos.Name(name))
+		val, _ := zsw.NameToSymbolCode(zsw.Name(name))
 		return val.String()
 	default:
 		return "[invalid encoding]"

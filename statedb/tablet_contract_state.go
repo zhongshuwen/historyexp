@@ -6,7 +6,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/fluxdb"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/proto"
 )
 
@@ -61,7 +61,7 @@ func NewContractStateRow(blockNum uint64, op *pbcodec.DBOp) (row *ContractStateR
 	var value []byte
 	if op.Operation != pbcodec.DBOp_OPERATION_REMOVE {
 		pb := pbstatedb.ContractStateValue{
-			Payer: eos.MustStringToName(op.NewPayer),
+			Payer: zsw.MustStringToName(op.NewPayer),
 			Data:  op.NewData,
 		}
 
@@ -80,7 +80,7 @@ func (r *ContractStateRow) Info() (payer string, rowData []byte, err error) {
 		return "", nil, err
 	}
 
-	return eos.NameToString(pb.Payer), pb.Data, nil
+	return zsw.NameToString(pb.Payer), pb.Data, nil
 }
 
 func (r *ContractStateRow) ToProto() (proto.Message, error) {

@@ -3,7 +3,7 @@ package accounthist
 import (
 	"fmt"
 
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 
 	"github.com/zhongshuwen/historyexp/accounthist/keyer"
 )
@@ -11,7 +11,7 @@ eos	"github.com/zhongshuwen/zswchain-go"
 type AccountFacet uint64
 
 func (a AccountFacet) String() string {
-	return fmt.Sprintf("account (%s)", eos.NameToString(uint64(a)))
+	return fmt.Sprintf("account (%s)", zsw.NameToString(uint64(a)))
 }
 
 func (a AccountFacet) Account() uint64 {

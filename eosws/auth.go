@@ -18,7 +18,7 @@ import (
 	"context"
 
 	"github.com/dfuse-io/derr"
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/historyexp/eosws/wsmsg"
 	"go.uber.org/zap"
 )
@@ -49,12 +49,12 @@ func (ws *WSConn) authorizeRequest(msg wsmsg.IncomingMessager, headBlock string)
 	common := msg.GetCommon()
 	reqStartBlock := common.StartBlock
 
-	headBlockNum := eos.BlockNum(headBlock)
+	headBlockNum := zsw.BlockNum(headBlock)
 
 	if reqStartBlock == 0 {
 		return &AuthorizedRequest{
 			StartBlockID:  headBlock,
-			StartBlockNum: eos.BlockNum(headBlock),
+			StartBlockNum: zsw.BlockNum(headBlock),
 		}, nil
 	}
 

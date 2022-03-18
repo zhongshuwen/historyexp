@@ -46,7 +46,7 @@ import (
 	pbheadinfo "github.com/dfuse-io/pbgo/dfuse/headinfo/v1"
 	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
 	"github.com/dfuse-io/shutter"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/gorilla/mux"
 	"go.uber.org/zap"
 )
@@ -131,14 +131,14 @@ func (a *App) Run() error {
 	if !strings.HasPrefix(apiURLStr, "http") {
 		apiURLStr = "http://" + apiURLStr
 	}
-	api := eos.New(apiURLStr)
+	api := zsw.New(apiURLStr)
 
-	var extraAPIs []*eos.API
+	var extraAPIs []*zsw.API
 	for _, extraAPIURL := range a.Config.NodeosRPCPushExtraEndpoints {
 		if !strings.HasPrefix(extraAPIURL, "http") {
 			extraAPIURL = "http://" + extraAPIURL
 		}
-		extraAPIs = append(extraAPIs, eos.New(extraAPIURL))
+		extraAPIs = append(extraAPIs, zsw.New(extraAPIURL))
 	}
 
 	kdb, err := trxdb.New(a.Config.KVDBDSN, trxdb.WithLogger(zlog))
@@ -249,7 +249,7 @@ func (a *App) Run() error {
 
 	irrFinder := eosws.NewDBReaderBaseIrrFinder(db)
 	abiGetter := eosws.NewDefaultABIGetter(stateClient)
-	coreSymbol := eos.MustStringToSymbol(a.Config.ChainCoreSymbol)
+	coreSymbol := zsw.MustStringToSymbol(a.Config.ChainCoreSymbol)
 
 	zlog.Info("creating api account getter", zap.Stringer("core_symbol", coreSymbol))
 	accountGetter := eosws.NewApiAccountGetter(api, coreSymbol)

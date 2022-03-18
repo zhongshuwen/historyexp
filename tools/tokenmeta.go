@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 
 	"github.com/spf13/viper"
 
@@ -58,7 +58,7 @@ func init() {
 }
 
 func findAccountE(cmd *cobra.Command, args []string) (err error) {
-	account := eos.AccountName(args[0])
+	account := zsw.AccountName(args[0])
 	tokenCache, err := loadgob()
 	if err != nil {
 		return fmt.Errorf("unable to load tokenmeta cache GOB file: %w", err)
@@ -74,7 +74,7 @@ func findAccountE(cmd *cobra.Command, args []string) (err error) {
 }
 
 func findContractE(cmd *cobra.Command, args []string) (err error) {
-	contract := eos.AccountName(args[0])
+	contract := zsw.AccountName(args[0])
 	tokenCache, err := loadgob()
 	if err != nil {
 		return fmt.Errorf("unable to load tokenmeta cache GOB file: %w", err)
@@ -88,8 +88,8 @@ func findContractE(cmd *cobra.Command, args []string) (err error) {
 }
 
 func findAccountContractE(cmd *cobra.Command, args []string) (err error) {
-	account := eos.AccountName(args[0])
-	contract := eos.AccountName(args[1])
+	account := zsw.AccountName(args[0])
+	contract := zsw.AccountName(args[1])
 	tokenCache, err := loadgob()
 	if err != nil {
 		return fmt.Errorf("unable to load tokenmeta cache GOB file: %w", err)

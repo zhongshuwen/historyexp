@@ -34,7 +34,7 @@ func (m *SearchMatch) SetIndex(index uint64) {
 }
 
 func (m *SearchMatch) FillProtoSpecific(match *pbsearch.SearchMatch, block *bstream.Block) (err error) {
-	eosMatch := &pbsearcheos.Match{}
+	eosMatch := &pbsearchzsw.Match{}
 
 	if block != nil {
 		eosMatch.Block = m.buildBlockTrxPayload(block)
@@ -50,11 +50,11 @@ func (m *SearchMatch) FillProtoSpecific(match *pbsearch.SearchMatch, block *bstr
 	return err
 }
 
-func (m *SearchMatch) buildBlockTrxPayload(block *bstream.Block) *pbsearcheos.BlockTrxPayload {
+func (m *SearchMatch) buildBlockTrxPayload(block *bstream.Block) *pbsearchzsw.BlockTrxPayload {
 	blk := block.ToNative().(*pbcodec.Block)
 
 	if m.TrxIDPrefix == "" {
-		return &pbsearcheos.BlockTrxPayload{
+		return &pbsearchzsw.BlockTrxPayload{
 			BlockHeader: blk.Header,
 			BlockID:     blk.ID(),
 		}
@@ -66,7 +66,7 @@ func (m *SearchMatch) buildBlockTrxPayload(block *bstream.Block) *pbsearcheos.Bl
 			continue
 		}
 
-		out := &pbsearcheos.BlockTrxPayload{}
+		out := &pbsearchzsw.BlockTrxPayload{}
 		out.BlockHeader = blk.Header
 		out.BlockID = blk.Id
 		out.Trace = trx

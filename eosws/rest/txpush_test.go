@@ -25,7 +25,7 @@ import (
 	"github.com/zhongshuwen/historyexp/codec"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/shutter"
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
@@ -181,7 +181,7 @@ func (s *dummySource) SetLogger(logger *zap.Logger) {}
 func txpushTestBlock(t *testing.T, id, previousID, producer, trxID string) *bstream.Block {
 	pbblock := &pbcodec.Block{
 		Id:     id,
-		Number: eos.BlockNum(id),
+		Number: zsw.BlockNum(id),
 		Header: &pbcodec.BlockHeader{
 			Previous:  previousID,
 			Producer:  producer,

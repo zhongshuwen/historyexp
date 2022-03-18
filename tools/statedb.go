@@ -18,7 +18,7 @@ import (
 	"github.com/dfuse-io/fluxdb"
 	"github.com/dfuse-io/kvdb/store"
 	"github.com/dustin/go-humanize"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/klauspost/compress/zstd"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -711,7 +711,7 @@ func heightToBytes(heights ...string) (out []byte, err error) {
 }
 
 func mustExtendedStringToName(name string) uint64 {
-	val, err := eos.ExtendedStringToName(name)
+	val, err := zsw.ExtendedStringToName(name)
 	if err != nil {
 		panic(err)
 	}

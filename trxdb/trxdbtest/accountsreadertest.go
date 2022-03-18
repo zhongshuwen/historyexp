@@ -23,7 +23,7 @@ import (
 	ct "github.com/zhongshuwen/historyexp/codec/testing"
 	"github.com/zhongshuwen/historyexp/trxdb"
 	"github.com/dfuse-io/kvdb"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/zswchain-go/system"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -160,7 +160,7 @@ func putAccount(t *testing.T, creator, account string, db trxdb.DB) {
 
 	var newAccount *system.NewAccount
 	require.NoError(t, json.Unmarshal([]byte(blk.TransactionTraces()[0].ActionTraces[0].Action.JsonData), &newAccount))
-	data, err := eos.MarshalBinary(newAccount)
+	data, err := zsw.MarshalBinary(newAccount)
 	require.NoError(t, err)
 	blk.TransactionTraces()[0].ActionTraces[0].Action.RawData = data
 

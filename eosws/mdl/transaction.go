@@ -25,7 +25,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	v0 "github.com/dfuse-io/eosws-go/mdl/v0"
 	v1 "github.com/dfuse-io/eosws-go/mdl/v1"
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/golang-collections/collections/stack"
 	"github.com/tidwall/sjson"
 )
@@ -48,7 +48,7 @@ func ToV1TransactionLifecycle(in *pbcodec.TransactionLifecycle) (*v1.Transaction
 		return nil, fmt.Errorf("trx lifecycle: canceledBy: %w", err)
 	}
 
-	var eosSignedTransaction *eos.SignedTransaction
+	var eosSignedTransaction *zsw.SignedTransaction
 	if in.Transaction != nil {
 		eosSignedTransaction = codec.SignedTransactionToEOS(in.Transaction)
 	}
@@ -167,8 +167,8 @@ func ToV0RAMOp(in *pbcodec.RAMOp) *v0.RAMOp {
 		Action:      strings.ToLower(strings.TrimPrefix(in.Action.String(), "ACTION_")),
 		Operation:   in.LegacyOperation(),
 		Payer:       in.Payer,
-		Delta:       eos.Int64(in.Delta),
-		Usage:       eos.Uint64(in.Usage),
+		Delta:       zsw.Int64(in.Delta),
+		Usage:       zsw.Uint64(in.Usage),
 	}
 	return out
 }
@@ -271,7 +271,7 @@ func ToV1AccountRAMDelta(in *pbcodec.AccountRAMDelta) *v1.AccountRAMDelta {
 		return nil
 	}
 	out := &v1.AccountRAMDelta{
-		Account: eos.AccountName(in.Account),
+		Account: zsw.AccountName(in.Account),
 		Delta:   in.Delta,
 	}
 	return out
@@ -429,7 +429,7 @@ func ToV1ActionTrace(in *pbcodec.ActionTrace) (*v1.ActionTrace, error) {
 
 	out := &v1.ActionTrace{
 		InlineTraces:                           []*v1.ActionTrace{},
-		Receiver:                               eos.AN(in.Receiver),
+		Receiver:                               zsw.AN(in.Receiver),
 		ClosestUnnotifiedAncestorActionOrdinal: in.ClosestUnnotifiedAncestorActionOrdinal,
 		CreatorActionOrdinal:                   in.CreatorActionOrdinal,
 		ActionOrdinal:                          in.ActionOrdinal,
@@ -467,11 +467,11 @@ func ToV1ActionReceipt(receiver string, in *pbcodec.ActionReceipt) v1.ActionRece
 	out := v1.ActionReceipt{
 		Receiver:       in.Receiver,
 		Digest:         in.Digest,
-		GlobalSequence: eos.Uint64(in.GlobalSequence),
+		GlobalSequence: zsw.Uint64(in.GlobalSequence),
 		AuthSequence:   authSeqs,
-		RecvSequence:   eos.Uint64(in.RecvSequence),
-		CodeSequence:   eos.Uint64(in.CodeSequence),
-		ABISequence:    eos.Uint64(in.AbiSequence),
+		RecvSequence:   zsw.Uint64(in.RecvSequence),
+		CodeSequence:   zsw.Uint64(in.CodeSequence),
+		ABISequence:    zsw.Uint64(in.AbiSequence),
 	}
 	return out
 }

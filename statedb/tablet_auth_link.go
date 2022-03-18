@@ -6,7 +6,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/fluxdb"
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/zswchain-go/system"
 	"github.com/golang/protobuf/proto"
 )
@@ -79,7 +79,7 @@ func newAuthLinkRow(blockNum uint64, account, contract, action string, permissio
 
 	var value []byte
 	if permission != "" {
-		pb := pbstatedb.AuthLinkValue{Permission: eos.MustStringToName(permission)}
+		pb := pbstatedb.AuthLinkValue{Permission: zsw.MustStringToName(permission)}
 
 		if value, err = proto.Marshal(&pb); err != nil {
 			return nil, fmt.Errorf("marshal proto: %w", err)
@@ -93,13 +93,13 @@ func (r *AuthLinkRow) Explode() (contract, action string) {
 	return bytesToName2(r.PrimaryKey())
 }
 
-func (r *AuthLinkRow) Permission() (out eos.PermissionName, err error) {
+func (r *AuthLinkRow) Permission() (out zsw.PermissionName, err error) {
 	pb := pbstatedb.AuthLinkValue{}
 	if err := proto.Unmarshal(r.Value(), &pb); err != nil {
 		return out, fmt.Errorf("marshal proto: %w", err)
 	}
 
-	return eos.PermissionName(eos.NameToString(pb.Permission)), nil
+	return zsw.PermissionName(zsw.NameToString(pb.Permission)), nil
 }
 
 func (r *AuthLinkRow) String() string {

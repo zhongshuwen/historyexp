@@ -3,7 +3,7 @@ package accounthist
 import (
 	"fmt"
 
-eos	"github.com/zhongshuwen/zswchain-go"
+zsw "github.com/zhongshuwen/zswchain-go"
 
 	"github.com/zhongshuwen/historyexp/accounthist/keyer"
 )
@@ -18,7 +18,7 @@ func (a *AccountContractKey) Row(shard byte, seqData uint64) RowKey {
 }
 
 func (a *AccountContractKey) String() string {
-	return fmt.Sprintf("account (%s) contract (%s)", eos.NameToString(uint64(a.account)), eos.NameToString(uint64(a.contract)))
+	return fmt.Sprintf("account (%s) contract (%s)", zsw.NameToString(uint64(a.account)), zsw.NameToString(uint64(a.contract)))
 }
 
 func (a *AccountContractKey) Account() uint64 {

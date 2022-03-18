@@ -22,7 +22,7 @@ import (
 	pbblockmeta "github.com/dfuse-io/pbgo/dfuse/blockmeta/v1"
 	"github.com/dfuse-io/derr"
 	"github.com/dfuse-io/dmetering"
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/historyexp/eosws"
 )
 
@@ -108,7 +108,7 @@ func BlockTimeHandler(blockmetaClient *pbblockmeta.Client) http.Handler {
 
 		eosws.WriteJSON(w, r, map[string]interface{}{
 			"block": map[string]interface{}{
-				"num":  eos.BlockNum(btResp.Id),
+				"num":  zsw.BlockNum(btResp.Id),
 				"id":   btResp.Id,
 				"time": pbblockmeta.Timestamp(btResp.Time),
 			},
