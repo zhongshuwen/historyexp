@@ -3,8 +3,8 @@ package migrator
 import (
 	"fmt"
 
-	"github.com/zhongshuwen/eosio-boot/config"
-	bootops "github.com/zhongshuwen/eosio-boot/ops"
+	"github.com/invisible-train-40/eosio-boot/config"
+	bootops "github.com/invisible-train-40/eosio-boot/ops"
 	"github.com/zhongshuwen/zswchain-go/ecc"
 )
 

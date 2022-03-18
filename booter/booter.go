@@ -11,7 +11,7 @@ import (
 	"time"
 
 	_ "github.com/zhongshuwen/historyexp/booter/migrator"
-	eosboot "github.com/zhongshuwen/eosio-boot"
+	eosboot "github.com/invisible-train-40/eosio-boot"
 	"github.com/dfuse-io/shutter"
 zsw "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
