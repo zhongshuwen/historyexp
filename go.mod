@@ -33,7 +33,6 @@ require (
 	github.com/dfuse-io/dmetrics v0.0.0-20200508170817-3b8cb01fee68
 	github.com/dfuse-io/dstore v0.1.1-0.20210507180120-88a95674809f
 	github.com/dfuse-io/dtracing v0.0.0-20200417133307-c09302668d0c
-	github.com/dfuse-io/eosio-boot v0.0.0-20210521175518-3c6bd783fa90
 	github.com/dfuse-io/firehose v0.1.1-0.20210424034522-6e5c05a23323
 	github.com/dfuse-io/fluxdb v0.0.0-20210528171211-9df379b9a4e1
 	github.com/dfuse-io/jsonpb v0.0.0-20200819202948-831ad3282037
@@ -49,7 +48,7 @@ require (
 	github.com/dfuse-io/shutter v1.4.1
 	github.com/dfuse-io/validator v0.0.0-20200407012817-82c55c634c7a
 	github.com/dustin/go-humanize v1.0.0
-	github.com/eoscanada/eos-go v0.9.1-0.20210222170049-21697b8969f6
+	github.com/eoscanada/eos-go v0.9.1-0.20210222170049-21697b8969f6 // indirect
 	github.com/eoscanada/eosc v1.4.0
 	github.com/eoscanada/pitreos v1.1.1-0.20200721154110-fb345999fa39
 	github.com/francoispqt/gojay v1.2.13
@@ -61,6 +60,7 @@ require (
 	github.com/gorilla/mux v1.7.3
 	github.com/gorilla/websocket v1.4.2
 	github.com/graph-gophers/graphql-go v0.0.0-20191115155744-f33e81362277
+	github.com/invisible-train-40/eosio-boot v0.0.4
 	github.com/invisible-train-40/zsw-lishi-launcher v0.0.0-20220303074923-0a5b1ebc3166
 	github.com/klauspost/compress v1.10.2
 	github.com/lithammer/dedent v1.1.0

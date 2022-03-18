@@ -909,7 +909,7 @@ func upgradeToProducerAuthoritySchedule(old *pbcodec.ProducerSchedule) *pbcodec.
 
 func (t BlockHeader) findProducerScheduleChangeExtension() (*zsw.ProducerScheduleChangeExtension, error) {
 	for _, e := range t.h.HeaderExtensions {
-		if e.Type == uint32(zsw.EOS_ProducerScheduleChangeExtension) {
+		if e.Type == uint32(zsw.ZSW_ProducerScheduleChangeExtension) {
 			extension := &zsw.ProducerScheduleChangeExtension{}
 			err := zsw.UnmarshalBinary(e.Data, extension)
 			if err != nil {
