@@ -49,7 +49,7 @@ require (
 	github.com/dfuse-io/validator v0.0.0-20200407012817-82c55c634c7a
 	github.com/dustin/go-humanize v1.0.0
 	github.com/eoscanada/eos-go v0.9.1-0.20210222170049-21697b8969f6 // indirect
-	github.com/eoscanada/eosc v1.4.0
+	github.com/eoscanada/eosc v1.4.0 // indirect
 	github.com/eoscanada/pitreos v1.1.1-0.20200721154110-fb345999fa39
 	github.com/francoispqt/gojay v1.2.13
 	github.com/gavv/httpexpect/v2 v2.0.3
@@ -82,9 +82,9 @@ require (
 	github.com/tidwall/gjson v1.6.7
 	github.com/tidwall/sjson v1.0.4
 	github.com/urfave/negroni v1.0.0 // indirect
-	github.com/zhongshuwen/eosc v0.1.0 // indirect
-	github.com/zhongshuwen/eosws-go v0.0.7
-	github.com/zhongshuwen/zswchain-go v1.9.3
+	github.com/zhongshuwen/eosc v0.1.0
+	github.com/zhongshuwen/eosws-go v0.0.9
+	github.com/zhongshuwen/zswchain-go v1.9.4
 	go.opencensus.io v0.22.5
 	go.uber.org/atomic v1.7.0
 	go.uber.org/zap v1.16.1-0.20210329175301-c23abee72d19
