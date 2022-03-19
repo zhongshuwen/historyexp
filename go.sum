@@ -633,8 +633,8 @@ github.com/improbable-eng/grpc-web v0.12.0/go.mod h1:6hRR09jOEG81ADP5wCQju1z71g6
 github.com/inconshreveable/mousetrap v1.0.0 h1:Z8tu5sraLXCXIcARxBp/8cbvlwVa7Z1NHg9XEKhtSvM=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
 github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883/go.mod h1:qZna6X/4elxqT3yI9iZYdZrWWdeFOOprn86kgg4+IzY=
-github.com/invisible-train-40/eosio-boot v0.0.4 h1:+gSgL/LZO/uttDKuDOivEjKiw3ugk4/sgJrR6YgFTvk=
-github.com/invisible-train-40/eosio-boot v0.0.4/go.mod h1:4e067+/j5+yn/IZu3J5Bws3QKrv9ScyMYKRSTys9k8M=
+github.com/invisible-train-40/eosio-boot v0.0.5 h1:3xKX7IyrS0hh1a6jU1myzZmSmHO9BOYfNCWngi/0unw=
+github.com/invisible-train-40/eosio-boot v0.0.5/go.mod h1:F8aTJeNRfQBtquAgK7ZNt5d4NpIQuwHZYjM749+C0E8=
 github.com/invisible-train-40/zsw-lishi-launcher v0.0.0-20220303074923-0a5b1ebc3166 h1:e8zKoWOxeuZvscmEzyeJPUH2zIsZ24Dw/KGIaD8U1gY=
 github.com/invisible-train-40/zsw-lishi-launcher v0.0.0-20220303074923-0a5b1ebc3166/go.mod h1:Z2OfR+sEDb0h5xLxdacY1u0Y3Cx6djQQyBtqV2VilLk=
 github.com/jackpal/go-nat-pmp v1.0.2-0.20160603034137-1fa385a6f458/go.mod h1:QPH045xvCAeXUZOxsnwmrtiCoxIr9eob+4orBN1SBKc=
@@ -1058,7 +1058,6 @@ github.com/zhongshuwen/eosws-go v0.0.8 h1:H2E6BFmyHZWc7TU7wMkKCpKivTsTqEYgzn2F7K
 github.com/zhongshuwen/eosws-go v0.0.8/go.mod h1:uchQNz1G4QsvmjT2JKijPymT+ao1QEHPxxwSWaSEHbw=
 github.com/zhongshuwen/gmsm v1.7.0 h1:ZXBBeBOKwGQ7wKDmhd0OS5b/g38R3C63orZrOdlLxhE=
 github.com/zhongshuwen/gmsm v1.7.0/go.mod h1:LVRhbvvuwdY1fpO5kocIeWRIGj4NMi2KGC9TobszP+Q=
-github.com/zhongshuwen/zswchain-go v1.9.3/go.mod h1:ZxJ+7ZkjXzvsI5vlntBLtzoIg+3vXVe8onfEQ7wSgM8=
 github.com/zhongshuwen/zswchain-go v1.9.4 h1:Fz7cqoYQdFJiqbZaF0kXKy4wCXTwc4VoS48JnYG79wM=
 github.com/zhongshuwen/zswchain-go v1.9.4/go.mod h1:ZxJ+7ZkjXzvsI5vlntBLtzoIg+3vXVe8onfEQ7wSgM8=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
