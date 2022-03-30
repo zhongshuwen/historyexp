@@ -583,6 +583,8 @@ github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANyt
 github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883/go.mod h1:qZna6X/4elxqT3yI9iZYdZrWWdeFOOprn86kgg4+IzY=
 github.com/invisible-train-40/dgraphql v0.2.0 h1:QjwMjdx6KmKgkz4SNqvdRRybRFltM6lY0DbWidIsi0c=
 github.com/invisible-train-40/dgraphql v0.2.0/go.mod h1:G4e+5xHMQN+/wV7TesOssGWWgG4N6bzDV/DvZErTT5g=
+github.com/invisible-train-40/dgraphql v0.5.0 h1:s+SL1Hz8iNav/IKzMar9dg8s1nbi4FgbTAJK8bqL/yI=
+github.com/invisible-train-40/dgraphql v0.5.0/go.mod h1:5cZdYE1BHvG0vjxVb6JZR4z9qlUI1JJqub/BAYbvCAU=
 github.com/invisible-train-40/eosio-boot v0.0.4 h1:+gSgL/LZO/uttDKuDOivEjKiw3ugk4/sgJrR6YgFTvk=
 github.com/invisible-train-40/eosio-boot v0.0.4/go.mod h1:4e067+/j5+yn/IZu3J5Bws3QKrv9ScyMYKRSTys9k8M=
 github.com/invisible-train-40/zsw-lishi-launcher v0.0.0-20220303074923-0a5b1ebc3166 h1:e8zKoWOxeuZvscmEzyeJPUH2zIsZ24Dw/KGIaD8U1gY=
