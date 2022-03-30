@@ -15,8 +15,8 @@
 package dgraphql
 
 import (
+	"github.com/invisible-train-40/dgraphql"
 	"github.com/zhongshuwen/historyexp/dgraphql/schema"
-	"github.com/dfuse-io/dgraphql"
 )
 
 func init() {

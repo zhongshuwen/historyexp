@@ -6,12 +6,12 @@ import (
 	"net"
 	"time"
 
-	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
-	"github.com/zhongshuwen/historyexp/tokenmeta/cache"
 	"github.com/dfuse-io/dgrpc"
 	pbhealth "github.com/dfuse-io/pbgo/grpc/health/v1"
 	"github.com/dfuse-io/shutter"
-zsw "github.com/zhongshuwen/zswchain-go"
+	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
+	"github.com/zhongshuwen/historyexp/tokenmeta/cache"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 )
@@ -126,7 +126,7 @@ func (s *Server) GetAccountBalances(ctx context.Context, in *pbtokenmeta.GetAcco
 	)
 
 	options := []cache.AccountBalanceOption{}
-	if hasAccountOption(in.Options, pbtokenmeta.GetAccountBalancesRequest_EOS_INCLUDE_STAKED) {
+	if hasAccountOption(in.Options, pbtokenmeta.GetAccountBalancesRequest_ZSWCC_INCLUDE_STAKED) {
 		options = append(options, cache.EOSIncludeStakedAccOpt)
 	}
 
@@ -181,7 +181,7 @@ func (s *Server) GetTokenBalances(ctx context.Context, in *pbtokenmeta.GetTokenB
 	)
 
 	options := []cache.TokenBalanceOption{}
-	if hasTokenOption(in.Options, pbtokenmeta.GetTokenBalancesRequest_EOS_INCLUDE_STAKED) {
+	if hasTokenOption(in.Options, pbtokenmeta.GetTokenBalancesRequest_ZSWCC_INCLUDE_STAKED) {
 		options = append(options, cache.EOSIncludeStakedTokOpt)
 	}
 	assets := []*cache.OwnedAsset{}

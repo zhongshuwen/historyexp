@@ -20,16 +20,16 @@ import (
 	"os"
 	"testing"
 
-	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
-	pbsearcheos "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/search/v1"
-	"github.com/zhongshuwen/historyexp/trxdb"
-	"github.com/dfuse-io/dgraphql"
 	"github.com/dfuse-io/dtracing"
 	"github.com/dfuse-io/logging"
 	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
 	"github.com/golang/protobuf/ptypes"
+	"github.com/invisible-train-40/dgraphql"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
+	pbsearcheos "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/search/v1"
+	"github.com/zhongshuwen/historyexp/trxdb"
 	"go.uber.org/zap"
 )
 

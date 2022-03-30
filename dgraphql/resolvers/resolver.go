@@ -26,6 +26,17 @@ import (
 	"unicode/utf8"
 
 	rateLimiter "github.com/dfuse-io/dauth/ratelimiter"
+	"github.com/dfuse-io/dhammer"
+	"github.com/dfuse-io/dmetering"
+	"github.com/dfuse-io/logging"
+	"github.com/dfuse-io/opaque"
+	pbblockmeta "github.com/dfuse-io/pbgo/dfuse/blockmeta/v1"
+	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
+	"github.com/golang/protobuf/ptypes"
+	"github.com/graph-gophers/graphql-go"
+	"github.com/invisible-train-40/dgraphql"
+	"github.com/invisible-train-40/dgraphql/analytics"
+	commonTypes "github.com/invisible-train-40/dgraphql/types"
 	"github.com/zhongshuwen/historyexp/codec"
 	"github.com/zhongshuwen/historyexp/dgraphql/types"
 	pbabicodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/abicodec/v1"
@@ -34,18 +45,7 @@ import (
 	pbsearcheos "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/search/v1"
 	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
 	"github.com/zhongshuwen/historyexp/trxdb"
-	"github.com/dfuse-io/dgraphql"
-	"github.com/dfuse-io/dgraphql/analytics"
-	commonTypes "github.com/dfuse-io/dgraphql/types"
-	"github.com/dfuse-io/dhammer"
-	"github.com/dfuse-io/dmetering"
-	"github.com/dfuse-io/logging"
-	"github.com/dfuse-io/opaque"
-	pbblockmeta "github.com/dfuse-io/pbgo/dfuse/blockmeta/v1"
-	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
-zsw "github.com/zhongshuwen/zswchain-go"
-	"github.com/golang/protobuf/ptypes"
-	"github.com/graph-gophers/graphql-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"go.uber.org/zap"
 )
 
@@ -826,14 +826,14 @@ type BlockRootMerkle struct {
 
 func newBlockRootMerkle(merkleRoot *pbcodec.BlockRootMerkle) BlockRootMerkle {
 	return BlockRootMerkle{
-		m:  merkleRoot,
+		m: merkleRoot,
 	}
 }
 
-func (b BlockRootMerkle) NodeCount() commonTypes.Uint32                    { return commonTypes.Uint32(b.m.NodeCount) }
-func (b BlockRootMerkle) ActiveNodes() (out []string){
-  out = make([]string, len(b.m.ActiveNodes))
-	for i, n := range b.m.ActiveNodes{
+func (b BlockRootMerkle) NodeCount() commonTypes.Uint32 { return commonTypes.Uint32(b.m.NodeCount) }
+func (b BlockRootMerkle) ActiveNodes() (out []string) {
+	out = make([]string, len(b.m.ActiveNodes))
+	for i, n := range b.m.ActiveNodes {
 		out[i] = hex.EncodeToString(n)
 	}
 	return

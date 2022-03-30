@@ -19,16 +19,16 @@ import (
 
 	drateLimiter "github.com/dfuse-io/dauth/ratelimiter"
 	"github.com/dfuse-io/derr"
+	"github.com/dfuse-io/dgrpc"
+	pbblockmeta "github.com/dfuse-io/pbgo/dfuse/blockmeta/v1"
+	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
+	"github.com/invisible-train-40/dgraphql"
+	dgraphqlApp "github.com/invisible-train-40/dgraphql/app/dgraphql"
 	eosResolver "github.com/zhongshuwen/historyexp/dgraphql/resolvers"
 	pbabicodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/abicodec/v1"
 	pbaccounthist "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/accounthist/v1"
 	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
 	"github.com/zhongshuwen/historyexp/trxdb"
-	"github.com/dfuse-io/dgraphql"
-	dgraphqlApp "github.com/dfuse-io/dgraphql/app/dgraphql"
-	"github.com/dfuse-io/dgrpc"
-	pbblockmeta "github.com/dfuse-io/pbgo/dfuse/blockmeta/v1"
-	pbsearch "github.com/dfuse-io/pbgo/dfuse/search/v1"
 	"go.uber.org/zap"
 )
 

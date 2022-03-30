@@ -267,8 +267,6 @@ github.com/dfuse-io/derr v0.0.0-20200417132224-d333cfd0e9a0/go.mod h1:/DjjRCyTi/
 github.com/dfuse-io/derr v0.0.0-20200730183817-a747f6f333ad/go.mod h1:/DjjRCyTi/KIiI1E1hnhvfWwg+K06jo+qM4VcjHvHq4=
 github.com/dfuse-io/derr v0.0.0-20201001203637-4dc9d8014152 h1:8Ee802t3evsUTc7B/W9Lf1pavPje2dtYWEpMtMnE7TY=
 github.com/dfuse-io/derr v0.0.0-20201001203637-4dc9d8014152/go.mod h1:8bq4KABI5QklH7a16SFIH7/R/jNCOloKu20T5VP+iTk=
-github.com/dfuse-io/dgraphql v0.0.2-0.20210506024839-da408de168b1 h1:nG5FooLOas5NK5FHdSCjbFUSeDkDYGVIJwKxgYLVFvs=
-github.com/dfuse-io/dgraphql v0.0.2-0.20210506024839-da408de168b1/go.mod h1:VXMflpeId/G6j7eiIbvMswWIomVV+Synsqp23TQqkVk=
 github.com/dfuse-io/dgrpc v0.0.0-20200406214416-6271093e544c/go.mod h1:n7pQV0mGBMBgJChGKp5gfRLkP2jSCkT+to7fPxKvQPA=
 github.com/dfuse-io/dgrpc v0.0.0-20200417124327-c8f215bc4ce5/go.mod h1:n7pQV0mGBMBgJChGKp5gfRLkP2jSCkT+to7fPxKvQPA=
 github.com/dfuse-io/dgrpc v0.0.0-20200615163546-b8380f15f7d8/go.mod h1:LJXocN3Yp8Kir8nhx0I65V9Qyw5g/NvXN+Wg7aF5Ujk=
@@ -583,6 +581,8 @@ github.com/improbable-eng/grpc-web v0.12.0/go.mod h1:6hRR09jOEG81ADP5wCQju1z71g6
 github.com/inconshreveable/mousetrap v1.0.0 h1:Z8tu5sraLXCXIcARxBp/8cbvlwVa7Z1NHg9XEKhtSvM=
 github.com/inconshreveable/mousetrap v1.0.0/go.mod h1:PxqpIevigyE2G7u3NXJIT2ANytuPF1OarO4DADm73n8=
 github.com/influxdata/influxdb v1.2.3-0.20180221223340-01288bdb0883/go.mod h1:qZna6X/4elxqT3yI9iZYdZrWWdeFOOprn86kgg4+IzY=
+github.com/invisible-train-40/dgraphql v0.2.0 h1:QjwMjdx6KmKgkz4SNqvdRRybRFltM6lY0DbWidIsi0c=
+github.com/invisible-train-40/dgraphql v0.2.0/go.mod h1:G4e+5xHMQN+/wV7TesOssGWWgG4N6bzDV/DvZErTT5g=
 github.com/invisible-train-40/eosio-boot v0.0.4 h1:+gSgL/LZO/uttDKuDOivEjKiw3ugk4/sgJrR6YgFTvk=
 github.com/invisible-train-40/eosio-boot v0.0.4/go.mod h1:4e067+/j5+yn/IZu3J5Bws3QKrv9ScyMYKRSTys9k8M=
 github.com/invisible-train-40/zsw-lishi-launcher v0.0.0-20220303074923-0a5b1ebc3166 h1:e8zKoWOxeuZvscmEzyeJPUH2zIsZ24Dw/KGIaD8U1gY=

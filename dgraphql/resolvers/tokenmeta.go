@@ -6,13 +6,13 @@ import (
 	"strings"
 
 	"github.com/dfuse-io/bstream"
+	"github.com/dfuse-io/dmetering"
+	"github.com/golang/protobuf/proto"
+	"github.com/invisible-train-40/dgraphql"
+	commonTypes "github.com/invisible-train-40/dgraphql/types"
 	"github.com/zhongshuwen/historyexp/dgraphql/types"
 	pbtokenmeta "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/tokenmeta/v1"
-	"github.com/dfuse-io/dgraphql"
-	commonTypes "github.com/dfuse-io/dgraphql/types"
-	"github.com/dfuse-io/dmetering"
-zsw "github.com/zhongshuwen/zswchain-go"
-	"github.com/golang/protobuf/proto"
+	zsw "github.com/zhongshuwen/zswchain-go"
 )
 
 var accountBalanceCursorDecoder = dgraphql.NewOpaqueProtoCursorDecoder(func() proto.Message { return &pbtokenmeta.AccountBalanceCursor{} })
@@ -147,7 +147,7 @@ const (
 type AccountBalanceOption string
 
 const (
-	AccountBalanceOptionEosIncludeStaked AccountBalanceOption = "EOS_INCLUDE_STAKED"
+	AccountBalanceOptionEosIncludeStaked AccountBalanceOption = "ZSWCC_INCLUDE_STAKED"
 )
 
 type AccountBalancesRequest struct {

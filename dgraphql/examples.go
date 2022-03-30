@@ -6,7 +6,7 @@ import (
 	"time"
 
 	rice "github.com/GeertJohan/go.rice"
-	"github.com/dfuse-io/dgraphql/static"
+	"github.com/invisible-train-40/dgraphql/static"
 )
 
 //go:generate rice embed-go
@@ -17,47 +17,35 @@ func GraphqlExamples(config *Config) []*static.GraphqlExample {
 	box := rice.MustFindBox("graphql-examples")
 	examples := []*static.GraphqlExample{
 		{
-			Label:    "Search Stream (Forward)",
+			Label:    "搜索信息流",
 			Document: graphqlDocument(box, "search_stream_forward.graphql"),
 			Variables: static.GraphqlVariablesByNetwork{
-				"generic": r(`{"query": "receiver:zswhq action:newaccount", "cursor": "", "limit": 10}`),
-				"mainnet": r(`{"query": "receiver:zswhq.token action:transfer -data.quantity:'0.0001 EOS'", "cursor": "", "limit": 10}`),
-				"jungle":  r("mainnet"),
-				"kylin":   r("mainnet"),
+				"generic": r(`{"query": "receiver:zsw.items action:mint", "cursor": "", "limit": 100}`),
 			},
 		},
 		{
-			Label:    "Search Query (Forward)",
+			Label:    "搜索信息流 (反向排序)",
+			Document: graphqlDocument(box, "search_stream_backward.graphql"),
+			Variables: static.GraphqlVariablesByNetwork{
+				"generic": r(`{"query": "receiver:zsw.items action:transfer", "cursor": "", "low": 1, "limit": 10}`),
+			},
+		},
+		{
+			Label:    "搜索查询",
 			Document: graphqlDocument(box, "search_query_forward.graphql"),
 			Variables: static.GraphqlVariablesByNetwork{
 				"generic": r(`{"query": "receiver:zswhq action:newaccount", "cursor": "", "limit": 10}`),
-				"mainnet": r(`{"query": "receiver:zswhq.token action:transfer -data.quantity:'0.0001 EOS'", "low": -500, "high": -1, "cursor": "", "limit": 10}`),
-				"jungle":  r("mainnet"),
-				"kylin":   r("mainnet"),
 			},
 		},
 		{
-			Label:    "Search Stream (Backward)",
-			Document: graphqlDocument(box, "search_stream_backward.graphql"),
-			Variables: static.GraphqlVariablesByNetwork{
-				"generic": r(`{"query": "receiver:zswhq action:newaccount", "cursor": "", "low": 1, "limit": 10}`),
-				"mainnet": r(`{"query": "receiver:zswhq.token action:transfer -data.quantity:'0.0001 EOS'", "cursor": "", "low": 1, "limit": 10}`),
-				"jungle":  r("mainnet"),
-				"kylin":   r("mainnet"),
-			},
-		},
-		{
-			Label:    "Search Query (Backward)",
+			Label:    "搜索查询（反向排序）",
 			Document: graphqlDocument(box, "search_query_backward.graphql"),
 			Variables: static.GraphqlVariablesByNetwork{
 				"generic": r(`{"query": "receiver:zswhq action:newaccount", "low": -500, "high": -1, "cursor": "", "limit": 10}`),
-				"mainnet": r(`{"query": "receiver:zswhq.token action:transfer -data.quantity:'0.0001 EOS'", "low": -500, "high": -1, "cursor": "", "limit": 10}`),
-				"jungle":  r("mainnet"),
-				"kylin":   r("mainnet"),
 			},
 		},
 		{
-			Label:    "Time Ranges",
+			Label:    "时间范围查询",
 			Document: graphqlDocument(box, "time_ranges.graphql"),
 			Variables: static.GraphqlVariablesByNetwork{
 				"generic": r(fmt.Sprintf(`{"start": "%s", "end": "%s"}`, dateOffsetByBlock(0), dateOffsetByBlock(5))),
@@ -67,7 +55,7 @@ func GraphqlExamples(config *Config) []*static.GraphqlExample {
 			},
 		},
 		{
-			Label:    "Get Block By Id (Alpha)",
+			Label:    "查询区块信息（Hash ID）",
 			Document: graphqlDocument(box, "get_block_by_id.graphql"),
 			Variables: static.GraphqlVariablesByNetwork{
 				"generic": r(`{"blockId": "<Block ID Here>"}`),
@@ -77,52 +65,35 @@ func GraphqlExamples(config *Config) []*static.GraphqlExample {
 			},
 		},
 		{
-			Label:    "Get Block By Num (Alpha) ",
+			Label:    "查询区块信息（n-th）",
 			Document: graphqlDocument(box, "get_block_by_num.graphql"),
 			Variables: static.GraphqlVariablesByNetwork{
 				"generic": r(`{"blockNum": 10}`),
-				"mainnet": r(`{"blockNum": 104782163}`),
-				"jungle":  r(`{"blockNum": 22430834}`),
-				"kylin":   r(`{"blockNum": 90340699}`),
 			},
 		},
 		{
-			Label:     "Get Tokens (Alpha)",
-			Document:  graphqlDocument(box, "get_tokens.graphql"),
-			Variables: nil,
-		},
-		{
-			Label:    "Get Token Balances (Alpha)",
-			Document: graphqlDocument(box, "get_token_balances.graphql"),
-			Variables: static.GraphqlVariablesByNetwork{
-				"generic": r(`{"contract": "zswhq.token", "symbol": "EOS", "opts": ["EOS_INCLUDE_STAKED"], "limit": 10}`),
-			},
-		},
-		{
-			Label:    "Get Account Balances (Alpha)",
+			Label:    "查询剩下的计算资源",
 			Document: graphqlDocument(box, "get_account_balances.graphql"),
 			Variables: static.GraphqlVariablesByNetwork{
-				"generic": r(`{"account": "zswhq", "opts": ["EOS_INCLUDE_STAKED"], "limit": 10}`),
+				"generic": r(`{"account": "zsw.admin", "opts": ["ZSWCC_INCLUDE_STAKED"], "limit": 10}`),
 			},
 		},
 	}
 
 	if config.AccountHistAccountAddr != "" {
 		examples = append(examples, &static.GraphqlExample{
-			Label:    "Get Account History (Alpha)",
+			Label:    "查询账号历史",
 			Document: graphqlDocument(box, "get_account_history_by_account.graphql"),
 			Variables: static.GraphqlVariablesByNetwork{
-				"generic": r(`{"account": "zswhq","limit": 100}`),
-				"mainnet": r(`{"account": "eoscanadacom","limit": 100}`),
-				"kylin":   r("mainnet"),
-				"dev1":    r(`{"account": "battlefield1","limit": 100}`),
+				"generic": r(`{"account": "zsw.admin","limit": 100}`),
+				"mainnet": r(`{"account": "zsw.admin","limit": 100}`),
 			},
 		})
 	}
 
 	if config.AccountHistAccountContractAddr != "" {
 		examples = append(examples, &static.GraphqlExample{
-			Label:    "Get Account History by Contract (Alpha)",
+			Label:    "查询账号历史（智能合约）",
 			Document: graphqlDocument(box, "get_account_history_by_account_contract.graphql"),
 			Variables: static.GraphqlVariablesByNetwork{
 				"generic": r(`{"account": "zswhq", "contract": "zswhq.token", "limit": 100}`),

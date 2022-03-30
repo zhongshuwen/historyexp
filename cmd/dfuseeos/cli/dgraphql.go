@@ -1,11 +1,11 @@
 package cli
 
 import (
-	dgraphqlEosio "github.com/zhongshuwen/historyexp/dgraphql"
-	dgraphqlApp "github.com/dfuse-io/dgraphql/app/dgraphql"
+	dgraphqlApp "github.com/invisible-train-40/dgraphql/app/dgraphql"
 	"github.com/invisible-train-40/zsw-lishi-launcher/launcher"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	dgraphqlEosio "github.com/zhongshuwen/historyexp/dgraphql"
 )
 
 func init() {
@@ -15,7 +15,7 @@ func init() {
 		Title:       "GraphQL",
 		Description: "Serves GraphQL queries to clients",
 		MetricsID:   "dgraphql",
-		Logger:      launcher.NewLoggingDef("github.com/dfuse-io/dgraphql.*", nil),
+		Logger:      launcher.NewLoggingDef("github.com/invisible-train-40/dgraphql.*", nil),
 		RegisterFlags: func(cmd *cobra.Command) error {
 			cmd.Flags().String("dgraphql-http-addr", DgraphqlHTTPServingAddr, "TCP Listener addr for http")
 			cmd.Flags().String("dgraphql-grpc-addr", DgraphqlGRPCServingAddr, "TCP Listener addr for gRPC")

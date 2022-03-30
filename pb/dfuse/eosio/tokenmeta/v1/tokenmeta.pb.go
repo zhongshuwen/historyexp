@@ -116,15 +116,15 @@ func (GetAccountBalancesRequest_SortField) EnumDescriptor() ([]byte, []int) {
 type GetAccountBalancesRequest_Option int32
 
 const (
-	GetAccountBalancesRequest_EOS_INCLUDE_STAKED GetAccountBalancesRequest_Option = 0
+	GetAccountBalancesRequest_ZSWCC_INCLUDE_STAKED GetAccountBalancesRequest_Option = 0
 )
 
 var GetAccountBalancesRequest_Option_name = map[int32]string{
-	0: "EOS_INCLUDE_STAKED",
+	0: "ZSWCC_INCLUDE_STAKED",
 }
 
 var GetAccountBalancesRequest_Option_value = map[string]int32{
-	"EOS_INCLUDE_STAKED": 0,
+	"ZSWCC_INCLUDE_STAKED": 0,
 }
 
 func (x GetAccountBalancesRequest_Option) String() string {
@@ -170,15 +170,15 @@ func (GetTokenBalancesRequest_SortField) EnumDescriptor() ([]byte, []int) {
 type GetTokenBalancesRequest_Option int32
 
 const (
-	GetTokenBalancesRequest_EOS_INCLUDE_STAKED GetTokenBalancesRequest_Option = 0
+	GetTokenBalancesRequest_ZSWCC_INCLUDE_STAKED GetTokenBalancesRequest_Option = 0
 )
 
 var GetTokenBalancesRequest_Option_name = map[int32]string{
-	0: "EOS_INCLUDE_STAKED",
+	0: "ZSWCC_INCLUDE_STAKED",
 }
 
 var GetTokenBalancesRequest_Option_value = map[string]int32{
-	"EOS_INCLUDE_STAKED": 0,
+	"ZSWCC_INCLUDE_STAKED": 0,
 }
 
 func (x GetTokenBalancesRequest_Option) String() string {
