@@ -188,7 +188,7 @@ func (c *DefaultCache) AccountBalances(account zsw.AccountName, opts ...AccountB
 		if accAssets, ok := v[account]; ok {
 			for _, ass := range accAssets {
 				if ass.Asset.Contract == EOSTokenContract &&
-					ass.Asset.Asset.Symbol.MustSymbolCode().String() == "EOS" &&
+					ass.Asset.Asset.Symbol.MustSymbolCode().String() == "ZSWCC" &&
 					hasAccountBalanceOption(opts, EOSIncludeStakedAccOpt) {
 
 					value := c.getStakeForAccount(ass.Owner)
@@ -235,7 +235,7 @@ func (c *DefaultCache) TokenBalances(contract zsw.AccountName, opts ...TokenBala
 		for _, accAssets := range contractAssets {
 			for _, ass := range accAssets {
 				if ass.Asset.Contract == EOSTokenContract &&
-					ass.Asset.Asset.Symbol.MustSymbolCode().String() == "EOS" &&
+					ass.Asset.Asset.Symbol.MustSymbolCode().String() == "ZSWCC" &&
 					hasTokenBalanceOption(opts, EOSIncludeStakedTokOpt) {
 					tokenBalances = append(tokenBalances, &OwnedAsset{
 						Owner: ass.Owner,

@@ -43,7 +43,7 @@ func (g *APIAccountGetter) GetAccount(ctx context.Context, name string) (out *zs
 	// For now, we pass the option only if different than the "default". But the default makes sense only in regards
 	// to the chain. So ideally, we would pass the parameter always. The parameter is however not totally documented
 	// so we play on the safe side and simulate the behavior when core symbol was not available.
-	if g.coreSymbol.Precision != 4 || g.coreSymbol.Symbol != "EOS" {
+	if g.coreSymbol.Precision != 4 || g.coreSymbol.Symbol != "ZSWCC" {
 		options = []zsw.GetAccountOption{zsw.WithCoreSymbol(g.coreSymbol)}
 	}
 

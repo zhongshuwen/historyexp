@@ -3,7 +3,7 @@ module github.com/zhongshuwen/historyexp
 go 1.14
 
 require (
-	contrib.go.opencensus.io/exporter/stackdriver v0.13.4
+	contrib.go.opencensus.io/exporter/stackdriver v0.13.10
 	github.com/GeertJohan/go.rice v1.0.0
 	github.com/ShinyTrinkets/overseer v0.3.0
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d
@@ -59,8 +59,8 @@ require (
 	github.com/gorilla/mux v1.7.3
 	github.com/gorilla/websocket v1.4.2
 	github.com/graph-gophers/graphql-go v0.0.0-20191115155744-f33e81362277
-	github.com/invisible-train-40/dgraphql v0.5.0 // indirect
-	github.com/invisible-train-40/eosio-boot v0.0.4
+	github.com/invisible-train-40/dgraphql v0.5.0
+	github.com/invisible-train-40/eosio-boot v0.0.5
 	github.com/invisible-train-40/zsw-lishi-launcher v0.0.0-20220303074923-0a5b1ebc3166
 	github.com/klauspost/compress v1.10.2
 	github.com/lithammer/dedent v1.1.0
@@ -79,20 +79,19 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/teris-io/shortid v0.0.0-20201117134242-e59966efd125
 	github.com/thedevsaddam/govalidator v1.9.9
-	github.com/tidwall/gjson v1.6.7
+	github.com/tidwall/gjson v1.14.0
 	github.com/tidwall/sjson v1.0.4
 	github.com/urfave/negroni v1.0.0 // indirect
 	github.com/zhongshuwen/eosc v0.1.0
 	github.com/zhongshuwen/eosws-go v0.0.9
-	github.com/zhongshuwen/zswchain-go v1.9.4
-	go.opencensus.io v0.22.5
-	go.uber.org/atomic v1.7.0
-	go.uber.org/zap v1.16.1-0.20210329175301-c23abee72d19
-	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2
-	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
-	golang.org/x/term v0.0.0-20201210144234-2321bbc49cbf // indirect
+	github.com/zhongshuwen/zswchain-go v1.12.11
+	go.opencensus.io v0.23.0
+	go.uber.org/atomic v1.9.0
+	go.uber.org/zap v1.21.0
+	golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd
+	golang.org/x/oauth2 v0.0.0-20211005180243-6b3c2da341f1
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0
-	google.golang.org/grpc v1.37.0
+	google.golang.org/grpc v1.40.0
 	gopkg.in/olivere/elastic.v3 v3.0.75
 	gopkg.in/yaml.v2 v2.4.0
 	gotest.tools v2.2.0+incompatible
