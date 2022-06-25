@@ -78,7 +78,7 @@ export class Banner extends React.Component {
         <Text
           fontFamily={theme.fontFamily.robotoCondensed+";"}
           fontWeight="bold"
-          color="white"
+          color={theme.colors.bannerTextColor}
           fontSize={[4, 5, 5]}
         >
           {account}
@@ -93,7 +93,7 @@ export class Banner extends React.Component {
         <Text
           fontFamily={theme.fontFamily.robotoCondensed+";"}
           fontWeight="bold"
-          color="white"
+          color={theme.colors.bannerTextColor}
           fontSize={[4, 5, 5]}
         >
           {blockNum}
@@ -105,7 +105,7 @@ export class Banner extends React.Component {
         <Text
           fontFamily={theme.fontFamily.robotoCondensed+";"}
           fontWeight="bold"
-          color="white"
+          color={theme.colors.bannerTextColor}
           fontSize={[4, 5, 5]}
         >
           {blockNum}

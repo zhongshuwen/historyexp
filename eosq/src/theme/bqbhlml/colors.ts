@@ -117,8 +117,8 @@ export const colors = {
   tpTabRootSelectedColor:"#6d6ae8",
   tpTabRootFocusColor: "#6d6ae8",
   tpTabRootColor:"#8d939a",
-  xxx: 123,
   tpTabSelectedBackground: "white",
   tpTabSelectedBorderBottom: "1px solid white",
+  bannerTextColor: "white",
 
 }
