@@ -99,7 +99,7 @@ export class UiModal extends React.Component<Props, State> {
                 </Cell>
               </ModalHeader>
             ) : null}
-            <Cell p={[3]} bg="white">
+            <Cell p={[3]} bg="#fff">
               {this.props.children}
             </Cell>
           </ModalContainer>

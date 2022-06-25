@@ -47,14 +47,14 @@ export class VerticalTabs extends React.Component<Props, State> {
 
   render() {
     return (
-      <Cell bg={theme.colors.grey2} width="auto">
+      <Cell bg={"#1C3253"} width="auto">
         <StyledUl>
           {this.props.tabData.map((entry) => {
             return (
               <StyledLi
                 key={entry.value}
-                bg={this.state.currentTab === entry.value ? "white" : theme.colors.grey2}
-                color="link"
+                bg={this.state.currentTab === entry.value ? "rgba(0, 117, 255, 0.27)" : "#1C3253"}
+                color="#fff"
                 onClick={() => this.selectTab(entry.value)}
               >
                 {entry.label}

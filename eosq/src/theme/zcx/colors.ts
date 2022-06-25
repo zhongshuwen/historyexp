@@ -1,5 +1,5 @@
 export const colors = {
-  primary: "#111",
+  primary: "rgba(226, 232, 240, 0.3)",
   secondary: "#333",
   ternary: "#25c2ab",
   green5: "#1ccab0",
@@ -18,11 +18,11 @@ export const colors = {
   grey5: "#aaaeb3",
   grey6: "#8d939a",
   grey7: "#71727D",
-  text: "#65656f",
-  header: "#003",
-  link: "#003",
-  link2: "#003",
-  link3: "#003",
+  text: "#f2f2f2",
+  header: "#fff",
+  link: "#f2f3ff",
+  link2: "#f2f3ff",
+  link3: "#1ccab0",
   bleu11: "#363670",
   bleu10: "#474793",
   bleu9: "#5354ad",
@@ -37,13 +37,13 @@ export const colors = {
   permissionBg: "#f5f8fc",
   permissionBg2: "#c2cbff",
   // FIXME: Link to ternary instead of copying somehow
-  linkHover: "#27cfb7",
+  linkHover: "#9400ff",
   formSelectorBg: "#f5f8fc",
   fieldIcon: "#8e8f9d",
   formSelectorBorder: "#d3d7dd",
   formFieldBg: "#fefefe",
   // FIXME: Link to border & header respectively
-  banner: "#222",
+  banner: "transparent",
   bannerHover: "#7e90fb",
   bannerTitle: "#fff",
   bannerValue: "#ccc",
@@ -62,11 +62,11 @@ export const colors = {
   traceAccountText: "#fff",
   traceAccountTokenBackground: "#7a85ff",
   traceAccountSystemBackground: "#072242",
-  traceAccountGenericBackground: "#8d939a",
+  traceAccountGenericBackground: "#0F1535",
   traceActionGenericText: "#65656f",
   traceActionReceiveBackground: "#90ded8",
   traceActionSendBackground: "#ffc88a",
-  traceActionGenericBackground: "#eaeff5",
+  traceActionGenericBackground: "#0F1535",
   traceDataHoverBackground: "#EAEEF2",
   traceMemoBackground: "#d3d7dd",
   traceMemoText: "#58596c",
@@ -110,19 +110,19 @@ export const colors = {
   editAdd: "#25c2ab",
   editRemove: "#EE4036",
   //tabbed panel
-  tpRootBackgroundColor: "white",
+  tpRootBackgroundColor: "#fff",
   tpTabsRootBackgroundColor: "#dce1e8",
   tpTabRootHoverColor: "#6d6ae8",
 
   tpTabRootSelectedColor:"#6d6ae8",
   tpTabRootFocusColor: "#6d6ae8",
   tpTabRootColor:"#8d939a",
-  xxx: 123,
-  tpTabSelectedBackground: "white",
-  tpTabSelectedBorderBottom: "1px solid white",
-  bannerTextColor: "white",
+  tpTabSelectedBackground: "#fff",
+  tpTabSelectedBorderBottom: "1px solid #fff",
+  bannerTextColor: "#fff",
+  white: "#0F1535",
 
   // start new stuff
-
+  navStyle:"light" as any
 
 }

@@ -44,7 +44,7 @@ export class HeaderMenu extends React.Component {
             gridColumnGap={[0, 1, 2]}
           >
             <div style={{height:"100%", display:"flex", justifyContent:"center",alignItems:"center"}} > 
-            <Img src={"/images/logo-explorer-white.png"} alt="Logo" minWidth="70px" maxHeight="70px" maxWidth="70vw"></Img>
+            <Img src={"/images/logo-explorer-white.png"} alt="Logo" minWidth="70px" maxHeight="70px" maxWidth="30vw" paddingRight="18px"></Img>
              
             </div>
 
@@ -57,7 +57,7 @@ export class HeaderMenu extends React.Component {
               py={[2]}
             >
               {this.renderSectionTitle(t("core.menu.titles.navigation"))}
-              <MainMenu variant="light" />
+              <MainMenu variant={theme.colors.navStyle} />
             </Cell>
             <Cell
               height="100%"
@@ -68,7 +68,7 @@ export class HeaderMenu extends React.Component {
               py={[2]}
             >
               {this.renderSectionTitle(t("core.menu.titles.network"))}
-              <NetworkSelector variant="light" />
+              <NetworkSelector variant={theme.colors.navStyle} />
             </Cell>
             <Cell
               height="100%"
@@ -79,7 +79,7 @@ export class HeaderMenu extends React.Component {
               py={[2]}
             >
               {this.renderSectionTitle(t("core.menu.titles.language"))}
-              <LanguageSelector variant="light" />
+              <LanguageSelector variant={theme.colors.navStyle}/>
             </Cell>
           </Grid>
         </Cell>

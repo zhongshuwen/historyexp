@@ -98,7 +98,7 @@ export class AccountTransactions extends ListContentLoaderComponent<Props> {
     return (
       <Grid gridTemplateColumns={["1fr"]}>
         <Cell justifySelf="right" alignSelf="right" px={[3]} py={[2]}>
-          {this.renderNavigation("light", searchStore.hasNextPage)}
+          {this.renderNavigation(theme.colors.navStyle, searchStore.hasNextPage)}
         </Cell>
       </Grid>
     )

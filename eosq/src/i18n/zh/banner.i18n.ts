@@ -10,7 +10,7 @@ export default {
     votes: "投票 （单位：EOS)",
     votes_tooltip: "用于投票的总抵押EOS",
     tooltip: {
-      last_24h_change: "前24小时内的更改（来源：binance.com)"
+      last_24h_change: "前24小时内的更改"
     }
   }
 }

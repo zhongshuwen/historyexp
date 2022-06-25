@@ -7,7 +7,7 @@ html {
 
 * {
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-family: "OPPOSans2", sans-serif;
   font-weight: 400;
 }
 
@@ -23,10 +23,34 @@ textarea:-webkit-autofill,
 select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset;
 }
+.bgStaticMain {
+  z-index: -1;
+  background-color:#060B26;
+  background-image:url('./assets/images/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  display: block;
+  padding:0;
+  margin:0;
+  overflow: hidden;
+
+}
 
 body {
-  color: #65656f;
+  /*color: #65656f;
   background-color: #f2f5f9;
+*/
+  background: #060B26;
+  color: #ffffff;
+  background-image:  url("./assets/images/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow-x: hidden;
   overflow-y: scroll;
   text-align: left;

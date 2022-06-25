@@ -15,7 +15,7 @@ class BaseTransactionRamUsage extends React.Component<Props> {
   render() {
     const ramops = summarizeRamOps(this.props.transactionLifeCycle.ramops || [])
     return (
-      <Cell p="20px" bg="white">
+      <Cell p="20px" bg="#fff">
         <RamUsage type="summary" ramops={ramops} />
       </Cell>
     )

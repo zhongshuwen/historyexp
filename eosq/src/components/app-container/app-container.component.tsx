@@ -75,13 +75,43 @@ const HeaderWrapper: React.ComponentType<any> = styled(Cell)`
   width: 100%;
   top: 0px;
 
-  background: #fff;
-  border-bottom: 1px solid #ccc;
+  background: transparent;
 `
+const HeaderWrapperDynamic: React.ComponentType<any> = (props)=>{
+  const [scrolledDown, setScrolledDown] = React.useState<boolean>(window.scrollY>1);
 
+
+
+  React.useEffect(()=>{
+      //let scrolledDown = window.scrollY>1;
+      const evListener = (e)=>{
+        const curState = window.scrollY>1;
+        if(scrolledDown!==curState){
+          setScrolledDown(curState);
+        }
+      }
+    window.addEventListener("scroll", evListener, false);
+    return window.removeEventListener("scroll", evListener, false);
+
+  },[scrolledDown, setScrolledDown]);
+  return <HeaderWrapper
+    {...props}
+    scrolledDown={scrolledDown}
+    
+  />
+
+
+}
 const PageWrapper: React.ComponentType<any> = styled.div`
-  background-color: #f0f0f0;
+  background-color: transparent;
   min-height: 100vh;
+
+  /*
+  background-image: url(/bg1.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  */
 `
 
 const MaintenanceWrapper: React.ComponentType<any> = styled(Grid)`
@@ -126,6 +156,10 @@ class AppContainer extends React.Component<Props, State> {
   state: State = {
     height: 167,
   }
+  constructor(props: any){
+    super(props);
+    this.onScrollPage = this.onScrollPage.bind(this);
+  }
 
   focusListener = () => {
     this.registerStreams()
@@ -164,6 +198,17 @@ class AppContainer extends React.Component<Props, State> {
       })
     }
   }
+  onScrollPage(e){
+    if(this.headerElement){
+      if(window.scrollY>1){
+        this.headerElement.style.background = "linear-gradient(352deg, rgba(21,63,159, 0.8) 0%, rgba(15, 32, 66,1) 100%)";
+      }else{
+        this.headerElement.style.background = "transparent";
+
+      }
+    }
+
+  }
 
   componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
     if (prevProps.location.pathname !== this.props.location.pathname) {
@@ -194,6 +239,7 @@ class AppContainer extends React.Component<Props, State> {
       handleVisibilityChange(this.focusListener, this.defocusListener),
       false
     )
+    window.addEventListener("scroll", this.onScrollPage, false);
 
     if (this.headerElement && this.headerElement.clientHeight) {
       const height = this.headerElement!.clientHeight
@@ -208,6 +254,7 @@ class AppContainer extends React.Component<Props, State> {
 
   componentWillUnmount = async () => {
     clearTimeout(this.headerElement!.onElementHeightChangeTimer)
+    window.removeEventListener("scroll", this.onScrollPage, false);
     document.removeEventListener(
       VISIBILITYCHANGE,
       handleVisibilityChange(this.focusListener, this.defocusListener),
@@ -335,6 +382,7 @@ class AppContainer extends React.Component<Props, State> {
   render() {
     return (
       <PageWrapper id="outer-container">
+        <div className="bgStaticMain"></div>
         {this.renderTitleBar()}
         <Cell minHeight="820px">{this.renderRoutes()}</Cell>
         <Footer />

@@ -18,6 +18,7 @@ import { TraceInfo } from "../../../models/pill-templates"
 
 const ContentWrapper: React.ComponentType<any> = styled(Cell)`
   padding: 24px 24px 24px 40px;
+  border: none;
 `
 
 const RawWrapper = styled(Cell)`
@@ -27,7 +28,7 @@ const RawWrapper = styled(Cell)`
 const TabContentWrapper: React.ComponentType<any> = styled(Cell)`
   overflow-y: scroll;
   max-height: 500px;
-
+  background: #0F1535;
   ${(props) => props.theme.overlays.BG_OVERLAY_TESTNET};
 `
 

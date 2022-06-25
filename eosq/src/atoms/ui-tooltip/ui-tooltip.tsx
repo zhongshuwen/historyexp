@@ -6,8 +6,8 @@ import { theme } from "../../theme"
 const styles = () =>
   createStyles({
     lightTooltip: {
-      background: "#eeeeff",
-      color: theme.colors.primary,
+      background: "#003",
+      color: "#fff",
       fontSize: 12,
       maxWidth: "none"
     },

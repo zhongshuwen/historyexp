@@ -36,7 +36,7 @@ export class ProducerWidget extends React.Component<Props, any> {
     const socialLinks = processSocialNetworkNames(account)
 
     return (
-      <Cell pl={[4, 0, 0]} bg="white" pt={[4]}>
+      <Cell pl={[4, 0, 0]} bg="#fff" pt={[4]}>
         <TitleHeader fontSize={[3]} bg={rankBgColor} color={theme.colors.primary}>
           <Text
             fontSize={[3]}

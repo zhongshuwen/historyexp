@@ -48,7 +48,7 @@ export class AccountSummary extends ContentLoaderComponent<Props, any> {
     const { account } = this.props
 
     return (
-      <Cell bg="white" pb={[0]} border="1px solid" borderColor="border">
+      <Cell bg="#fff" pb={[0]} border="1px solid" borderColor="border">
         <Grid
           gridTemplateColumns={["1fr", "5fr 2fr", "5fr 2fr"]}
           height="auto"

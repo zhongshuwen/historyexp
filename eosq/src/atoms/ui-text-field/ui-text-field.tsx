@@ -22,38 +22,38 @@ export const UiInput: React.ComponentType<any> = styled(Input)`
 `
 
 export const UiSearch: React.ComponentType<any> = styled(Input)`
-  background-color: ${(props: any) => "#fff"};
-  border:1px solid transparent;
-  border-bottom:3px solid #aaa;
-  color: #222 !important;
-  padding: 0.75em 95px 0.75em 25px;
-  font-size: 18px !important;
-  height: 76px;
+  background-color:rgb(120,129,177,0.3);
+  border:1.5px solid transparent;
+  color: #A0AEC0 !important;
+  padding: 0.75em 16px 0.75em 40px;
+  font-size: 16px !important;
+  height: 60px;
   width: 100%;
   outline: none;
   text-align: left;
   font-family: ${(props) => props.theme.fontFamily.robotoCondensed} !important;
-  border-radius: 0px !important;
+  border-radius: 29px !important;
   transition: background-color 500ms linear, border-color 500ms linear;
 
   input:-webkit-autofill {
-    color: #222 !important;
+    color: #A0AEC0 !important;
     background-color: ${(props) => props.theme.colors.searchBg} !important;
   }
 
   input:-webkit-autofill {
-    -webkit-text-fill-color: #222;
+    -webkit-text-fill-color: #A0AEC0;
     -webkit-box-shadow: 0 0 0 30px ${(props) => props.theme.colors.searchBg} inset;
   }
 
   &:hover{
     background-color: #efefef !important;
-    border-bottom-color: #000;
+    background-color:rgba(15,21,53,0.5) !important;
+    border-color: rgba(100,100,100,0.5) !important;
   }
   &:focus {
     border-color: #000;
-    border-bottom-color: #000;
-    background-color: #efefef !important;
+    border-bottom-color: #ccc;
+    background-color:rgba(15,21,53,0.8) !important;
   }
 
   input::placeholder {
@@ -62,7 +62,7 @@ export const UiSearch: React.ComponentType<any> = styled(Input)`
     font-family: ${(props) => props.theme.fontFamily.robotoCondensed} !important;
 
     font-weight: 400;
-    color: ${(props) => props.theme.colors.bleu5} !important;
+    color: #A0AED0 !important;
   }
 
   @media (max-width: 767px) {

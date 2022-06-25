@@ -141,7 +141,6 @@ export class GenericPillComponent
 
   renderLevel2Template = (): JSX.Element | null => {
     const { data } = this.props.action
-
     if (data && data.memo) {
       return <DetailLineAuto label={t("transaction.pill.memo")}>{data.memo}</DetailLineAuto>
     }
@@ -217,14 +216,15 @@ export class GenericPillComponent
     const headerText = this.props.headerAndTitleOptions.header.text
     if (headerText.includes("notification:")) {
       return (
-        <Cell>
+        <Cell color="#fff">
           {this.renderTextWrapper(<FontAwesomeIcon icon={faBell as any} />, [2])}
           {this.renderTextWrapper(headerText.replace("notification:", ""))}
         </Cell>
       )
     }
+    console.log(headerText)
 
-    return headerText
+    return <Text color="#fff">{headerText}</Text>
   }
 
   render(): JSX.Element {
@@ -235,7 +235,9 @@ export class GenericPillComponent
         highlighted={this.props.highlighted}
         headerHoverTitle={this.props.headerAndTitleOptions.header.hoverTitle}
         disabled={this.props.disabled}
+
         headerBgColor={theme.colors.traceAccountGenericBackground}
+        
         expandButtonBgColor={theme.colors.traceAccountGenericBackground}
         expandButtonColor={theme.colors.traceAccountText}
         headerText={this.renderHeaderText()}

@@ -25,6 +25,7 @@ import { NavigationButtons } from "../../../atoms/navigation-buttons/navigation-
 import { contractTableStore } from "../../../stores"
 import { AbiStructField } from "@dfuse/client"
 import { GetTableRowParams } from "../../../clients/websocket/eosws"
+import { theme } from "../../../theme"
 
 interface Props {
   location: H.Location
@@ -194,7 +195,7 @@ export class AccountTableView extends ContentLoaderComponent<Props, State> {
         showNext={tableRows.more}
         showPrev={contractTableStore.offset !== 0}
         showFirst={false}
-        variant="light"
+        variant={theme.colors.navStyle}
       />
     )
   }

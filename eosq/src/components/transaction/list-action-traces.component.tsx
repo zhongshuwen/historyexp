@@ -50,7 +50,7 @@ export class ListActionTraces extends React.Component<Props, any> {
 
     return (
       <Cell key={index}>
-        <Cell pl={`${traceLevel.level * 25}px`}>
+        <Cell pl={`${traceLevel.level * 25}px`} className="sawyy">
           <ActionTracePill
             highlighted={this.computeHighlighted(traceLevel)}
             dbops={dbops}
@@ -60,7 +60,7 @@ export class ListActionTraces extends React.Component<Props, any> {
             pageContext={this.props.pageContext}
           />
         </Cell>
-        <Cell pl={`${traceLevel.level * 25 + 31}px`}>
+        <Cell pl={`${traceLevel.level * 25 + 31}px`} className="ikea">
           {operations.map((operation: DeferredOperation, idx: number) => {
             const delaySec = moment.duration(
               moment(operation.delay_until).diff(operation.published_at)
@@ -122,6 +122,8 @@ export class ListActionTraces extends React.Component<Props, any> {
   }
 
   render() {
-    return <Cell>{this.renderItems()}</Cell>
+    console.log("test");
+
+    return <Cell className="swaggy">{this.renderItems()}</Cell>
   }
 }

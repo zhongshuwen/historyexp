@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Cell, Grid } from "../../atoms/ui-grid/ui-grid.component"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 import { LinkStyledText, Text } from "../../atoms/text/text.component"
 import { pagination } from "../../helpers/pagination-algorithm"
 import { NavigationButton } from "../../atoms/navigation-buttons/navigation-buttons"
@@ -70,7 +70,7 @@ export const VotedProducerPagination: React.SFC<{
       <Cell alignSelf="center" onClick={showPrev ? onPrevClick : null} justifySelf="left">
         {" "}
         {showPrev ? (
-          <NavigationButton variant="light" direction="previous" onClick={() => onPrevClick()} />
+          <NavigationButton variant={theme.colors.navStyle} direction="previous" onClick={() => onPrevClick()} />
         ) : null}
       </Cell>
       <Cell>
@@ -78,7 +78,7 @@ export const VotedProducerPagination: React.SFC<{
       </Cell>
       <Cell alignSelf="center" onClick={showPrev ? onNextClick : null} justifySelf="right">
         {showNext ? (
-          <NavigationButton variant="light" direction="next" onClick={() => onNextClick()} />
+          <NavigationButton variant={theme.colors.navStyle} direction="next" onClick={() => onNextClick()} />
         ) : null}
       </Cell>
     </VotedProducerPaginationContainer>

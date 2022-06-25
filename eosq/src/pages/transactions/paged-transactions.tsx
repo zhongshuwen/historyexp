@@ -16,6 +16,7 @@ import { ListContentLoaderComponent } from "../../components/list-content-loader
 import { isTransactionResponseEmpty } from "../../helpers/transaction.helpers"
 import { ListTransactionsResponse } from "../../clients/websocket/eosws"
 import { transactionListStore } from "../../stores"
+import { theme } from "../../theme"
 
 interface Props extends RouteComponentProps<any> {}
 
@@ -55,7 +56,7 @@ export class PagedTransactions extends ListContentLoaderComponent<Props, any> {
         </Cell>
         <Grid gridTemplateColumns={["1fr"]}>
           <Cell justifySelf="right" alignSelf="right" p={[4]}>
-            {this.renderNavigation("light", transactionListStore.hasNextPage)}
+            {this.renderNavigation(theme.colors.navStyle, transactionListStore.hasNextPage)}
           </Cell>
         </Grid>
       </Cell>
@@ -65,8 +66,10 @@ export class PagedTransactions extends ListContentLoaderComponent<Props, any> {
   render() {
     return (
       <Panel
+        bgColor="transparent"
+        borderStyle="none"
         title={t("transaction.list.title")}
-        renderSideTitle={() => this.renderNavigation("light", transactionListStore.hasNextPage)}
+        renderSideTitle={() => this.renderNavigation(theme.colors.navStyle, transactionListStore.hasNextPage)}
       >
         {this.handleRender(fetchTransactionList, t("transaction.list.loading"))}
       </Panel>

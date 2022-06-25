@@ -8,7 +8,7 @@ import { Text } from "../../atoms/text/text.component"
 import { HeaderMenu } from "../header-menu/header-menu"
 import { HeaderLogo } from "../header-elements/header-elements"
 import { theme, styled } from "../../theme"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faThLarge } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { HeaderMenuMobile } from "../header-menu/header-menu-mobile"
 import { menuStore } from "../../stores"
@@ -22,9 +22,14 @@ interface State {
 }
 
 const StyledButton: React.ComponentType<any> = styled(Button)`
-  padding: 10px;
-  border: 1px solid ${(props) => props.theme.colors.primary} !important;
-  border-radius: 0 !important;
+  padding: 4px;
+  background: #0F1535;
+  border: 1px solid rgba(226, 232, 240, 0.5) !important;
+  border-radius: 22.9747px;
+
+font-family: 'OPPOSans',sans-serif;
+
+
 `
 
 @observer
@@ -37,13 +42,13 @@ export class Header extends React.Component<any, State> {
         <Text
           pl={[3]}
           pr={[3]}
-          fontSize={[4]}
+          fontSize={[2]}
           display={["none", "inline-block"]}
-          color={theme.colors.primary}
+          color={"#fff"}
         >
           {t("core.menu.mainTitle")}
         </Text>
-        <FontAwesomeIcon size="2x" icon={faBars as any} color={theme.colors.primary} />
+        <FontAwesomeIcon size="1x" icon={faThLarge as any} color={theme.colors.primary} />
       </StyledButton>
     )
   }
@@ -51,7 +56,7 @@ export class Header extends React.Component<any, State> {
   renderMobileMenuOpener() {
     return (
       <Cell p="10px">
-        <FontAwesomeIcon size="2x" icon={faBars as any} color={theme.colors.primary} />
+        <FontAwesomeIcon size="2x" icon={faThLarge as any} color={theme.colors.primary} />
       </Cell>
     )
   }
@@ -75,13 +80,14 @@ export class Header extends React.Component<any, State> {
   render() {
     return (
       <Grid
-        gridTemplateColumns={["auto 1fr", "2fr 4fr 2fr", "2fr 5fr 2fr"]}
+        gridTemplateColumns={["auto 1fr", "1fr 4fr 2fr", "1fr 5fr 2fr"]}
         pt={[0]}
         pb={[0]}
         px={[1, 0]}
         position="fixed"
+        gridColumnGap="3vw"
       >
-        <HeaderLogo variant="light" />
+        <HeaderLogo variant={theme.colors.navStyle} />
         <Cell
           gridRow={["2", "1", "1"]}
           gridColumn={["1 / span2", "2", "2"]}

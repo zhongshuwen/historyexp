@@ -14,7 +14,7 @@ import { Links } from "../../routes"
 import { Config } from "../../models/config"
 
 const BannerWrapper: React.ComponentType<any> = styled(Grid)`
-  grid-column-gap: 0px;
+  grid-column-gap: 28px;
   border-style: solid;
   border-color: ${(props) => props.theme.colors.bleu6};
 `
@@ -66,7 +66,7 @@ export class Banner extends React.Component {
         <Text
           fontFamily={theme.fontFamily.robotoCondensed+";"}
           fontWeight="bold"
-          color="white"
+          color={theme.colors.bannerTextColor}
           fontSize={[4, 5, 5]}
         >
           {account}
@@ -128,6 +128,7 @@ export class Banner extends React.Component {
         >
           <div></div>
           <BannerItem
+            
             title={t("banner.head_block")}
             details={formatNumber(metricsStore.headBlockNum)}
           />

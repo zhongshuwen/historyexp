@@ -96,7 +96,7 @@ type Props = { account: string; tokens: UserBalance[] }
 
 export const AccountTokens: React.FC<Props> = ({ account, tokens }) => {
   return (
-    <Cell bg="white">
+    <Cell bg="#fff">
       <Collapsible
         trigger={<Title icon={faCaretRight} />}
         triggerWhenOpen={<Title icon={faCaretDown} />}

@@ -144,7 +144,7 @@ export class HeaderMenuMobile extends React.Component<Props, State> {
             {this.renderNetworkTitle(theme.colors.grey6, 1)}
           </Box>
         </Cell>
-        <Box height="100%" bg="white">
+        <Box height="100%" bg="#fff">
           <NetworkSelector variant="dark" />
         </Box>
       </SelectorWrapper>
@@ -162,7 +162,7 @@ export class HeaderMenuMobile extends React.Component<Props, State> {
             {this.renderLanguageTitle(theme.colors.grey6, 1)}
           </Box>
         </Cell>
-        <Box height="100%" bg="white">
+        <Box height="100%" bg="#fff">
           <LanguageSelector variant="dark" />
         </Box>
       </SelectorWrapper>

@@ -227,7 +227,8 @@ export class BlockHeader extends ContentLoaderComponent<Props, any> {
             showFirst={false}
           />
         </PanelTitleBanner>
-        <Panel>
+
+        <Panel bgColor="rgba(6, 11, 40, 0.74)" borderStyle="none">
           <PanelContentWrapper pt={[0]}>
             <Grid gridTemplateColumns={["1fr", "4fr 200px"]}>
               <Grid px={[3, 4]} pt={[3, 2]} pb={[1, 2]} gridRow={[2, 1]}>

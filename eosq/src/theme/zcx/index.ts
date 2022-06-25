@@ -13,12 +13,12 @@ export const theme = {
   colors,
   overlays,
   fontFamily: {
-    roboto: "Roboto, sans-serif",
+    roboto: "OPPOSans2, sans-serif",
     mono: "'Roboto Mono', monospace",
-    robotoCondensed: "'Roboto Condensed', sans-serif",
+    robotoCondensed: "'OPPOSans2', sans-serif",
     opensans: "Open Sans",
     iceland: "Iceland",
-    lato: "Lato"
+    lato: "OPPOSans2"
   },
 }
 

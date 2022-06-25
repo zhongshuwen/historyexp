@@ -18,6 +18,7 @@ interface Props {
 
 const UnderlinedTextLink: React.ComponentType<any> = styled(TextLink)`
   border-bottom: 2px dotted ${theme.colors.grey4};
+  color:#0075FF !important;
 `
 
 export class BlockInfoBox extends React.Component<Props> {

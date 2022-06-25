@@ -5,7 +5,7 @@ import { RouteComponentProps } from "react-router-dom"
 import { t } from "i18next"
 import { observer } from "mobx-react"
 import { Panel } from "../../atoms/panel/panel.component"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 import { space } from "styled-system"
 import { Cell, Grid } from "../../atoms/ui-grid/ui-grid.component"
 import {
@@ -68,7 +68,10 @@ export class BlockTransactions extends ListContentLoaderComponent<Props> {
     return (
       <Panel
         title={t("transaction.list.title")}
-        renderSideTitle={() => this.renderNavigation("light", showNext)}
+        renderSideTitle={() => this.renderNavigation(theme.colors.navStyle, showNext)}
+        bgColor="rgba(6, 11, 40, 0.74)" borderStyle="none"
+        paddingTop="18px"
+        
       >
         <Cell>
           <Cell overflowX="auto">
@@ -80,7 +83,7 @@ export class BlockTransactions extends ListContentLoaderComponent<Props> {
           </Cell>
           <Grid gridTemplateColumns={["1fr"]}>
             <Cell justifySelf="right" alignSelf="right" p={[4]}>
-              {this.renderNavigation("light", showNext)}
+              {this.renderNavigation(theme.colors.navStyle, showNext)}
             </Cell>
           </Grid>
         </Cell>

@@ -8,6 +8,7 @@ import { observer } from "mobx-react"
 import {
   UiTableCellPill,
   UiTableCellTop,
+  UiTableRow,
   UiTableRowAlternated
 } from "../../atoms/ui-table/ui-table.component"
 import { Text, TextLink } from "../../atoms/text/text.component"
@@ -30,10 +31,21 @@ import { TransactionListInfo } from "./list-transactions.component"
 import { getTransactionStatusColor } from "../../helpers/transaction.helpers"
 import { PageContext } from "../../models/core"
 
-const Row: React.ComponentType<any> = styled(UiTableRowAlternated)`
+const Row: React.ComponentType<any> = styled(UiTableRow)`
   align-items: center;
   padding-top: 8px;
   padding-bottom: 8px;
+  border-top: 12px solid transparent;
+  
+  background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);
+  & > *:first-child {
+    border-radius-top-left: 20px;
+    border-radius-bottom-left: 20px;
+
+    background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);
+  }
+  
+
 `
 
 interface Props {
@@ -90,7 +102,7 @@ export class ListTransactionsRow extends React.Component<Props, State> {
             <FontAwesomeIcon color={theme.colors[color]} icon={icon as any} />
           </Cell>
         ) : null}
-        <TextLink mr={[1]} key={id} fontSize={[2]} to={Links.viewTransaction({ id })}>
+        <TextLink mr={[1]} key={id} fontSize={[2]} to={Links.viewTransaction({ id })} color="#fff">
           {compactString(id, 12, 0)}
         </TextLink>
       </Cell>
@@ -224,7 +236,7 @@ export class ListTransactionsRow extends React.Component<Props, State> {
     return (
       <Row key={transaction.id}>
         <UiTableCellTop fontSize={[2]}>{this.renderSummaryFields(transaction)}</UiTableCellTop>
-        <UiTableCellPill fontSize={[2]}>
+        <UiTableCellPill fontSize={[2]} className="awe">
           {this.renderPills(
             transaction,
             convertDTrxOpsToDeferredOperations(transaction.id, transaction.dtrxops || [])

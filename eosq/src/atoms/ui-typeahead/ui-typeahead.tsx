@@ -39,7 +39,7 @@ const SearchButton: React.ComponentType<any> = styled.div`
   border: none !important;
 
   cursor: pointer;
-  color: #333;
+  color: #909Eb0;
   border-radius: 0px !important;
   padding: 0 6px;
 
@@ -50,13 +50,13 @@ const SearchButton: React.ComponentType<any> = styled.div`
   width: fit-content;
 
   top: 19px;
-  right: 11px;
-  font-size: 38px;
+  left: 12px;
+  font-size: 16px;
 
   @media (max-width: 767px) {
     top: 12px;
     left: 8px;
-    font-size: 28px;
+    font-size: 14px;
   }
 `
 
@@ -75,15 +75,18 @@ const SyntaxBox: React.ComponentType<any> = styled.div`
 const DeleteIcon: React.ComponentType<any> = styled(FontAwesomeIcon)`
   position: absolute;
 
-  color: #222;
+  color: #909Eb0;
   &:disabled {
     cursor: inherit;
   }
   &:hover {
     cursor: pointer;
   }
-  top: 29px;
-  right: 70px;
+  right: 20px;
+
+
+  top: 20px;
+  font-size: 18px;
 
   @media (max-width: 767px) {
     top: 18px;
@@ -149,7 +152,7 @@ function renderSummary(summary: string, accountName: string, isHighlighted: bool
       pt={[2, 0]}
       fontSize={[2]}
       lineHeight={[2]}
-      color={isHighlighted ? "white" : theme.colors.grey5}
+      color={isHighlighted ? "#fff" : theme.colors.grey5}
     >
       {t(`search.suggestions.summary.${summary}`, { accountName })}
     </Text>
@@ -205,8 +208,8 @@ export class UiTypeahead extends React.Component<Props, State> {
         className={params.groupId}
         style={{
           fontWeight: isSelected ? 600 : 400,
-          backgroundColor: isHighlighted ? theme.colors.green5 : "white",
-          color: isHighlighted ? "white" : "black",
+          backgroundColor: isHighlighted ? theme.colors.green5 : "#fff",
+          color: isHighlighted ? "#fff" : "black",
           height: "auto"
         }}
       >

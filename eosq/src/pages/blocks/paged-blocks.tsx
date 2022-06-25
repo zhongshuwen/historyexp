@@ -13,6 +13,7 @@ import { RouteComponentProps } from "react-router"
 import queryString from "query-string"
 import { Links } from "../../routes"
 import { BlockSummary, BLOCK_NUM_100B } from "../../models/block"
+import { theme } from "../../theme"
 
 type Props = RouteComponentProps<{}>
 
@@ -89,7 +90,7 @@ export class PagedBlocks extends ContentLoaderComponent<Props> {
         showNext={true}
         showFirst={this.lastBlockNum < metricsStore.headBlockNum}
         showPrev={this.lastBlockNum < metricsStore.headBlockNum}
-        variant="light"
+        variant={theme.colors.navStyle}
       />
     )
   }

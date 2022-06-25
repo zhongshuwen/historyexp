@@ -289,7 +289,7 @@ export class AccountPermissions extends React.Component<Props> {
   render() {
     const hierarchyData = assignHierarchy(this.props.account.permissions, [])
     return (
-      <Cell bg="white">
+      <Cell bg="#fff">
         <Collapsible
           trigger={this.renderTitle(faCaretRight)}
           triggerWhenOpen={this.renderTitle(faCaretDown)}

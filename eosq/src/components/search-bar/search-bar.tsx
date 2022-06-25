@@ -112,7 +112,7 @@ export class SearchBar extends React.Component<Props> {
         <ExternalTextLink
           fontWeight="600"
           fontSize={[2]}
-          color="white"
+          color="#fff"
           to="https://docs.dfuse.io/reference/eosio/search-terms"
         >
           {t("search.sqeDocumentation")}

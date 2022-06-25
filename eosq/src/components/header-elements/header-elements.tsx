@@ -44,7 +44,7 @@ interface Props {
 export const HeaderLogo: React.FC<Props> = () => {
   return (
     <Grid gridTemplateColumns={["auto auto"]} gridRow={["1"]} gridColumn={["1"]} py={[1, 0]}>
-      <Cell alignSelf="center" justifySelf="right">
+      <Cell alignSelf="center" justifySelf="right" maxWidth={["50vw","35vw","35vw"]}>
         <LogoLink to={Links.home()}>
           <Logo />
         </LogoLink>
@@ -56,7 +56,7 @@ export const HeaderLogo: React.FC<Props> = () => {
 const Logo: React.FC = () => {
   const { network } = Config
 
-  return (<Img src={"/images/logo-explorer-black.png"} alt="Logo" minWidth="70px" maxHeight="70px" maxWidth="70vw"></Img>)
+  return (<Img src={"/images/logo-explorer-white.png"} alt="Logo" minWidth="70px" maxHeight="70px" maxWidth="380px" paddingRight="18px"></Img>)
 }
 
 const LogoDefault: React.FC = () => (
@@ -82,7 +82,7 @@ const LogoImageAndText: React.FC<{ image: string; text?: string }> = ({ image, t
           <LogoDefault />
         </Box>
       ) : (
-        <LogoText color="white" mx={[2]} fontSize={[4]}>
+        <LogoText color="#fff" mx={[2]} fontSize={[4]}>
           {text}
         </LogoText>
       )

@@ -51,6 +51,7 @@ export const ActionTracePill: React.SFC<TraceProps> = ({
   const action = actionTrace.act
   const headerParams = getHeaderAndTitle(action, actionTrace.receipt.receiver)
   const ConcreteComponent = templateStore.getComponent(action)
+  console.log(ConcreteComponent)
 
   const traceInfo: TraceInfo = {
     inline_traces: actionTrace.inline_traces || [],

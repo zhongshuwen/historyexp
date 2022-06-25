@@ -1,12 +1,13 @@
 import * as React from "react"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 import { Text } from "../text/text.component"
 import { Cell, Grid } from "../ui-grid/ui-grid.component"
 
 const Wrapper: React.ComponentType<any> = styled(Grid)`
-  border: 1px solid ${(props: any) => props.theme.colors.border};
+  border: ${(props: any) => props.borderStyle || ("1px solid " +props.theme.colors.border)};
   grid-auto-flow: row;
   min-width: 0px;
+  ${(props: any)=>(props.bgColor?`background: ${props.bgColor} !important;`:"")}
 `
 
 const BorderLessWrapper: React.ComponentType<any> = styled(Grid)`
@@ -17,6 +18,9 @@ type Props = {
   title?: string | JSX.Element
   subtitle?: string
   overflowX?: string
+  bgColor?: string
+  borderStyle?: string
+  paddingTop?: string
   renderSideTitle?: () => JSX.Element
 }
 
@@ -25,22 +29,27 @@ export const Panel: React.SFC<Props> = ({
   subtitle,
   overflowX,
   renderSideTitle,
-  children
+  children,
+  bgColor,
+  borderStyle,
+  paddingTop,
+
 }) => {
   return (
-    <Wrapper bg="panelBackground" overflowX={overflowX}>
+    <Wrapper borderStyle={borderStyle}  bg={bgColor||"panelBackground"} overflowX={overflowX} paddingTop={paddingTop}>
       <Grid
         gridTemplateColumns={title && renderSideTitle ? ["1fr", "1fr auto", "1fr auto"] : ["1fr"]}
       >
         {title ? (
           <Cell gridRow={["1", "1", "1"]} gridColumn={["1", "1", "1"]}>
             <Text
-              alignSelf="left"
+              alignSelf="right"
               px={[3, 3, 4]}
-              py={[3, 3, 4]}
               color="header"
-              fontSize={[5]}
-              fontWeight="500"
+              fontSize={[5,5,"24px"]}
+              fontWeight="700"
+              textAlign="right"
+              fontFamily="'Noto Sans SC', sans-serif"
             >
               {title}
             </Text>
@@ -53,7 +62,6 @@ export const Panel: React.SFC<Props> = ({
             alignSelf={["end"]}
             justifySelf={["right", "right", "right"]}
             px={[2, 3, 4]}
-            py={[2, 3, 4]}
           >
             {renderSideTitle()}
           </Cell>

@@ -122,7 +122,7 @@ export class AccountTitle extends ContentLoaderComponent<Props, any> {
           width="72px"
           border="1px solid"
           borderColor="grey3"
-          bg="white"
+          bg="#fff"
           mr={[4]}
         >
           {this.renderAccountImage(src)}

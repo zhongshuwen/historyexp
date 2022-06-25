@@ -11,6 +11,11 @@ const Container: React.ComponentType<any> = styled(Cell)`
 const BorderBannerContainer: React.ComponentType<any> = styled(Container)`
   border-style: solid;
   border-color: ${(props) => props.theme.colors.bleu6};
+
+
+  background: linear-gradient(126.97deg, rgba(6, 11, 38, 0.74) 28.26%, rgba(26, 31, 55, 0.5) 91.2%);
+  border-radius: 20px;
+
 `
 
 export const BannerTitle: React.ComponentType<any> = styled(Text)`
@@ -62,19 +67,21 @@ export const BannerItem: React.SFC<BannerItemProps> = ({
   details,
   titleTip,
   containerProps
-}) => (
+}) => { 
+  return (
   <BannerContainer titleTip={titleTip} containerProps={containerProps}>
     <Box flexDirection="column">
       <BannerTitle textAlign={align} fontSize={[1]} fontWeight="400">
         {title}
       </BannerTitle>
-      <BannerDetails textAlign={align} color="white" fontSize={[4, 5, 5]}>
+      <BannerDetails textAlign={align} color="#fff" fontSize={[4, 5, 5]}>
         {details}
       </BannerDetails>
     </Box>
   </BannerContainer>
 )
+};
 
 BannerItem.defaultProps = {
-  align: ["left", "left", "right"]
+  align: ["left", "left", "left"]
 }
