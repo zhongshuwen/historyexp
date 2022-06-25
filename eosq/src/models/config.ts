@@ -1,4 +1,5 @@
 import { debugLog } from "../services/logger"
+import { networkOverride, overrideConfig } from "./override"
 
 export interface EosqNetwork {
   id: string
@@ -46,13 +47,7 @@ const isLocalhost = Boolean(
 )
 
 const isEnvSet = (value: string | undefined): boolean => value != null && value !== ""
-const overrideConfig: any = {
-  dfuse_io_endpoint: "chain-api-bj-2.ccmgip.com",
-  secure: true,
-}
-const networkOverride: any = {
-  is_test: false,
-}
+
 const newDefaultConfig = () => {
   const core = {
     version: 1,
