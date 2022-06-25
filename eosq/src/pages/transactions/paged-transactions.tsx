@@ -65,14 +65,22 @@ export class PagedTransactions extends ListContentLoaderComponent<Props, any> {
 
   render() {
     return (
+      <>
+
       <Panel
         bgColor="transparent"
         borderStyle="none"
         title={t("transaction.list.title")}
         renderSideTitle={() => this.renderNavigation(theme.colors.navStyle, transactionListStore.hasNextPage)}
       >
+
         {this.handleRender(fetchTransactionList, t("transaction.list.loading"))}
       </Panel>
+      <img className="staticTopLeft" src="/images/static-block-machine.png" />
+
+
+      </>
+
     )
   }
 }

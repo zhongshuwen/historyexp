@@ -124,7 +124,7 @@ export class Banner extends React.Component {
           borderBottom={["0px"]}
           borderTop={["0px"]}
           py="0px"
-          gridTemplateColumns={["3fr 2fr", "1fr 3fr 3fr 3fr"]}
+          gridTemplateColumns={["3fr 2fr", "2.2fr 3fr 3fr 3fr"]}
         >
           <div></div>
           <BannerItem

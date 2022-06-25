@@ -14,6 +14,7 @@ export class TransactionsPage extends React.Component<Props, any> {
       <PageContainer>
         <Banner />
         <PagedTransactions {...this.props} />
+
       </PageContainer>
     )
   }

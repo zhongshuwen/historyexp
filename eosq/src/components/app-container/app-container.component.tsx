@@ -383,6 +383,7 @@ class AppContainer extends React.Component<Props, State> {
     return (
       <PageWrapper id="outer-container">
         <div className="bgStaticMain"></div>
+
         {this.renderTitleBar()}
         <Cell minHeight="820px">{this.renderRoutes()}</Cell>
         <Footer />

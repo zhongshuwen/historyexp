@@ -4,10 +4,11 @@ import { Text } from "../text/text.component"
 import { Cell, Grid } from "../ui-grid/ui-grid.component"
 
 const Wrapper: React.ComponentType<any> = styled(Grid)`
-  border: ${(props: any) => props.borderStyle || ("1px solid " +props.theme.colors.border)};
+  /*border: ${(props: any) => props.borderStyle || ("1px solid " +props.theme.colors.border)};*/
+  border:none;
   grid-auto-flow: row;
   min-width: 0px;
-  ${(props: any)=>(props.bgColor?`background: ${props.bgColor} !important;`:"")}
+  ${(props: any)=>(props.bgColor?`background: ${props.bgColor} !important;`:"background: rgba(6,11,40,0.74);")}
 `
 
 const BorderLessWrapper: React.ComponentType<any> = styled(Grid)`
