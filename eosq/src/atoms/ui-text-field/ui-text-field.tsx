@@ -32,7 +32,7 @@ export const UiSearch: React.ComponentType<any> = styled(Input)`
   width: 100%;
   outline: none;
   text-align: left;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: ${(props) => props.theme.fontFamily.robotoCondensed} !important;
   border-radius: 0px !important;
   transition: background-color 500ms linear, border-color 500ms linear;
 
@@ -59,7 +59,7 @@ export const UiSearch: React.ComponentType<any> = styled(Input)`
   input::placeholder {
     opacity: 1;
     font-size: 18px !important;
-    font-family: "Roboto Condensed", sans-serif !important;
+    font-family: ${(props) => props.theme.fontFamily.robotoCondensed} !important;
 
     font-weight: 400;
     color: ${(props) => props.theme.colors.bleu5} !important;

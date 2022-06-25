@@ -3,7 +3,7 @@ import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles"
 import Tabs from "@material-ui/core/Tabs"
 import Tab from "@material-ui/core/Tab"
 import { Cell } from "../ui-grid/ui-grid.component"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 import { FontSizeProps } from "styled-system"
 import { Text } from "../text/text.component"
 
@@ -18,11 +18,11 @@ const styles = () =>
   createStyles({
     root: {
       fontSize: "30px !important",
-      border: "1px solid #d3d7dd",
-      backgroundColor: "white"
+      border: `1px solid ${theme.colors.border}`,
+      background: theme.colors.tpRootBackgroundColor,
     },
     tabsRoot: {
-      backgroundColor: "#dce1e8",
+      background: theme.colors.tpTabsRootBackgroundColor,
       height: "48px"
     },
     tabsIndicator: {
@@ -42,33 +42,33 @@ const styles = () =>
         borderRight: "none !important"
       },
 
-      borderRight: "1px solid #d3d7dd",
-      borderBottom: "1px solid #d3d7dd",
+      borderRight: `1px solid ${theme.colors.border}`,
+      borderBottom: `1px solid ${theme.colors.border}`,
       textTransform: "initial",
       minWidth: 72,
       fontWeight: "normal",
-      fontFamily: ["Roboto"].join(","),
+      fontFamily: theme.fontFamily.roboto,
       "&:hover": {
-        color: "#6d6ae8",
+        color: theme.colors.tpTabRootHoverColor,
         opacity: 1
       },
       "&$tabSelected": {
-        color: "#6d6ae8",
+        color: theme.colors.tpTabRootSelectedColor,
         fontWeight: 500,
         borderBottom: "none !important"
       },
       "&:focus": {
-        color: "#6d6ae8"
+        color:theme.colors.tpTabRootFocusColor,
       },
-      color: "#8d939a"
+      color: theme.colors.tpTabRootColor
     },
     selected: {
       border: "none !important"
     },
     tabSelected: {
-      backgroundColor: "white",
-      borderRight: "1px solid #d3d7dd",
-      borderBottom: "1px solid white"
+      background:  theme.colors.tpTabSelectedBackground,
+      borderRight: `1px solid ${theme.colors.border}`,
+      borderBottom: theme.colors.tpTabSelectedBorderBottom,
     }
   })
 

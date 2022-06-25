@@ -205,7 +205,7 @@ export class GenericPillComponent
         display="inline-block"
         color={theme.colors.primary}
         fontSize={[1]}
-        fontFamily="'Roboto Mono', monospace;"
+        fontFamily={theme.fontFamily.mono+";"}
         pr={padding}
       >
         {content}

@@ -10,7 +10,7 @@ import { Box, Text } from "@dfuse/explorer"
 import { Img } from "../../atoms/img"
 
 const LogoElement: React.ComponentType<any> = styled.div`
-  font-family: "Lato", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.lato};
   font-weight: 600;
   ${color_};
   ${fontSize};
@@ -23,7 +23,7 @@ const LogoElement: React.ComponentType<any> = styled.div`
 `
 
 const Tagline: React.ComponentType<any> = styled.span`
-  font-family: "Lato", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.lato};
   font-weight: 600;
   color: ${(props) => props.theme.colors.logo1};
   ${fontSize};
@@ -69,7 +69,7 @@ const LogoImage: React.FC<{ image: string }> = ({ image }) => (
 )
 
 const LogoText = styled(Text)`
-  font-family: "Lato", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.lato};
   font-weight: 400;
 `
 

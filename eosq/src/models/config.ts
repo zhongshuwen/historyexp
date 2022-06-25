@@ -46,7 +46,13 @@ const isLocalhost = Boolean(
 )
 
 const isEnvSet = (value: string | undefined): boolean => value != null && value !== ""
-
+const overrideConfig: any = {
+  dfuse_io_endpoint: "chain-api-bj-2.ccmgip.com",
+  secure: true,
+}
+const networkOverride: any = {
+  is_test: false,
+}
 const newDefaultConfig = () => {
   const core = {
     version: 1,
@@ -120,9 +126,11 @@ function newConfig() {
     chain_core_symbol_code: coreSymbolCode,
     chain_core_asset_format: "0,0." + "0".repeat(coreSymbolPrecision),
     isLocalhost,
+    ...overrideConfig
   } as EosqConfig
 
-  config.network = config.available_networks.find((network) => network.id === config.network_id)
+  config.network = {...(config.available_networks.find((network) => network.id === config.network_id)||{}),...networkOverride,};
+  console.log(config.network)
 
   debugLog("Loaded config %O", config)
   return config

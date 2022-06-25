@@ -4,7 +4,7 @@ import * as React from "react"
 
 export const Badge: React.ComponentType<any> = styled(Cell)`
   color: ${(props: any) => props.theme.colors.primary};
-  font-family: "Roboto Condensed";
+  font-family: ${(props: any) => props.theme.fontFamily.robotoCondensed};
   text-align: center;
   line-height: 24px;
   font-size: 11px;

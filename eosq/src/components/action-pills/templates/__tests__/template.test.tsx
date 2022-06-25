@@ -16,9 +16,6 @@ import { UnDelegateBandwidthPillComponent } from "../system/undelegate-bandwidth
 import { UpdateAuthPillComponent } from "../system/updateauth-pill.component"
 import { VotePillComponent } from "../system/vote-pill.component"
 import { GenericPillComponent } from "../generic-pill.component"
-import { DecenTwitterTweetPillComponent } from "../decenttwitter/decenttwitter-tweet-pill.component"
-import { ForumPostPillComponent } from "../forum/forum-post-pill.component"
-import { ForumProposePillComponent } from "../forum/forum-propose-pill.component"
 import { SetcodePillComponent } from "../system/setcode-pill.component"
 
 const headerAndTitleOptions = {
@@ -71,19 +68,6 @@ describe("Templates", () => {
     })
   })
 
-  describe("BaseDecenTwitterTweetPillComponent", () => {
-    it("should render properly", () => {
-      const action = getActionMock({
-        data: {
-          msg: "msg"
-        }
-      })
-
-      expect(
-        shallowWithTheme(renderComponent(DecenTwitterTweetPillComponent, action))
-      ).toMatchSnapshot()
-    })
-  })
 
   describe("DelegateBandwidthPillComponent", () => {
     it("should render properly", () => {
@@ -99,40 +83,6 @@ describe("Templates", () => {
       expect(
         shallowWithTheme(renderComponent(DelegateBandwidthPillComponent, action))
       ).toMatchSnapshot()
-    })
-  })
-
-  describe("BaseForumPostPillComponent", () => {
-    it("should render properly", () => {
-      const action = getActionMock({
-        data: {
-          certify: "certify",
-          content: "content",
-          json_metadata: "{}",
-          post_uuid: "uuid",
-          poster: "poster",
-          reply_to_post_uuid: "uuid",
-          reply_to_poster: "poster"
-        }
-      })
-
-      expect(shallowWithTheme(renderComponent(ForumPostPillComponent, action))).toMatchSnapshot()
-    })
-  })
-
-  describe("BaseForumProposePillComponent", () => {
-    it("should render properly", () => {
-      const action = getActionMock({
-        data: {
-          expires_at: "2018/20/01",
-          proposal_json: "{}",
-          proposal_name: "testing",
-          proposer: "eoscanadacom",
-          title: "title"
-        }
-      })
-
-      expect(shallowWithTheme(renderComponent(ForumProposePillComponent, action))).toMatchSnapshot()
     })
   })
 

@@ -179,7 +179,7 @@ export class UiDropDown extends React.Component<Props, any> {
           {this.props.options.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               <Text
-                fontFamily="'Roboto Condensed', sans-serif;"
+                fontFamily={theme.fontFamily.robotoCondensed+";"}
                 color={this.props.color ? this.props.color : "text"}
                 fontSize={this.props.fontSize ? this.props.fontSize : "16px"}
               >

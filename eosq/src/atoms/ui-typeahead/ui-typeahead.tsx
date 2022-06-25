@@ -131,7 +131,7 @@ function renderInput(inputProps: any) {
 function formatBold(content: string) {
   const regex: RegExp = /(\S*:)/g
   return (
-    <EllipsisText whiteSpace="pre-wrap !important" fontFamily="Roboto Condensed" fontSize={[3]}>
+    <EllipsisText whiteSpace="pre-wrap !important" fontFamily={theme.fontFamily.robotoCondensed} fontSize={[3]}>
       {content.split(regex).map((value: string, index: number) => {
         if (regex.test(value)) {
           return <SyntaxBox key={index}>{value}</SyntaxBox>

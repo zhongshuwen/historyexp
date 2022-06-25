@@ -23,7 +23,7 @@ const ProgressSpinner: React.ComponentType<any> = styled(LoadingOutlined)`
 `
 
 const ProgressText: React.ComponentType<any> = styled(Text)`
-  font-family: Roboto Condensed;
+  font-family: ${(props) => props.theme.fontFamily.robotoCondensed};
   text-align: center;
 `
 

@@ -2,7 +2,7 @@ import { t } from "i18next"
 import { observer } from "mobx-react"
 import * as React from "react"
 import { formatAmount, formatNumber, Box } from "@dfuse/explorer"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 import { metricsStore } from "../../stores"
 import { Text } from "../../atoms/text/text.component"
 
@@ -23,7 +23,7 @@ const Price: React.ComponentType<any> = styled(Text)`
   color: ${(props) => props.theme.colors.bannerValue};
   line-height: 1;
   font-weight: 700;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.robotoCondensed};
 `
 
 const BannerMarketPrice: React.SFC<{ price: number; variation: number }> = ({
@@ -64,7 +64,7 @@ export class Banner extends React.Component {
     if (!account || account.length === 0) {
       return (
         <Text
-          fontFamily="'Roboto Condensed', sans-serif;"
+          fontFamily={theme.fontFamily.robotoCondensed+";"}
           fontWeight="bold"
           color="white"
           fontSize={[4, 5, 5]}
@@ -76,7 +76,7 @@ export class Banner extends React.Component {
     return (
       <Link to={Links.viewAccount({ id: account })}>
         <Text
-          fontFamily="'Roboto Condensed', sans-serif;"
+          fontFamily={theme.fontFamily.robotoCondensed+";"}
           fontWeight="bold"
           color="white"
           fontSize={[4, 5, 5]}
@@ -91,7 +91,7 @@ export class Banner extends React.Component {
     if (!blockId || blockId.length === 0) {
       return (
         <Text
-          fontFamily="'Roboto Condensed', sans-serif;"
+          fontFamily={theme.fontFamily.robotoCondensed+";"}
           fontWeight="bold"
           color="white"
           fontSize={[4, 5, 5]}
@@ -103,7 +103,7 @@ export class Banner extends React.Component {
     return (
       <Link to={Links.viewBlock({ id: blockId })}>
         <Text
-          fontFamily="'Roboto Condensed', sans-serif;"
+          fontFamily={theme.fontFamily.robotoCondensed+";"}
           fontWeight="bold"
           color="white"
           fontSize={[4, 5, 5]}
@@ -114,14 +114,6 @@ export class Banner extends React.Component {
     )
   }
 
-  renderBannerPrice() {
-    if (!Config.display_price) {
-      return <BannerContainer />
-    }
-    return (
-      <BannerMarketPrice price={metricsStore.priceUSD} variation={metricsStore.priceVariation} />
-    )
-  }
 
   render() {
     return (
@@ -132,9 +124,9 @@ export class Banner extends React.Component {
           borderBottom={["0px"]}
           borderTop={["0px"]}
           py="0px"
-          gridTemplateColumns={["3fr 2fr", "3fr 2fr 2fr 2fr"]}
+          gridTemplateColumns={["3fr 2fr", "1fr 3fr 3fr 3fr"]}
         >
-          {this.renderBannerPrice()}
+          <div></div>
           <BannerItem
             title={t("banner.head_block")}
             details={formatNumber(metricsStore.headBlockNum)}

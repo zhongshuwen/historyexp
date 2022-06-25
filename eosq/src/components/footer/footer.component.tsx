@@ -20,7 +20,7 @@ const LogoLink: React.ComponentType<any> = styled(Link)`
 `
 
 const LogoFirst: React.ComponentType<any> = styled.div`
-  font-family: "Lato", sans-serif;
+font-family: ${(props) => props.theme.fontFamily.lato};
   font-weight: 600;
   color: ${(props) => props.theme.colors.logo1};
   ${fontSize};
@@ -29,7 +29,7 @@ const LogoFirst: React.ComponentType<any> = styled.div`
 `
 
 const LogoSecond: React.ComponentType<any> = styled.div`
-  font-family: "Lato", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.lato};
   font-weight: 600;
   color: ${(props) => props.theme.colors.logo2};
   ${fontSize};

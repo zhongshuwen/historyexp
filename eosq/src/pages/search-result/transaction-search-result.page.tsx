@@ -26,7 +26,7 @@ interface Props extends RouteComponentProps<any> {}
 const BoldText: React.ComponentType<any> = styled.span`
   font-weight: bold;
   ${fontSize};
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.robotoCondensed};
 `
 
 const StyledButton: React.ComponentType<any> = styled(Button)`

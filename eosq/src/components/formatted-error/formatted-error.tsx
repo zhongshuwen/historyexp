@@ -10,7 +10,7 @@ import { ErrorData } from "@dfuse/client"
 const BoldText: React.ComponentType<any> = styled(Text)`
   font-weight: bold;
 
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.robotoCondensed};
   margin-bottom: 3px;
 `
 

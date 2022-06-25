@@ -41,7 +41,7 @@ export class FilterModal extends React.Component<Props, State> {
             display="inline-block"
             color={this.props.color ? this.props.color : "link"}
             fontSize={[3]}
-            fontFamily="'Roboto Condensed', sans-serif;"
+            fontFamily={theme.fontFamily.robotoCondensed+";"}
           >
             {this.props.title}
             <Cell display="inline-block" ml={[2]}>

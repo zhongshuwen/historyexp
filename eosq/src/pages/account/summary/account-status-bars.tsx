@@ -52,7 +52,7 @@ export class AccountStatusBars extends React.Component<Props> {
 
   renderUsed() {
     return (
-      <Text fontFamily="Roboto" fontWeight="400" color={theme.colors.grey5} display="inline-block">
+      <Text fontFamily={theme.fontFamily.roboto} fontWeight="400" color={theme.colors.grey5} display="inline-block">
         {" "}
         {t("account.status.used")}
         {NBSP}

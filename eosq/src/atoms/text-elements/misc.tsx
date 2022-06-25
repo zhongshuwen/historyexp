@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Text, TextLink, TextLinkProps } from "../text/text.component"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 import * as React from "react"
 
 export const MonospaceTextLink: React.SFC<TextLinkProps> = ({ ...rest }) => (
-  <TextLink {...rest} fontFamily="'Roboto Mono', monospace;" lineHeight="1em" />
+  <TextLink {...rest} fontFamily={theme.fontFamily.mono+";"} lineHeight="1em" />
 )
 
 export const ArrowTo: React.ComponentType<any> = styled(FontAwesomeIcon)`
@@ -15,12 +15,12 @@ export const ArrowTo: React.ComponentType<any> = styled(FontAwesomeIcon)`
 `
 
 export const MonospaceText: React.ComponentType<any> = styled(Text)`
-  font-family: "Roboto Mono", monospace;
+  font-family: ${(props) => props.theme.fontFamily.mono};
   white-space: nowrap;
 `
 
 export const MonospaceTextWrap: React.ComponentType<any> = styled(Text)`
-  font-family: "Roboto Mono", monospace;
+font-family: ${(props) => props.theme.fontFamily.mono};
 `
 
 export const WrappingText: React.ComponentType<any> = styled(Text)`
@@ -29,7 +29,7 @@ export const WrappingText: React.ComponentType<any> = styled(Text)`
 `
 
 export const WrappingMonospaceText: React.ComponentType<any> = styled(Text)`
-  font-family: "Roboto Mono", monospace;
+  font-family: ${(props) => props.theme.fontFamily.mono};
   overflow: hidden;
   word-wrap: break-word;
 `

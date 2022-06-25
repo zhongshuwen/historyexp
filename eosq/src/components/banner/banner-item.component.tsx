@@ -15,14 +15,14 @@ const BorderBannerContainer: React.ComponentType<any> = styled(Container)`
 
 export const BannerTitle: React.ComponentType<any> = styled(Text)`
   color: ${(props) => props.theme.colors.bannerTitle};
-  font-family: "Roboto", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.roboto};
   text-transform: uppercase;
   font-weight: 400;
 `
 
 export const BannerDetails: React.ComponentType<any> = styled(Text)`
   margin-top: 0.12em;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.robotoCondensed};
   font-weight: 700;
 `
 

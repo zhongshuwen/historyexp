@@ -68,7 +68,7 @@ export class SearchFilters extends React.Component<Props> {
   renderSectionTitle(type: string, color: string) {
     return (
       <Text
-        fontFamily="'Roboto Condensed', sans-serif;"
+        fontFamily={theme.fontFamily.robotoCondensed+";"}
         color={color}
         display="inline-block"
         fontSize={[2]}

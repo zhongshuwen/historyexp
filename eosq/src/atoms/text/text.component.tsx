@@ -15,7 +15,7 @@ import {
   width,
   compose
 } from "styled-system"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 
 const textStyle = compose(
   alignSelf,
@@ -49,6 +49,8 @@ export const HoverableText: React.ComponentType<any> = styled(Text)`
   }
 `
 
+
+
 export const HoverableTextNoHighlight: React.ComponentType<any> = styled(Text)`
   &:hover {
     cursor: pointer;
@@ -62,7 +64,7 @@ export const EllipsisText: React.ComponentType<any> = styled(Text)`
 `
 
 export const CondensedBold: React.ComponentType<any> = styled.b`
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${(props) => props.theme.fontFamily.robotoCondensed};
   font-weight: 800;
 `
 
@@ -180,7 +182,7 @@ export class KeyValueFormatEllipsis extends React.Component<{ content: string }>
   render() {
     const regex: RegExp = /(\S*: )/g
     return (
-      <EllipsisText fontFamily="Roboto Condensed" fontSize={[1]}>
+      <EllipsisText fontFamily={theme.fontFamily.robotoCondensed} fontSize={[1]}>
         {this.props.content.split(regex).map((value: string, index: number) => {
           if (regex.test(value)) {
             return <CondensedBold key={index}>{value}</CondensedBold>

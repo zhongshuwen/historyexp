@@ -1,5 +1,5 @@
 import * as React from "react"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 import { Cell, Grid } from "../ui-grid/ui-grid.component"
 import { Text } from "../text/text.component"
 
@@ -49,7 +49,7 @@ export const PanelTitleBanner: React.SFC<BannerContainerProps> = ({
         pr={[2, 3]}
         alignSelf="center"
       >
-        <Text fontSize={[4]} fontWeight="800" fontFamily="Roboto Condensed" color="#f0f0f0">
+        <Text fontSize={[4]} fontWeight="800" fontFamily={theme.fontFamily.robotoCondensed} color="#f0f0f0">
           {content}
         </Text>
       </Cell>

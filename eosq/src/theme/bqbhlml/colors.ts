@@ -108,5 +108,17 @@ export const colors = {
   testnet: "#f05a28",
 
   editAdd: "#25c2ab",
-  editRemove: "#EE4036"
+  editRemove: "#EE4036",
+  //tabbed panel
+  tpRootBackgroundColor: "white",
+  tpTabsRootBackgroundColor: "#dce1e8",
+  tpTabRootHoverColor: "#6d6ae8",
+
+  tpTabRootSelectedColor:"#6d6ae8",
+  tpTabRootFocusColor: "#6d6ae8",
+  tpTabRootColor:"#8d939a",
+  xxx: 123,
+  tpTabSelectedBackground: "white",
+  tpTabSelectedBorderBottom: "1px solid white",
+
 }
