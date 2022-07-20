@@ -2,7 +2,7 @@ import Modal from "@material-ui/core/Modal/Modal"
 import * as React from "react"
 import { Cell, Grid } from "../ui-grid/ui-grid.component"
 import { Text } from "../text/text.component"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -40,8 +40,9 @@ const ModalContainer: React.ComponentType<any> = styled(Grid)`
   max-width: 800px;
   height: auto;
   max-height: 90vh;
+  color:#fff !important;
 
-  background-color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => ((props.theme.colors as any).modalBackground) || props.theme.colors.primary} !important;
   box-shadow: 1px 2px 5px 1px ${(props) => props.theme.colors.grey7};
   outline: none;
 `
@@ -50,8 +51,8 @@ const ModalHeader: React.ComponentType<any> = styled(Grid)`
   grid-template-columns: auto 20px;
   width: 100%;
   height: auto;
-  background-color: white;
-  border-bottom: 1px solid ${(props) => props.theme.colors.grey4};
+  background-color: ${(props) => ((props.theme.colors as any).modalHeaderBackground)|| "white"} !important;
+  border-bottom: 1px solid ${(props) => ((props.theme.colors as any).modalHeaderBorder)|| props.theme.colors.grey4} !important;
 `
 
 export class UiModal extends React.Component<Props, State> {
@@ -92,14 +93,14 @@ export class UiModal extends React.Component<Props, State> {
         <Modal onClose={this.handleClose} open={this.state.open}>
           <ModalContainer>
             {this.props.headerTitle ? (
-              <ModalHeader p={[3]}>
+              <ModalHeader p={[3]}> 
                 <Cell justifySelf="left">{this.props.headerTitle}</Cell>
                 <Cell onClick={this.handleClose} justifySelf="center" p={[2]}>
                   <HoverableIcon icon={faTimes as any} size="2x" />
                 </Cell>
               </ModalHeader>
             ) : null}
-            <Cell p={[3]} bg="#fff">
+            <Cell p={[3]} bg={(theme.colors as any).modalBackground||"#fff"}>
               {this.props.children}
             </Cell>
           </ModalContainer>

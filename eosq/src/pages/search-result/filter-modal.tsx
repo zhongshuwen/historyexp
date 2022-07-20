@@ -50,7 +50,7 @@ export class FilterModal extends React.Component<Props, State> {
           </LinkStyledText>
         }
         headerTitle={
-          <Text fontSize={[4]} p={[2]} color={theme.colors.bleu8} fontWeight="600">
+          <Text fontSize={[4]} p={[2]} color={theme.colors.text} fontWeight="600">
             {t("filters.queryParams")}
           </Text>
         }

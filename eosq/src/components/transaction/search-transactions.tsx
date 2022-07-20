@@ -104,6 +104,8 @@ export class SearchTransactions extends React.Component<Props, State> {
             defaultValue={transferOptions[0].value}
             id="transfers-filter"
             options={transferOptions}
+            bg={(theme.colors as any).dropDownBg}
+            selectorBg={(theme.colors as any).dropDownSelectorBg}
             onSelect={(query: string) => this.onSelect(query)}
             value={this.state.query}
           />
@@ -118,6 +120,8 @@ export class SearchTransactions extends React.Component<Props, State> {
             defaultValue={systemOptions[0].value}
             id="system-filter"
             options={systemOptions}
+            bg={(theme.colors as any).dropDownBg}
+            selectorBg={(theme.colors as any).dropDownSelectorBg}
             onSelect={(query: string) => this.onSelect(query)}
             value={this.state.query}
           />

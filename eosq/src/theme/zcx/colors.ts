@@ -81,6 +81,9 @@ export const colors = {
   panelGrayBackground: "rgba(6,11,40,0.54)",
   panelBackgroundDisabled: "rgba(6,11,40,0.34)",
 
+
+  modalHeaderBackground:"rgb(20,22,40)",
+  modalBackground:"rgb(30,32,50)",
   pillTitleText: "#616082",
   tableEvenRowBackground: "rgba(6,11,40,0.74)",
   tableOddRowBackground: "rgba(60,11,40,0.74)",

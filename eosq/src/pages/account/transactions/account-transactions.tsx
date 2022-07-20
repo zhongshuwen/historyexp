@@ -20,12 +20,13 @@ import { BLOCK_NUM_5M } from "../../../models/block"
 
 const StyledButton: React.ComponentType<any> = styled(Button)`
   padding: 12px 30px !important;
-  background-color: ${(props) => props.theme.colors.ternary} !important;
+
   border: none !important;
   font-weight: bold !important;
   border-radius: 0px !important;
   min-height: 35px !important;
-  color: ${(props) => props.theme.colors.primary} !important;
+  color: ${(props) => (props.theme.colors as any).standardButtonColor||props.theme.colors.primary} !important;
+  background-color: ${(props) => (props.theme.colors as any).standardButtonBackground||props.theme.colors.ternary} !important;
 `
 
 const PanelContentWrapper: React.ComponentType<any> = styled(Cell)`

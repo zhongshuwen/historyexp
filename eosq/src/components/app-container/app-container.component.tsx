@@ -316,15 +316,13 @@ class AppContainer extends React.Component<Props, State> {
           px={[2]}
           justifySelf="left"
           alignSelf="left"
-          color={theme.colors.primary}
           bg={bg}
         >
           <SkewedCell px={[3]} justifySelf="left" alignSelf="left" bg={bg}>
             <Text
               zIndex="10"
-              fontFamily={theme.fontFamily.robotoCondensed}
               fontSize={[1]}
-              color="primary"
+              color="#fff"
               display="inline-block"
               fontWeight="bold"
             >

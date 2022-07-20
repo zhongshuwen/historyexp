@@ -31,12 +31,12 @@ const BoldText: React.ComponentType<any> = styled.span`
 
 const StyledButton: React.ComponentType<any> = styled(Button)`
   padding: 12px 30px !important;
-  background-color: ${(props) => (props.theme.colors as any).buttonBackground||props.theme.colors.ternary} !important;
+  background-color: ${(props) => (props.theme.colors as any).standardButtonBackground||props.theme.colors.ternary} !important;
   border: none !important;
   font-weight: bold !important;
   border-radius: 0px !important;
   min-height: 35px !important;
-  color: ${(props) => (props.theme.colors as any).buttonColor||props.theme.colors.primary} !important;
+  color: ${(props) => (props.theme.colors as any).standardButtonColor||props.theme.colors.primary} !important;
 `
 
 const PanelContentWrapper: React.ComponentType<any> = styled(Cell)`

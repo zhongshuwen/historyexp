@@ -33,7 +33,6 @@ const StyledInput: React.ComponentType<any> = styled(UiInput)`
 const StyledButton: React.ComponentType<any> = styled(Button)`
   padding-left: 40px !important;
   padding-right: 40px !important;
-  background-color: ${(props) => props.theme.colors.ternary} !important;
   border: none !important;
   span {
     font-weight: 600 !important;
@@ -41,7 +40,8 @@ const StyledButton: React.ComponentType<any> = styled(Button)`
   border-radius: 0px !important;
   height: 30px !important;
   min-height: 35px !important;
-  color: ${(props) => props.theme.colors.primary} !important;
+  color: ${(props) => (props.theme.colors as any).standardButtonColor||props.theme.colors.primary} !important;
+  background-color: ${(props) => (props.theme.colors as any).standardButtonBackground||props.theme.colors.ternary} !important;
 `
 
 const StyledCheckbox: React.ComponentType<any> = styled(Checkbox)`
@@ -91,7 +91,7 @@ export class SearchFilters extends React.Component<Props> {
           justifySelf="left"
           display="inline-block"
           fontSize={[2]}
-          color={theme.colors.bleu8}
+          color={theme.colors.text}
           mr={[2]}
         >
           {label}
@@ -120,7 +120,7 @@ export class SearchFilters extends React.Component<Props> {
           justifySelf="left"
           display="inline-block"
           fontSize={[2]}
-          color={theme.colors.bleu8}
+          color={theme.colors.text}
           mr={[2]}
         >
           {label}
@@ -128,6 +128,8 @@ export class SearchFilters extends React.Component<Props> {
         <UiDropDown
           defaultValue={searchStore.rangeOption}
           options={this.BLOCK_RANGE_OPTIONS}
+          bg={(theme.colors as any).dropDownBg}
+          selectorBg={(theme.colors as any).dropDownSelectorBg}
           onSelect={this.onSelectBlockRangeOption}
         />
       </Grid>
@@ -205,7 +207,7 @@ export class SearchFilters extends React.Component<Props> {
         <Cell display="inline-block">
           <StyledCheckbox
             checked={data.irreversibleOnly}
-            color="default"
+            color="primary"
             onChange={(event: any) => {
               searchStore.updateFilter(
                 FilterTypes.BLOCK_STATUS,
@@ -215,7 +217,7 @@ export class SearchFilters extends React.Component<Props> {
             }}
           />
         </Cell>
-        <Text display="inline-block" fontSize={[2]} color={theme.colors.bleu8} ml={[1]}>
+        <Text display="inline-block" fontSize={[2]} color={theme.colors.text} ml={[1]}>
           {t("filters.sections.labels.irreversible")}
         </Text>
         <Cell />
@@ -275,13 +277,13 @@ export class SearchFilters extends React.Component<Props> {
     return (
       <Cell>
         <Cell>
-          <Text color={theme.colors.bleu8}>SORT</Text>
+          <Text color={theme.colors.text}>SORT</Text>
         </Cell>
         <HoverableTextNoHighlight
           onClick={() => searchStore.toggleSort()}
           display="inline-block"
           fontSize={[2]}
-          color={theme.colors.bleu8}
+          color={theme.colors.text}
           mr={[1]}
         >
           Ascending
@@ -295,7 +297,7 @@ export class SearchFilters extends React.Component<Props> {
           onClick={() => searchStore.toggleSort()}
           display="inline-block"
           fontSize={[2]}
-          color={theme.colors.bleu8}
+          color={theme.colors.text}
           ml={[1]}
         >
           Descending
