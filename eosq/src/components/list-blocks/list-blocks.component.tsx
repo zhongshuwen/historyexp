@@ -2,7 +2,7 @@ import { t } from "i18next"
 import { max } from "ramda"
 import * as React from "react"
 import { compactCount, compactString, formatNumber } from "@dfuse/explorer"
-import { styled } from "../../theme"
+import { styled, theme } from "../../theme"
 import { BlockSummary } from "../../models/block"
 import { Links } from "../../routes"
 import { Cell } from "../../atoms/ui-grid/ui-grid.component"
@@ -90,7 +90,7 @@ export class ListBlocks extends React.Component<Props, State> {
             <Ratio width={`${ratioWidth}%`}>&nbsp;</Ratio>
           </TransactionRatioCell>
         </UiTableCellTransactionRatio>
-        <UiTableCell color="text" fontSize={[2]}>
+        <UiTableCell color={theme.colors.text} fontSize={[2]}>
           {compactCount(block.transaction_count)}
         </UiTableCell>
       </UiTableRowAlternated>

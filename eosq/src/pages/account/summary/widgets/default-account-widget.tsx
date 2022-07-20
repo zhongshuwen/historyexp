@@ -19,7 +19,7 @@ export class DefaultAccountWidget extends React.Component<Props, any> {
     const { account } = this.props
 
     return (
-      <Cell pl={[4, 0, 0]} bg="#fff" pt={[4]}>
+      <Cell pl={[4, 0, 0]} bg="transparent" pt={[4]}>
         <DetailLine variant="auto" label={t("account.summary.creation_date")}>
           <Text>{formatDateFromString(account.created, false)}</Text>
         </DetailLine>

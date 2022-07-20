@@ -30,9 +30,9 @@ const ProgressText: React.ComponentType<any> = styled(Text)`
 const ProgressSvg: React.ComponentType<any> = styled.svg`
   circle {
     transition: stroke-dashoffset 0s linear;
-    stroke: rgba(255, 255, 255, 0.2);
+    stroke:  ${(props) => (props.theme.colors as any).progressCircleStroke||"rgba(255, 255, 255, 0.2)"};
     stroke-width: 8px;
-    fill: #eee;
+    fill:  ${(props) => (props.theme.colors as any).progressCircleFill||"#eee"};
   }
 
   .progress-bar {

@@ -120,6 +120,7 @@ export const Cell: React.ComponentType<any> = styled.div`
   right: ${(props: CellExtraProps) => props.right};
   vertical-align: ${(props: CellExtraProps) => props.verticalAlign};
   ${cellStyle}
+  
 `
 
 export const HeaderCell: React.ComponentType<any> = styled.div`

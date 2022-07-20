@@ -101,6 +101,7 @@ const ResponsiveContainer: React.ComponentType<any> = styled(Cell)`
     }
   }
 `
+const themeColors : any = theme.colors;
 
 interface Props {
   placeholder: string
@@ -208,8 +209,8 @@ export class UiTypeahead extends React.Component<Props, State> {
         className={params.groupId}
         style={{
           fontWeight: isSelected ? 600 : 400,
-          backgroundColor: isHighlighted ? theme.colors.green5 : "#fff",
-          color: isHighlighted ? "#fff" : "black",
+          backgroundColor: isHighlighted ? (themeColors.typeaheadHighlightedBackground||theme.colors.green5) : (themeColors.typeaheadBackground||"#fff"),
+          color: isHighlighted ? (themeColors.typeaheadHighlightedColor||"#fff" ): (themeColors.typeaheadColor||"black"),
           height: "auto"
         }}
       >
@@ -456,7 +457,7 @@ export class UiTypeahead extends React.Component<Props, State> {
               {isOpen ? (
                 <UiPaper
                   square={true}
-                  style={{ marginTop: 0, width: popperNode ? popperNode.clientWidth : null }}
+                  style={{ backgroundColor:(themeColors.typeaheadContainerBackground||"#fff"), marginTop: 0, width: popperNode ? popperNode.clientWidth : null }}
                 >
                   <UiTypeaheadFetcher
                     fetchData={this.props.getItems}

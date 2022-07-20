@@ -29,6 +29,7 @@ import { secondsToTime } from "@dfuse/explorer"
 import { assignHierarchy, HierarchyData } from "../../../helpers/account.helpers"
 import { AutorizationBox } from "../../../components/authorization-box/authorization-box.component"
 import { SearchShortcut } from "../../../components/search-shortcut/search-shortcut"
+const themeColors : any = theme.colors;
 
 interface Props {
   account: Account
@@ -112,11 +113,12 @@ export class AccountPermissions extends React.Component<Props> {
 
   renderPermissionGroup = (permission: Permission, idx: number, hasChilds: boolean) => {
     const Wrapper = hasChilds ? WrapperWithChilds : Grid
+    console.log("pgroup",themeColors.permissionNestedBackgrounds)
     return (
       <Wrapper
         mr={[3, 3, 0]}
         mb={[3]}
-        bg={["#fff", "#fff", "grey1"]}
+        bg={themeColors.permissionNestedBackgrounds||["#fff", "#fff", "grey1"]}
         border="1px solid"
         borderColor={theme.colors.grey3}
         gridTemplateColumns={["180px auto 250px"]}
@@ -128,7 +130,7 @@ export class AccountPermissions extends React.Component<Props> {
         {this.renderPermissionValues(permission)}
         <Cell
           height="100%"
-          bg="bleu4"
+          bg={themeColors.permissionInnerBackground1||theme.colors.bleu4}
           width="100%"
           justifySelf="left"
           alignSelf="left"
@@ -224,9 +226,9 @@ export class AccountPermissions extends React.Component<Props> {
     return (
       <Cell p="20px" cursor="pointer">
         <Cell width="20px" cursor="pointer" display="inline-block" lineHeight="30px" pr={[2]}>
-          <FontAwesomeIcon size="lg" color={theme.colors.bleu8} icon={caret} />
+          <FontAwesomeIcon size="lg" color={themeColors.expandTextColor || theme.colors.bleu8} icon={caret} />
         </Cell>
-        <SubTitle color={theme.colors.bleu8} display="inline-block" mb={[20]}>
+        <SubTitle color={themeColors.expandTextColor || theme.colors.bleu8} display="inline-block" mb={[20]}>
           {t("account.permissions.title")}
         </SubTitle>
       </Cell>
@@ -239,7 +241,7 @@ export class AccountPermissions extends React.Component<Props> {
         {hierarchyData.map((entry: HierarchyData, index: number) => {
           return (
             <Grid
-              minWidth={["1100px"]}
+              minWidth={["600px"]}
               key={index}
               gridTemplateColumns={this.getGridTemplateColumns(entry.depth)}
             >
@@ -289,22 +291,22 @@ export class AccountPermissions extends React.Component<Props> {
   render() {
     const hierarchyData = assignHierarchy(this.props.account.permissions, [])
     return (
-      <Cell bg="#fff">
+      <Cell bg={themeColors.permissionContainerBackground||"#fff"}>
         <Collapsible
           trigger={this.renderTitle(faCaretRight)}
           triggerWhenOpen={this.renderTitle(faCaretDown)}
         >
           <Cell p="20px">
             <Cell
-              bg={["#f2f5f9", "#f2f5f9", "#fff"]}
+              bg={themeColors.permissionNestedBackgroundsCore||["#f2f5f9", "#f2f5f9", "#fff"]}
               borderRadius="0px"
               mt={[3]}
               overflow="hidden"
               overflowX="auto"
               p={[3, 3, 0]}
-              border={["1px solid #ddd", "1px solid #ddd", "0px solid #ccc"]}
+              border={themeColors.permissionNestedBorderCore||["1px solid #ddd", "1px solid #ddd", "0px solid #ccc"]}
             >
-              <Cell minWidth="800px" width="100%">
+              <Cell minWidth="400px" width="100%">
                 {this.renderFromHierarchy(hierarchyData)}
               </Cell>
             </Cell>

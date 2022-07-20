@@ -16,8 +16,9 @@ const StyledFormControl: React.ComponentType<any> = styled(FormControl)`
 const StyledInputLabel: React.ComponentType<any> = styled(InputLabel)`
   font-size: 16px !important;
   width: 180px !important;
-  padding: 0 12px !important;
+  padding: 4px 0px !important;
   z-index: 3;
+  color: ${(props: any) => (props.theme.colors.text)} !important;
 `
 
 const StyledSelect: React.ComponentType<any> = styled(Select)`

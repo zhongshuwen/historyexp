@@ -9,7 +9,7 @@ import { Text } from "../../../atoms/text/text.component"
 import { DropDownOption, UiDropDown } from "../../../atoms/ui-dropdown/ui-dropdown.component"
 import { Cell, Grid } from "../../../atoms/ui-grid/ui-grid.component"
 import { UiInput } from "../../../atoms/ui-text-field/ui-text-field"
-import { styled } from "../../../theme"
+import { styled, theme } from "../../../theme"
 import { Links } from "../../../routes"
 import { AbiLoader } from "../../../services/abi-loader"
 import { contractTableStore } from "../../../stores"
@@ -18,13 +18,13 @@ import { fetchContractTableRowsOnContractPage } from "../../../services/contract
 const StyledButton: React.ComponentType<any> = styled(Button)`
   padding-left: 20px !important;
   padding-right: 20px !important;
-  background-color: ${(props) => props.theme.colors.ternary} !important;
+  background-color: ${(props) => ((props.theme.colors as any).standardButtonBackground)||props.theme.colors.ternary} !important;
   border: none !important;
   font-weight: bold !important;
   border-radius: 0px !important;
   height: 35px !important;
   min-height: 35px !important;
-  color: ${(props) => props.theme.colors.primary} !important;
+  color: ${(props) => ((props.theme.colors as any).standardButtonColor)||props.theme.colors.primary} !important;
   ${props=>(props as any).extraStyle||""}
 `
 
@@ -88,6 +88,8 @@ export class AccountTableSearch extends React.Component<Props> {
           placeholder={t("accountTables.tables.dropdown.placeholder")}
           options={dropDownOptions}
           defaultValue={selectedTableName}
+          bg={(theme.colors as any).dropDownBg}
+          selectorBg={(theme.colors as any).dropDownSelectorBg}
           onSelect={this.selectTableWithHistory}
           id="table-selector"
         />
@@ -100,7 +102,7 @@ export class AccountTableSearch extends React.Component<Props> {
   renderScopeInput() {
     return [
       <InputLabel key="scope-input-label" htmlFor="scope-input">
-        <Text pl={[2]} fontSize={[1]}>
+        <Text pl={[0]} fontSize={[1]}>
           {t("accountTables.search.scope")}
         </Text>
       </InputLabel>,
@@ -120,7 +122,7 @@ export class AccountTableSearch extends React.Component<Props> {
   renderLowerBoundInput() {
     return [
       <InputLabel key="lower-bound-input-label" htmlFor="lower-bound-input">
-        <Text pl={[2]} fontSize={[1]}>
+        <Text pl={[0]} fontSize={[1]}>
           {t("accountTables.search.lowerBound")}
         </Text>
       </InputLabel>,
@@ -161,8 +163,8 @@ export class AccountTableSearch extends React.Component<Props> {
             {this.renderLowerBoundInput()}
           </Cell>
           <Cell gridColumn={["1", "4"]} gridRow={["4", "1"]} ml={[0, 3]} mt={[3]}>
-            <StyledButton onClick={this.onClick} extraStyle="padding:0px !important;">
-              <Text fontWeight="bold" color="primary">
+            <StyledButton  onClick={this.onClick} extraStyle="padding:0px !important;">
+              <Text fontWeight="bold">
                 {t("accountTables.search.load")}
               </Text>
             </StyledButton>

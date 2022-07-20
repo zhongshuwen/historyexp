@@ -7,6 +7,8 @@ export const UiInput: React.ComponentType<any> = styled(Input)`
   font-size: 16px !important;
   width: ${(props: any) => (props.width ? props.width : "250px")} !important;
   background-color: ${(props) => props.theme.colors.formFieldBg};
+  color: ${(props) => props.theme.colors.text} !important;
+  font-weight:300;
   padding-left: 8px;
   box-sizing: border-box;
   height: 35px;
@@ -19,6 +21,7 @@ export const UiInput: React.ComponentType<any> = styled(Input)`
     -webkit-text-fill-color: black;
     -webkit-box-shadow: 0 0 0 30px ${(props) => props.theme.colors.formFieldBg} inset;
   }
+
 `
 
 export const UiSearch: React.ComponentType<any> = styled(Input)`

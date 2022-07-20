@@ -50,7 +50,7 @@ const StyledFont: React.ComponentType<any> = styled(FontAwesomeIcon)`
 `
 
 const BaseFooter = () => (
-  <Cell height="auto" bg={"#f8f8f8"} mt="10px" pt="6px">
+  <Cell height="auto" bg={(theme.colors as any).footerBackground||"#f8f8f8"} mt="10px" pt="6px">
     <Cell
       maxWidth={["1800px"]}
       px={[4]}
@@ -67,16 +67,16 @@ const BaseFooter = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-      <img src="/images/logo-explorer-black.png" alt="联盟链区块浏览器" style={{width:"30vw",maxWidth:"300px"}}/>
+      <img src="/images/logo-explorer-white.png" alt="联盟链区块浏览器" style={{width:"30vw",maxWidth:"300px"}}/>
       </a>
     </Cell>
     <Cell p={[3]} mt={[3]} borderTop={`1px solid ${theme.colors.bleu10}`} textAlign="center">
-      <Text color={theme.colors.primary} fontSize={[1]}>
+      <Text color={(theme.colors as any).footerColor||theme.colors.primary} fontSize={[1]}>
         {t("footer.copyright", { year: new Date().getFullYear() })}
       </Text>
-      <Text color={theme.colors.primary} fontSize={[1]}>
+      <Text color={(theme.colors as any).footerColor||theme.colors.primary} fontSize={[1]}>
         <ExternalTextLink fontSize={[1]} to={t("footer.privacyPolicyLink")}>
-          <StyledText display="inline-block" fontSize={[1]} color={theme.colors.bleu6}>
+          <StyledText display="inline-block" fontSize={[1]} color={(theme.colors as any).footerSubColor||theme.colors.bleu6}>
             {t("footer.privacyPolicy")}
           </StyledText>
         </ExternalTextLink>
@@ -84,7 +84,7 @@ const BaseFooter = () => (
         {BULLET}
         {NBSP}
         <ExternalTextLink fontSize={[1]} to={t("footer.termsOfServicesLink")}>
-          <StyledText display="inline-block" fontSize={[1]} color={theme.colors.bleu6}>
+          <StyledText display="inline-block" fontSize={[1]} color={(theme.colors as any).footerSubColor||theme.colors.bleu6}>
             {t("footer.termsOfServices")}
           </StyledText>
         </ExternalTextLink>

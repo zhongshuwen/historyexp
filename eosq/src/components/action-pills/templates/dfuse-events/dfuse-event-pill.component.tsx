@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Box, Pill, PillLogoProps, CellValue, PillClickable, MonospaceText } from "@dfuse/explorer"
+import { Box, PillLogoProps, CellValue, PillClickable, MonospaceText } from "@dfuse/explorer"
 import { theme } from "../../../../theme"
 import { GenericPillComponent, PillRenderingContext } from "../generic-pill.component"
 import { getDfuseEventLevel1Fields } from "../pill-template.helpers"
@@ -8,6 +8,7 @@ import { FormattedText } from "../../../formatted-text/formatted-text"
 import { Cell, Grid } from "../../../../atoms/ui-grid/ui-grid.component"
 import { Text } from "../../../../atoms/text/text.component"
 import { t } from "../../../../i18n"
+import { Pill } from "../../../explorer/pill"
 
 export class DfuseEventPillComponent extends GenericPillComponent {
   get logoParams(): PillLogoProps | undefined {

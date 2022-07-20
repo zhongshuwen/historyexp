@@ -3,7 +3,6 @@ import {
   Box,
   explodeJson,
   DetailLineAuto,
-  Pill,
   PillLogoProps,
   PillClickable,
   MonospaceText,
@@ -21,6 +20,7 @@ import { truncateJsonString, truncateStringPlus } from "./pill-template.helpers"
 import { GenericPillParams, GenericPillState } from "../../../models/pill-templates"
 import { Config } from "../../../models/config"
 import { PILL_CONTRACT_LOGOS } from "./all-logos"
+import { Pill } from "../../explorer/pill"
 
 export interface GenericPillComponentInterface {
   renderContent(): JSX.Element | null

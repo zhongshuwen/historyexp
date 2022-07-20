@@ -47,10 +47,11 @@ export const Panel: React.SFC<Props> = ({
               alignSelf="right"
               px={[3, 3, 4]}
               color="header"
-              fontSize={[5,5,"24px"]}
+              fontSize={["14px"]}
               fontWeight="700"
-              textAlign="right"
+              textAlign="left"
               fontFamily="'Noto Sans SC', sans-serif"
+              paddingTop="12px"
             >
               {title}
             </Text>

@@ -3,14 +3,15 @@ export const colors = {
   secondary: "#333",
   ternary: "#25c2ab",
   green5: "#1ccab0",
+  buttonColor:"#fff",
   secondHighlight: "#FFB866",
   logo: "#7a85ff",
   logo1: "#fff",
   logo2: "#7e90fb",
   highlight: "#7a85ff",
   highlight2: "#ccc",
-  border: "#d3d7dd",
-  neutral: "#aaaeb3",
+  border: "rgba(100,100,100,0.4)",
+  neutral: "#15345a",
   grey1: "#f2f5f9",
   grey2: "#eaeff5",
   grey3: "#dce1e8",
@@ -36,12 +37,40 @@ export const colors = {
   menuActive: "#fff",
   permissionBg: "#f5f8fc",
   permissionBg2: "#c2cbff",
+  permissionNestedBackgrounds: ["#2f1135", "#2f1135", "#2f1155"],
+  permissionNestedBackgroundsCore: ["#2a1c4f", "#2a1c4f", "#1c2d5e"],
+  permissionNestedBorderCore: ["1px solid #ddd", "1px solid #ddd", "0px solid #ccc"],
+  permissionContainerBackground: "#0a1c3f",
+  permissionInnerBackground1: "#1f2f5f",
+  expandTextColor:"#f2f2f3",
+
+  progressCircleFill:"#2f2f2f",
+
+  transactionHeaderAttentionBackground:"#07071e",
+
+  standardButtonColor:"#f2f2f2",
+  standardButtonBackground:"#0b0f4f",
+
+  // start query
+  typeaheadContainerBackground:"#113a5f",
+  typeaheadBackground:"rgba(10,10,20,0.2)",
+  typeaheadColor:"#fff",
+  typeaheadHighlightedBackground:"#212153",
+  typeaheadHighlightedColor:"#ffffef",
+
+  footerBackground: "#071033",
+  footerColor: "#efefef",
+  footerSubColor:"#efefef",
+
+  dropDownBg:"#18324f",
+  dropDownSelectorBg:"#2e344f",
   // FIXME: Link to ternary instead of copying somehow
   linkHover: "#9400ff",
   formSelectorBg: "#f5f8fc",
   fieldIcon: "#8e8f9d",
-  formSelectorBorder: "#d3d7dd",
-  formFieldBg: "#fefefe",
+  formSelectorBorder: "#0e142f",
+  formFieldInputColor:"#f9f9f9",
+  formFieldBg: "#18324f",
   // FIXME: Link to border & header respectively
   banner: "transparent",
   bannerHover: "#7e90fb",
@@ -70,6 +99,12 @@ export const colors = {
   traceDataHoverBackground: "#EAEEF2",
   traceMemoBackground: "#d3d7dd",
   traceMemoText: "#58596c",
+
+
+  pillBackground: "#0F1535",
+  pillHighlightedBackground: "#0F1535",
+  pillErrorBackground: "#FF91A0",
+
 
   traceRawButtonBackground: "#EAEEF2",
   traceRawButtonText: "#5F6070",
