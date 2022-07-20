@@ -12,7 +12,8 @@ import {
   requestContractTableRows,
   requestProducerAccountTableRows
 } from "../clients/rest/account"
-import { extractValueWithUnits, getDfuseClient } from "@dfuse/explorer"
+import { extractValueWithUnits } from "../dexplorer"
+import { getDfuseClient } from "../clients/dfuse"
 
 export async function registerAccountDetailsListeners(
   accountName: string,

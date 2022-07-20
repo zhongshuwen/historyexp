@@ -1,5 +1,6 @@
 import * as React from "react"
-import { Pill, CellValue, Box, PillClickable, MonospaceText } from "@dfuse/explorer"
+//import { Pill, CellValue, Box, PillClickable, MonospaceText } from "@dfuse/explorer"
+
 import { theme } from "../../../theme"
 import { TransferBox } from "../../../atoms/pills/pill-transfer-box"
 import { getMemoText } from "../../../helpers/action.helpers"
@@ -8,6 +9,11 @@ import { getNewAccountFromNameServiceFields, getNewAccountInTraces } from "./pil
 import { Grid } from "../../../atoms/ui-grid/ui-grid.component"
 import { Text } from "../../../atoms/text/text.component"
 import { FormattedText } from "../../formatted-text/formatted-text"
+import { Pill } from "../../pills/pill"
+import { CellValue } from "../../pills/detail-line"
+import { Box } from "../../atoms/box"
+import { PillClickable } from "../../pills/pill-elements"
+import { MonospaceText } from "../../atoms/typography"
 
 export class TransferPillComponent extends GenericPillComponent {
   static requireFields: string[] = ["from", "to", "quantity"]

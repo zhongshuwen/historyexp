@@ -2,7 +2,7 @@ import { observer } from "mobx-react"
 import { Cell } from "../../../../atoms/ui-grid/ui-grid.component"
 import * as React from "react"
 import { Account } from "../../../../models/account"
-import { DetailLine, formatTransactionID } from "@dfuse/explorer"
+import { DetailLine, formatTransactionID } from "../../../../dexplorer"
 import { t } from "i18next"
 
 import { Text, TextLink, ExternalTextLink } from "../../../../atoms/text/text.component"

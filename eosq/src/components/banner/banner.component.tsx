@@ -1,7 +1,7 @@
 import { t } from "i18next"
 import { observer } from "mobx-react"
 import * as React from "react"
-import { formatAmount, formatNumber, Box } from "@dfuse/explorer"
+import { formatAmount, formatNumber, Box } from "../../dexplorer"
 import { styled, theme } from "../../theme"
 import { metricsStore } from "../../stores"
 import { Text } from "../../atoms/text/text.component"

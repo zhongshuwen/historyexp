@@ -2,6 +2,7 @@ const CracoLessPlugin = require("craco-less")
 const { join } = require("path")
 
 const nodeModules = (element) => join(__dirname, "node_modules", element)
+const CracoAlias = require("craco-alias");
 
 module.exports = {
   webpack: {
@@ -14,6 +15,16 @@ module.exports = {
   },
 
   plugins: [
+    {
+      plugin: CracoAlias,
+      options: {
+        source: "options",
+        baseUrl: "./",
+        aliases: {
+          "@dfuse/explorer": "./src/dexplorer",
+        }
+      }
+    },
     {
       plugin: CracoLessPlugin,
       options: {

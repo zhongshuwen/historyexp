@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Box, NBSP } from "@dfuse/explorer"
+import { Box, NBSP } from "../../dexplorer"
 import { ArrowTo, MonospaceTextLink } from "../text-elements/misc"
 
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"

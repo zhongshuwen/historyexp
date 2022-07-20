@@ -1,7 +1,7 @@
 import { Cell } from "../../../atoms/ui-grid/ui-grid.component"
 import { SearchShortcut } from "../../search-shortcut/search-shortcut"
 import { AutorizationBox } from "../../authorization-box/authorization-box.component"
-import { DetailLine, JsonWrapper } from "@dfuse/explorer"
+import { DetailLine, JsonWrapper } from "../../../dexplorer"
 import { t } from "i18next"
 import { LinkStyledText, Text } from "../../../atoms/text/text.component"
 import { theme, styled } from "../../../theme"

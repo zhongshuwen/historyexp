@@ -6,7 +6,7 @@ import {
   PromiseState,
   promiseStateRetype,
   promiseStateResolved
-} from "@dfuse/explorer"
+} from "../dexplorer"
 import { GraphqlResponseError } from "@dfuse/client"
 
 export type UserBalance = {

@@ -7,7 +7,7 @@ import {
   PillLogoProps,
   PillClickable,
   MonospaceText,
-} from "@dfuse/explorer"
+} from "../../../dexplorer"
 
 import { Cell } from "../../../atoms/ui-grid/ui-grid.component"
 

@@ -1,7 +1,7 @@
 import { observer } from "mobx-react"
 import * as React from "react"
 import { Account } from "../../../../models/account"
-import { DetailLine, Cell, compactString } from "@dfuse/explorer"
+import { DetailLine, Cell, compactString } from "../../../../dexplorer"
 import { t } from "i18next"
 
 import { Text, TextLink } from "../../../../atoms/text/text.component"

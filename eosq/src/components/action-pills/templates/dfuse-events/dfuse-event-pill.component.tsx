@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Box, Pill, PillLogoProps, CellValue, PillClickable, MonospaceText } from "@dfuse/explorer"
+import { Box, Pill, PillLogoProps, CellValue, PillClickable, MonospaceText } from "../../../../dexplorer"
 import { theme } from "../../../../theme"
 import { GenericPillComponent, PillRenderingContext } from "../generic-pill.component"
 import { getDfuseEventLevel1Fields } from "../pill-template.helpers"

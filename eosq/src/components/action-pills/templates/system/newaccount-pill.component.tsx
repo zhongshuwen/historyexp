@@ -1,6 +1,6 @@
 import * as React from "react"
 import { GenericPillComponent, PillRenderingContext } from "../generic-pill.component"
-import { Box, PillLogoProps } from "@dfuse/explorer"
+import { Box, PillLogoProps } from "../../../../dexplorer"
 import { Grid } from "../../../../atoms/ui-grid/ui-grid.component"
 import { FormattedText } from "../../../formatted-text/formatted-text"
 import { getNewAccountLevel1Fields, getNewAccountLevel2Fields } from "../pill-template.helpers"

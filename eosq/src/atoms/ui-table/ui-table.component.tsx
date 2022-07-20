@@ -4,10 +4,12 @@ import TableRow from "@material-ui/core/TableRow"
 import Table from "@material-ui/core/Table"
 import TableBody from "@material-ui/core/TableBody"
 import { system, Scale } from "styled-system"
-import { Box, Cell } from "@dfuse/explorer"
+//import { Box, Cell } from "@dfuse/explorer"
 import { theme, styled, resolveValue } from "../../theme"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import * as React from "react"
+import { Box } from "../../components/atoms/box"
+import { Cell } from "../../components/atoms/cell"
 
 type TableCaptionItemProps = {
   alignSelf?: any

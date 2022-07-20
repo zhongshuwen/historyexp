@@ -1,6 +1,6 @@
 import * as React from "react"
 import { GenericPillComponent, PillRenderingContext } from "../generic-pill.component"
-import { Box } from "@dfuse/explorer"
+import { Box } from "../../../../dexplorer"
 import { Grid } from "../../../../atoms/ui-grid/ui-grid.component"
 import { FormattedText } from "../../../formatted-text/formatted-text"
 import { getUpdateAuthLevel1Fields, getUpdateAuthLevel2Fields } from "../pill-template.helpers"
