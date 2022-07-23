@@ -20,6 +20,7 @@ import { FilterModal } from "./filter-modal"
 import { FilterTypes, RangeOptions } from "../../models/search-filters"
 import { theme, styled } from "../../theme"
 import { BLOCK_NUM_5M } from "../../models/block"
+import { getWidgetTitle, isWidgetModeActivated } from "../../utils/widgetMode"
 
 interface Props extends RouteComponentProps<any> {}
 
@@ -102,6 +103,13 @@ export class TransactionSearchResultPage extends ListContentLoaderComponent<Prop
   }
 
   renderResultsTitle() {
+    if(isWidgetModeActivated() && getWidgetTitle()){
+      return (
+        <Text color="header" fontSize={[5]}>
+          {getWidgetTitle()}{" "}
+        </Text>
+      )
+    }
     return (
       <Text color="header" fontSize={[5]}>
         {t("search.searchResultsFor")}{" "}
@@ -276,10 +284,23 @@ export class TransactionSearchResultPage extends ListContentLoaderComponent<Prop
         </Cell>
       )
     }
+    if(isWidgetModeActivated()){
 
+      return (
+        <PageContainer>
+          <Panel
+            title={searchStore.query ? this.renderResultsTitle() : ""}
+            bgColor="transparent"
+          >
+            <PanelContentWrapper>{content}</PanelContentWrapper>
+          </Panel>
+        </PageContainer>
+      )
+    }
     return (
       <PageContainer>
         <Panel
+
           title={searchStore.query ? this.renderResultsTitle() : ""}
           renderSideTitle={this.renderSideTitle}
         >

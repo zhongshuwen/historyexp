@@ -26,6 +26,7 @@ import { theme, styled } from "../../theme"
 import { ServiceWorkerStates } from "../../stores/service-worker-store"
 import { handleVisibilityChange, VISIBILITYCHANGE } from "../../helpers/focus.helpers"
 import { Config, EosqNetwork } from "../../models/config"
+import { isWidgetModeActivated } from "../../utils/widgetMode"
 
 const SkewedCell = styled(Cell)`
   position: relative;
@@ -378,6 +379,11 @@ class AppContainer extends React.Component<Props, State> {
   }
 
   render() {
+    if(isWidgetModeActivated()){
+      return(
+        <div className="widgetOuter">{this.renderRoutes()}</div>
+      )
+    }
     return (
       <PageWrapper id="outer-container">
         <div className="bgStaticMain"></div>

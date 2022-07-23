@@ -8,7 +8,9 @@ const Wrapper: React.ComponentType<any> = styled(Grid)`
   border:none;
   grid-auto-flow: row;
   min-width: 0px;
-  ${(props: any)=>(props.bgColor?`background: ${props.bgColor} !important;`:"background: rgba(6,11,40,0.74);")}
+  ${(props: any)=>{
+    return (props.bgColor||props.bg)?`background: ${props.bgColor||props.bg} !important;`:"background: rgba(6,11,40,0.74);";
+  }}
 `
 
 const BorderLessWrapper: React.ComponentType<any> = styled(Grid)`
@@ -36,6 +38,7 @@ export const Panel: React.SFC<Props> = ({
   paddingTop,
 
 }) => {
+  console.log("ibg",bgColor)
   return (
     <Wrapper borderStyle={borderStyle}  bg={bgColor||"panelBackground"} overflowX={overflowX} paddingTop={paddingTop}>
       <Grid
