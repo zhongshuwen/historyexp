@@ -44,13 +44,15 @@ function setupStyle() {
 }
 function runWidgetMode(){
   if(isWidgetModeActivated()){
+    setupStyle();
     setInterval(()=>{
       setupStyle();
-    },3000);
+    },1000);
   }
 }
 runWidgetMode();
 export {
   isWidgetModeActivated,
-  getWidgetTitle
+  getWidgetTitle,
+  QueryMap,
 }
