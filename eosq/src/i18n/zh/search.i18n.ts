@@ -49,7 +49,7 @@ export default {
     dropdowns: {
       tokens: {
         allTokens: "所有代币",
-        eos: "EOS",
+        eos: "ZSWCC",
         popularTokens: "人气代币"
       },
       system: {
