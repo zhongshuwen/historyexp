@@ -1,3 +1,3 @@
-generate.sh - Sat Jul 30 18:31:52 HKT 2022 - carter
+generate.sh - Sat Jul 30 18:32:50 HKT 2022 - carter
 dfuse-io/proto revision: ef66837f403a517d99068686f446708c9a04eb3a
-dfuse-io/proto-eosio revision: 99684ad4cac9463c789b5a550f70e7853468cbac
+dfuse-io/proto-eosio revision: 91a9adbba272e14003f033588c2bea5135902e9b
