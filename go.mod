@@ -97,6 +97,8 @@ require (
 	gopkg.in/yaml.v2 v2.4.0
 	gotest.tools v2.2.0+incompatible
 )
+//replace github.com/dfuse-io/proto-eosio => github.com/vhist/proto-eosio v0.0.1
+
 replace github.com/dfuse-io/dstore => github.com/vhist/dstore v0.30.0
 replace google.golang.org/grpc => google.golang.org/grpc v1.29.1
 
