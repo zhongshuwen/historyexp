@@ -5,7 +5,7 @@ package pbtrxdb
 
 import (
 	fmt "fmt"
-	v1 "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
+	v1 "github.com/dfuse-io/dfuse-eosio/pb/dfuse/eosio/codec/v1"
 	proto "github.com/golang/protobuf/proto"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	math "math"
@@ -408,7 +408,9 @@ func init() {
 	proto.RegisterType((*AccountRow)(nil), "dfuse.eosio.trxdb.v1.AccountRow")
 }
 
-func init() { proto.RegisterFile("dfuse/eosio/trxdb/v1/trxdb.proto", fileDescriptor_014579ff7d302fea) }
+func init() {
+	proto.RegisterFile("dfuse/eosio/trxdb/v1/trxdb.proto", fileDescriptor_014579ff7d302fea)
+}
 
 var fileDescriptor_014579ff7d302fea = []byte{
 	// 658 bytes of a gzipped FileDescriptorProto

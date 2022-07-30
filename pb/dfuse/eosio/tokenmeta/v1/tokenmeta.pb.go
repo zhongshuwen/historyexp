@@ -116,15 +116,15 @@ func (GetAccountBalancesRequest_SortField) EnumDescriptor() ([]byte, []int) {
 type GetAccountBalancesRequest_Option int32
 
 const (
-	GetAccountBalancesRequest_ZSWCC_INCLUDE_STAKED GetAccountBalancesRequest_Option = 0
+	GetAccountBalancesRequest_EOS_INCLUDE_STAKED GetAccountBalancesRequest_Option = 0
 )
 
 var GetAccountBalancesRequest_Option_name = map[int32]string{
-	0: "ZSWCC_INCLUDE_STAKED",
+	0: "EOS_INCLUDE_STAKED",
 }
 
 var GetAccountBalancesRequest_Option_value = map[string]int32{
-	"ZSWCC_INCLUDE_STAKED": 0,
+	"EOS_INCLUDE_STAKED": 0,
 }
 
 func (x GetAccountBalancesRequest_Option) String() string {
@@ -170,15 +170,15 @@ func (GetTokenBalancesRequest_SortField) EnumDescriptor() ([]byte, []int) {
 type GetTokenBalancesRequest_Option int32
 
 const (
-	GetTokenBalancesRequest_ZSWCC_INCLUDE_STAKED GetTokenBalancesRequest_Option = 0
+	GetTokenBalancesRequest_EOS_INCLUDE_STAKED GetTokenBalancesRequest_Option = 0
 )
 
 var GetTokenBalancesRequest_Option_name = map[int32]string{
-	0: "ZSWCC_INCLUDE_STAKED",
+	0: "EOS_INCLUDE_STAKED",
 }
 
 var GetTokenBalancesRequest_Option_value = map[string]int32{
-	"ZSWCC_INCLUDE_STAKED": 0,
+	"EOS_INCLUDE_STAKED": 0,
 }
 
 func (x GetTokenBalancesRequest_Option) String() string {
@@ -1202,11 +1202,11 @@ var fileDescriptor_acfa679eff1c5edb = []byte{
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConn
+var _ grpc.ClientConnInterface
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
+const _ = grpc.SupportPackageIsVersion6
 
 // TokenMetaClient is the client API for TokenMeta service.
 //
@@ -1218,10 +1218,10 @@ type TokenMetaClient interface {
 }
 
 type tokenMetaClient struct {
-	cc *grpc.ClientConn
+	cc grpc.ClientConnInterface
 }
 
-func NewTokenMetaClient(cc *grpc.ClientConn) TokenMetaClient {
+func NewTokenMetaClient(cc grpc.ClientConnInterface) TokenMetaClient {
 	return &tokenMetaClient{cc}
 }
 
