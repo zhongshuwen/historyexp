@@ -50,7 +50,7 @@ function generate() {
     fi
 
     for file in "$@"; do
-      protoc -I$PROTO -I$PROTO_EOSIO $base$file --go_out=plugins=grpc,paths=source_relative:.
+      protoc-old -I$PROTO -I$PROTO_EOSIO $base$file --go_out=plugins=grpc,paths=source_relative:.
     done
 }
 
