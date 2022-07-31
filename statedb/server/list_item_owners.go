@@ -48,8 +48,11 @@ func (srv *EOSServer) listItemOwnersHandler(w http.ResponseWriter, r *http.Reque
 		writeError(ctx, w, fmt.Errorf("unable to prepare read: %w", err))
 		return
 	}
+	zlogger.Debug("block_num and item id", zap.Uint64("block_num", blockNum),zap.Uint64("item_id", request.ItemId))
 
 	tablet := statedb.NewItemOwnerTablet(request.ItemId)
+	zlogger.Debug("got tablet in item owners", zap.Reflect("tablet", tablet))
+
 	tabletRows, err := srv.db.ReadTabletAt(
 		ctx,
 		actualBlockNum,
@@ -61,6 +64,7 @@ func (srv *EOSServer) listItemOwnersHandler(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
+	zlogger.Debug("got tablet rows", zap.Reflect("tabletRows", tabletRows))
 	zlogger.Debug("post-processing item owners", zap.Int("item_owners_account_count", len(tabletRows)))
 	itemOwners, err := sortedUniqueItemOwners(tabletRows)
 	if err != nil {
@@ -122,6 +126,7 @@ var emptyItemOwners = []*itemOwnerListItem{}
 
 func sortedUniqueItemOwners(tabletRows []fluxdb.TabletRow) ([]*itemOwnerListItem, error) {
 	if len(tabletRows) <= 0 {
+		zlogger.Debug("len(tabletRows) <= 0: true, tabletRowsEmpty")
 		// We return an actual array so the output is actually `[]` instead of `null`
 		return emptyItemOwners, nil
 	}
