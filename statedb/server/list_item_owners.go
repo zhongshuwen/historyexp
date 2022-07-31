@@ -137,7 +137,7 @@ func sortedUniqueItemOwners(tabletRows []fluxdb.TabletRow) ([]*itemOwnerListItem
 		if err != nil {
 			return emptyItemOwners, err
 		}
-		accountNameSet[account] = balance
+		accountNameSet[owner] = balance
 	}
 
 	i := 0
