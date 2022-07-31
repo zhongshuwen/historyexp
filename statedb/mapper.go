@@ -195,8 +195,6 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 				}
 
 				lastTabletRowMap[keyForRow(authLinkRow)] = authLinkRow
-			case "zsw.items:logtransfer":
-				DBOpsForAction(act.CreatorActionOrdinal
 			}
 		}
 	}
