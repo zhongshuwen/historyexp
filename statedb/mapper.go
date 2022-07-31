@@ -39,7 +39,7 @@ func (tibr TableItemBalancesRow) ItemId() uint64 {
 	return binary.LittleEndian.Uint64(tibr[0:8])
 }
 func (tibr TableItemBalancesRow) TotalBalance() uint64 {
-	return binary.LittleEndian.Uint64(tibr[0:12])+binary.LittleEndian.Uint64(tibr[0:20])+binary.LittleEndian.Uint64(tibr[0:28])
+	return binary.LittleEndian.Uint64(tibr[12:20]) + binary.LittleEndian.Uint64(tibr[20:28]) + binary.LittleEndian.Uint64(tibr[28:36])
 }
 func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 	blk := rawBlk.ToNative().(*pbcodec.Block)

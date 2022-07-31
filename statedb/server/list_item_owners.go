@@ -101,7 +101,7 @@ type listItemOwnersResponse struct {
 	ItemOwners []*itemOwnerListItem `json:"item_owners"`
 }
 type itemOwnerListItem struct {
-	Balance     uint64 `json:"block_num"`
+	Balance     uint64 `json:"balance"`
 	AccountName string `json:"account_name"`
 }
 
