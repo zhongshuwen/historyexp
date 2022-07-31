@@ -81,9 +81,26 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 		for _, dbOp := range trx.DbOps {
 			if traceEnabled {
 				zlog.Debug("db op", zap.Reflect("op", dbOp))
+				if dbOp.Code == "zsw.items" && dbOp.TableName == "itembalances" {
+
+					actItemsType2 := itemsActTypeMap[dbOp.ActionIndex]
+					zlog.Debug("items op", 
+						zap.String("dbOp.Code", dbOp.Code), 
+						zap.String("dbOp.TableName", dbOp.TableName),
+						zap.Uint32("dbOp.TableName", itemsActTypeMap[dbOp.ActionIndex]),
+						
+						zap.Bool("(actItemsType == ZswItemsMintAction || actItemsType == ZswItemsTransferAction)", (actItemsType2 == ZswItemsMintAction || actItemsType2 == ZswItemsTransferAction)),
+						
+						zap.Bool("itemsActTypeMap[dbOp.ActionIndex] != 0",itemsActTypeMap[dbOp.ActionIndex] != 0),
+						
+					)
+					zlog.Debug("db op items", zap.Reflect("op", dbOp))
+				}
 			}
 			actItemsType := itemsActTypeMap[dbOp.ActionIndex]
 			if dbOp.Code == "zsw.items" && dbOp.TableName == "itembalances" && (actItemsType == ZswItemsMintAction || actItemsType == ZswItemsTransferAction) && itemsActTypeMap[dbOp.ActionIndex] != 0{
+
+				zlog.Debug("db op items good", zap.Reflect("op", dbOp))
 				//logActionIndex := itemsActTypeMap[dbOp.ActionIndex] - 1
 				if dbOp.Operation == pbcodec.DBOp_OPERATION_UPDATE {
 					if !bytes.Equal(dbOp.OldData, dbOp.NewData) {
@@ -91,6 +108,8 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 						if err != nil {
 							return nil, fmt.Errorf("unable to extract item owner: %w", err)
 						}
+
+						zlog.Debug("db op items good update", zap.Reflect("op", itemOwnerRow))
 						lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
 					}
 				}else if dbOp.Operation == pbcodec.DBOp_OPERATION_REMOVE {
@@ -98,13 +117,28 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 					if err != nil {
 						return nil, fmt.Errorf("unable to extract item owner: %w", err)
 					}
-					lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
+					rowKey := keyForRow(itemOwnerRow)
+					lastOp := lastTabletRowMap[rowKey]
+
+					zlog.Debug("db op items good remove", zap.Reflect("op", itemOwnerRow))
+					if firstDbOpWasInsert[rowKey] {
+						delete(firstDbOpWasInsert, rowKey)
+						delete(lastTabletRowMap, rowKey)
+					} else {
+						lastTabletRowMap[rowKey] = itemOwnerRow
+					}
 				}else if dbOp.Operation == pbcodec.DBOp_OPERATION_INSERT {
 					itemOwnerRow, err := NewItemOwnerRow(blockNum, TableItemBalancesRow(dbOp.NewData).ItemId(),TableItemBalancesRow(dbOp.NewData).TotalBalance(), dbOp.Scope, false)
 					if err != nil {
 						return nil, fmt.Errorf("unable to extract item owner: %w", err)
 					}
-					lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
+					rowKey := keyForRow(itemOwnerRow)
+					lastOp := lastTabletRowMap[rowKey]
+					if lastOp == nil {
+						firstDbOpWasInsert[rowKey] = true
+					}
+					zlog.Debug("db op items good insert", zap.Reflect("op", itemOwnerRow))
+					lastTabletRowMap[rowKey] = itemOwnerRow
 				}
 			}
 
