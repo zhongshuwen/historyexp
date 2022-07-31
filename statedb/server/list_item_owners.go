@@ -126,7 +126,6 @@ var emptyItemOwners = []*itemOwnerListItem{}
 
 func sortedUniqueItemOwners(tabletRows []fluxdb.TabletRow) ([]*itemOwnerListItem, error) {
 	if len(tabletRows) <= 0 {
-		zlogger.Debug("len(tabletRows) <= 0: true, tabletRowsEmpty")
 		// We return an actual array so the output is actually `[]` instead of `null`
 		return emptyItemOwners, nil
 	}
