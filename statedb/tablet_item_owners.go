@@ -53,8 +53,8 @@ func (t ItemOwnerTablet) Identifier() []byte {
 }
 
 func (t ItemOwnerTablet) Row(height uint64, primaryKey []byte, data []byte) (fluxdb.TabletRow, error) {
-	if len(primaryKey) != 16 {
-		return nil, fluxdb.ErrInvalidKeyLength("item owner primary key", 16, len(primaryKey))
+	if len(primaryKey) != 8 {
+		return nil, fluxdb.ErrInvalidKeyLength("item owner primary key", 8, len(primaryKey))
 	}
 
 	return &ItemOwnerRow{baseRow(t, height, primaryKey, data)}, nil
@@ -62,7 +62,7 @@ func (t ItemOwnerTablet) Row(height uint64, primaryKey []byte, data []byte) (flu
 
 func (t ItemOwnerTablet) String() string {
 
-	return iownPrefix + ":" + string(binary.BigEndian.Uint64(t))
+	return iownPrefix + ":" + (binary.BigEndian.Uint64(t))
 }
 
 type ItemOwnerRow struct {
