@@ -70,6 +70,7 @@ func New(addr string, db *fluxdb.FluxDB) *EOSServer {
 	coreRouter.Methods("GET").Path("/v0/state/abi").HandlerFunc(srv.getABIHandler)
 	coreRouter.Methods("POST").Path("/v0/state/abi/bin_to_json").HandlerFunc(srv.decodeABIHandler)
 	coreRouter.Methods("GET", "POST").Path("/v0/state/key_accounts").HandlerFunc(srv.listKeyAccountsHandler)
+	coreRouter.Methods("GET", "POST").Path("/v0/state/item_owners").HandlerFunc(srv.listItemOwnersHandler)
 	coreRouter.Methods("GET").Path("/v0/state/permission_links").HandlerFunc(srv.listLinkedPermissionsHandler)
 	coreRouter.Methods("GET").Path("/v0/state/table").HandlerFunc(srv.listTableRowsHandler)
 

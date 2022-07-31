@@ -63,6 +63,12 @@ func DataPublicKeyNotFoundError(ctx context.Context, publicKey string) *derr.Err
 	)
 }
 
+func DataItemIdNotFoundError(ctx context.Context, itemId uint64) *derr.ErrorResponse {
+	return derr.HTTPBadRequestError(ctx, nil, derr.C("data_item_id_not_found_error"), "This item id does not exist at this block height.",
+		"item_id", itemId,
+	)
+}
+
 func DataTableNotFoundError(ctx context.Context, account zsw.AccountName, table zsw.TableName) *derr.ErrorResponse {
 	return derr.HTTPBadRequestError(ctx, nil, derr.C("data_table_not_found_error"), "Table does not exist in ABI at this block height.",
 		"account", account,

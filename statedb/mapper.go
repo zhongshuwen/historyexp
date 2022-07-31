@@ -27,6 +27,19 @@ import (
 type BlockMapper struct {
 }
 
+
+const (
+	ZswItemsMintAction = 0xfffffff0
+	ZswItemsTransferAction = 0xfffffff1
+)
+
+type TableItemBalancesRow []byte
+func (tibr *TableItemBalancesRow) ItemId() uint64 {
+	return binary.BigEndian.Uint64(tibr[0:8])
+}
+func (tibr *TableItemBalancesRow) TotalBalance() uint64 {
+	return binary.BigEndian.Uint64(tibr[0:12])+binary.BigEndian.Uint64(tibr[0:20])+binary.BigEndian.Uint64(tibr[0:28])
+}
 func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 	blk := rawBlk.ToNative().(*pbcodec.Block)
 
@@ -34,6 +47,10 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 	lastTabletRowMap := map[string]fluxdb.TabletRow{}
 
 	firstDbOpWasInsert := map[string]bool{}
+	
+	itemsActTypeMap := map[uint32]uint32{}
+	itemsOrdinalToExecutionIndexMap := map[uint32]uint32{}
+
 
 	req := &fluxdb.WriteRequest{
 		Height:   rawBlk.Num(),
@@ -43,10 +60,51 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 	blockNum := req.BlockRef.Num()
 	for _, trx := range blk.TransactionTraces() {
 		actionMatcher := blk.FilteringActionMatcher(trx, isRequiredSystemAction)
+		for _, a := range trx.ActionTraces {
+			if a.Account == "zsw.items" {
+				if a.Name == "mint" && a.Receiver == "zsw.items" {
+					//itemsActTypeMap[a.ExecutionIndex] = ZswItemsMintAction
+					itemsOrdinalToExecutionIndexMap[a.ActionOrdinal] = a.ExecutionIndex+1
+				}else if a.Name == "transfer" && a.Receiver == "zsw.items" {
+					//itemsActTypeMap[a.ExecutionIndex] = ZswItemsTransferAction
+					itemsOrdinalToExecutionIndexMap[a.ActionOrdinal] = a.ExecutionIndex+1
+				}else if a.Name == "logtransfer" && a.Receiver == "zsw.items"{
+					if itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal] != 0 {
+						itemsActTypeMap[itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal+1]] = a.ExecutionIndex+1
+					}
+				}
+			}
+		}
+
 
 		for _, dbOp := range trx.DbOps {
 			if traceEnabled {
 				zlog.Debug("db op", zap.Reflect("op", dbOp))
+			}
+			actItemsType := itemsActTypeMap[dbOp.ActionIndex]
+			if dbOp.Code == "zsw.items" && dbOp.TableName == "itembalances" && (actItemsType == ZswItemsMintAction || actItemsType == ZswItemsTransferAction) && itemsActTypeMap[dbOp.ActionIndex] != 0{
+				logActionIndex := itemsActTypeMap[dbOp.ActionIndex] - 1
+				if dbOp.Operation == pbcodec.DBOp_OPERATION_UPDATE {
+					if !bytes.Equal(dbOp.OldData, dbOp.NewData) {
+						itemOwnerRow, err := NewItemOwnerTablet(blockNum, dbOp.NewData.(*TableItemBalancesRow).ItemId(), dbOp.NewData.(*TableItemBalancesRow).TotalBalance(), dbOp.Scope, false)
+						if err != nil {
+							return nil, fmt.Errorf("unable to extract item owner: %w", err)
+						}
+						lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
+					}
+				}else if dbOp.Operation == pbcodec.DBOp_OPERATION_REMOVE {
+					itemOwnerRow, err := NewItemOwnerTablet(blockNum, dbOp.OldData.(*TableItemBalancesRow).ItemId(), 0, dbOp.Scope, true)
+					if err != nil {
+						return nil, fmt.Errorf("unable to extract item owner: %w", err)
+					}
+					lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
+				}else if dbOp.Operation == pbcodec.DBOp_OPERATION_INSERT {
+					itemOwnerRow, err := NewItemOwnerTablet(blockNum, dbOp.NewData.(*TableItemBalancesRow).ItemId(), dbOp.NewData.(*TableItemBalancesRow).TotalBalance(), dbOp.Scope, false)
+					if err != nil {
+						return nil, fmt.Errorf("unable to extract item owner: %w", err)
+					}
+					lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
+				}
 			}
 
 			if !actionMatcher.Matched(dbOp.ActionIndex) {
@@ -103,7 +161,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 		}
 
 		for _, act := range trx.ActionTraces {
-			if act.Receiver != "zswhq" {
+			if act.Receiver != "zswhq" && act.Receiver != "zsw.items" {
 				continue
 			}
 
@@ -137,6 +195,8 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 				}
 
 				lastTabletRowMap[keyForRow(authLinkRow)] = authLinkRow
+			case "zsw.items:logtransfer":
+				DBOpsForAction(act.CreatorActionOrdinal
 			}
 		}
 	}
