@@ -17,11 +17,12 @@ package statedb
 import (
 	"bytes"
 	"fmt"
-
+	"encoding/binary"
 	"github.com/dfuse-io/bstream"
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/fluxdb"
 	"go.uber.org/zap"
+
 )
 
 type BlockMapper struct {
@@ -34,10 +35,10 @@ const (
 )
 
 type TableItemBalancesRow []byte
-func (tibr *TableItemBalancesRow) ItemId() uint64 {
+func (tibr TableItemBalancesRow) ItemId() uint64 {
 	return binary.BigEndian.Uint64(tibr[0:8])
 }
-func (tibr *TableItemBalancesRow) TotalBalance() uint64 {
+func (tibr TableItemBalancesRow) TotalBalance() uint64 {
 	return binary.BigEndian.Uint64(tibr[0:12])+binary.BigEndian.Uint64(tibr[0:20])+binary.BigEndian.Uint64(tibr[0:28])
 }
 func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
