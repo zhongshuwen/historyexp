@@ -71,7 +71,7 @@ type ItemOwnerRow struct {
 
 func NewItemOwnerRow(blockNum uint64, item_id, balance uint64, account string, isDeletion bool) (row *ItemOwnerRow, err error) {
 	tablet := NewItemOwnerTablet(item_id)
-	primaryKey := nameaToBytes(account)
+	primaryKey := nameaToBytes(zsw.AccountName(account))
 
 	var value []byte
 	if balance != 0 {

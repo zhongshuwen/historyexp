@@ -20,7 +20,8 @@ import (
 	"net/url"
 	"sort"
 	"strconv"
-
+	"encoding/binary"
+	
 	"github.com/dfuse-io/derr"
 	"github.com/zhongshuwen/historyexp/statedb"
 	"github.com/dfuse-io/fluxdb"
