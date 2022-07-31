@@ -87,20 +87,20 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 				logActionIndex := itemsActTypeMap[dbOp.ActionIndex] - 1
 				if dbOp.Operation == pbcodec.DBOp_OPERATION_UPDATE {
 					if !bytes.Equal(dbOp.OldData, dbOp.NewData) {
-						itemOwnerRow, err := NewItemOwnerTablet(blockNum, dbOp.NewData.(*TableItemBalancesRow).ItemId(), dbOp.NewData.(*TableItemBalancesRow).TotalBalance(), dbOp.Scope, false)
+						itemOwnerRow, err := NewItemOwnerTablet(blockNum, TableItemBalancesRow(dbOp.NewData).ItemId(), TableItemBalancesRow(dbOp.NewData).TotalBalance(), dbOp.Scope, false)
 						if err != nil {
 							return nil, fmt.Errorf("unable to extract item owner: %w", err)
 						}
 						lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
 					}
 				}else if dbOp.Operation == pbcodec.DBOp_OPERATION_REMOVE {
-					itemOwnerRow, err := NewItemOwnerTablet(blockNum, dbOp.OldData.(*TableItemBalancesRow).ItemId(), 0, dbOp.Scope, true)
+					itemOwnerRow, err := NewItemOwnerTablet(blockNum, TableItemBalancesRow(dbOp.OldData).ItemId(), 0, dbOp.Scope, true)
 					if err != nil {
 						return nil, fmt.Errorf("unable to extract item owner: %w", err)
 					}
 					lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
 				}else if dbOp.Operation == pbcodec.DBOp_OPERATION_INSERT {
-					itemOwnerRow, err := NewItemOwnerTablet(blockNum, dbOp.NewData.(*TableItemBalancesRow).ItemId(), dbOp.NewData.(*TableItemBalancesRow).TotalBalance(), dbOp.Scope, false)
+					itemOwnerRow, err := NewItemOwnerTablet(blockNum, TableItemBalancesRow(dbOp.NewData).ItemId(),TableItemBalancesRow(dbOp.NewData).TotalBalance(), dbOp.Scope, false)
 					if err != nil {
 						return nil, fmt.Errorf("unable to extract item owner: %w", err)
 					}
