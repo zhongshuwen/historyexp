@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"encoding/binary"
+	"strconv"
 
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/fluxdb"
@@ -62,7 +63,7 @@ func (t ItemOwnerTablet) Row(height uint64, primaryKey []byte, data []byte) (flu
 
 func (t ItemOwnerTablet) String() string {
 
-	return iownPrefix + ":" + (binary.BigEndian.Uint64(t))
+	return iownPrefix + ":" + strconv.FormatUint(binary.BigEndian.Uint64(t),10)
 }
 
 type ItemOwnerRow struct {
