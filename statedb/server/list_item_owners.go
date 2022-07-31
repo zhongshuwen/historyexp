@@ -62,7 +62,11 @@ func (srv *EOSServer) listItemOwnersHandler(w http.ResponseWriter, r *http.Reque
 	}
 
 	zlogger.Debug("post-processing item owners", zap.Int("item_owners_account_count", len(tabletRows)))
-	itemOwners := sortedUniqueItemOwners(tabletRows)
+	itemOwners, err := sortedUniqueItemOwners(tabletRows)
+	if err != nil {
+		writeError(ctx, w, fmt.Errorf("unable to read unique item owners tablet at %d: %w", blockNum, err))
+		return
+	}
 	if len(itemOwners) == 0 {
 		zlogger.Debug("no item owners found for request, checking if we ever seen this public key")
 		seen, err := srv.db.HasSeenAnyRowForTablet(ctx, tablet)
@@ -114,12 +118,12 @@ func extractListItemOwnersRequest(r *http.Request) *listItemOwnersRequest {
 	}
 }
 
-var emptyItemOwners = []itemOwnerListItem{}
+var emptyItemOwners = []*itemOwnerListItem{}
 
-func sortedUniqueItemOwners(tabletRows []fluxdb.TabletRow) (out []*itemOwnerListItem) {
+func sortedUniqueItemOwners(tabletRows []fluxdb.TabletRow) ([]*itemOwnerListItem, error) {
 	if len(tabletRows) <= 0 {
 		// We return an actual array so the output is actually `[]` instead of `null`
-		return emptyItemOwners
+		return emptyItemOwners, nil
 	}
 
 
@@ -128,11 +132,16 @@ func sortedUniqueItemOwners(tabletRows []fluxdb.TabletRow) (out []*itemOwnerList
 	accountNameSet := map[string]uint64{}
 	for _, tabletRow := range tabletRows {
 		owner := tabletRow.(*statedb.ItemOwnerRow).Owner()
-		accountNameSet[account] = tabletRow.(*statedb.ItemOwnerRow).Balance()
+
+		balance, err := tabletRow.(*statedb.ItemOwnerRow).Balance()
+		if err != nil {
+			return emptyItemOwners, err
+		}
+		accountNameSet[account] = balance
 	}
 
 	i := 0
-	out = make([]*itemOwnerListItem, len(accountNameSet))
+	out := make([]*itemOwnerListItem, len(accountNameSet))
 	for account := range accountNameSet {
 		out[i] = &itemOwnerListItem{
 			Balance: accountNameSet[account],
@@ -145,5 +154,5 @@ func sortedUniqueItemOwners(tabletRows []fluxdb.TabletRow) (out []*itemOwnerList
 		return out[i].AccountName < out[j].AccountName
 	})
 
-	return
+	return out, nil
 }
