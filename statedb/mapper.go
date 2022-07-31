@@ -118,7 +118,6 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 						return nil, fmt.Errorf("unable to extract item owner: %w", err)
 					}
 					rowKey := keyForRow(itemOwnerRow)
-					lastOp := lastTabletRowMap[rowKey]
 
 					zlog.Debug("db op items good remove", zap.Reflect("op", itemOwnerRow))
 					if firstDbOpWasInsert[rowKey] {
