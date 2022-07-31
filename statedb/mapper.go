@@ -62,14 +62,14 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 	for _, trx := range blk.TransactionTraces() {
 		actionMatcher := blk.FilteringActionMatcher(trx, isRequiredSystemAction)
 		for _, a := range trx.ActionTraces {
-			if a.Account == "zsw.items" {
-				if a.Name == "mint" && a.Receiver == "zsw.items" {
+			if a.Account() == "zsw.items" {
+				if a.Name() == "mint" && a.Receiver == "zsw.items" {
 					//itemsActTypeMap[a.ExecutionIndex] = ZswItemsMintAction
 					itemsOrdinalToExecutionIndexMap[a.ActionOrdinal] = a.ExecutionIndex+1
-				}else if a.Name == "transfer" && a.Receiver == "zsw.items" {
+				}else if a.Name() == "transfer" && a.Receiver == "zsw.items" {
 					//itemsActTypeMap[a.ExecutionIndex] = ZswItemsTransferAction
 					itemsOrdinalToExecutionIndexMap[a.ActionOrdinal] = a.ExecutionIndex+1
-				}else if a.Name == "logtransfer" && a.Receiver == "zsw.items"{
+				}else if a.Name() == "logtransfer" && a.Receiver == "zsw.items"{
 					if itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal] != 0 {
 						itemsActTypeMap[itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal+1]] = a.ExecutionIndex+1
 					}
