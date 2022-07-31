@@ -3,7 +3,7 @@ package statedb
 import (
 	"errors"
 	"fmt"
-	"math"
+	"encoding/binary"
 
 	pbstatedb "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/statedb/v1"
 	"github.com/dfuse-io/fluxdb"
