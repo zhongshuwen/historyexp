@@ -20,7 +20,6 @@ import (
 	"net/url"
 	"sort"
 	"strconv"
-	"encoding/binary"
 	
 	"github.com/dfuse-io/derr"
 	"github.com/zhongshuwen/historyexp/statedb"
@@ -91,7 +90,7 @@ type listItemOwnersRequest struct {
 
 type listItemOwnersResponse struct {
 	BlockNum     uint64            `json:"block_num"`
-	ItemOwners []itemOwnerListItem `json:"item_owners"`
+	ItemOwners []*itemOwnerListItem `json:"item_owners"`
 }
 type itemOwnerListItem struct {
 	Balance     uint64 `json:"block_num"`
@@ -120,7 +119,7 @@ var emptyItemOwners = []itemOwnerListItem{}
 func sortedUniqueItemOwners(tabletRows []fluxdb.TabletRow) (out []*itemOwnerListItem) {
 	if len(tabletRows) <= 0 {
 		// We return an actual array so the output is actually `[]` instead of `null`
-		return emptyAccountNames
+		return emptyItemOwners
 	}
 
 
