@@ -76,7 +76,7 @@ func NewItemTemplateOwnerRow(blockNum uint64, item_template_id, item_id, balance
 
 	var value []byte
 	if balance != 0 {
-		pb := pbstatedb.ItemTemplateOwnerValue{Balance: balance}
+		pb := pbstatedb.ItemOwnerValue{Balance: balance}
 
 		if value, err = proto.Marshal(&pb); err != nil {
 			return nil, fmt.Errorf("marshal proto: %w", err)
@@ -98,7 +98,7 @@ func (r *ItemTemplateOwnerRow) ItemIdAndOwner() (uint64, string) {
 }
 
 func (r *ItemTemplateOwnerRow) Balance() (uint64, error) {
-	pb := pbstatedb.ItemTemplateOwnerValue{}
+	pb := pbstatedb.ItemOwnerValue{}
 	if err := proto.Unmarshal(r.Value(), &pb); err != nil {
 		return 0, err
 	}
@@ -109,5 +109,5 @@ func (r *ItemTemplateOwnerRow) Balance() (uint64, error) {
 func (r *ItemTemplateOwnerRow) String() string {
 	itemId, owner := r.ItemIdAndOwner()
 
-	return strconv.FormatUint(itemId)+":"+r.Stringify(owner)
+	return strconv.FormatUint(itemId,10)+":"+r.Stringify(owner)
 }
