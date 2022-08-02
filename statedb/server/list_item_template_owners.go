@@ -39,7 +39,11 @@ func (srv *EOSServer) listItemTemplateOwnersHandler(w http.ResponseWriter, r *ht
 		return
 	}
 
-	request := extractListItemTemplateOwnersRequest(r)
+	err, request := extractListItemTemplateOwnersRequest(r)
+	if err != nil {
+		writeError(ctx, w, fmt.Errorf("invalid arguments passed for item_template_id: %w", err))
+		return
+	}
 	zlogger.Debug("extracted request", zap.Reflect("request", request))
 
 	blockNum := uint64(request.BlockNum)
