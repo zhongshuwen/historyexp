@@ -68,6 +68,11 @@ func DataItemIdNotFoundError(ctx context.Context, itemId uint64) *derr.ErrorResp
 		"item_id", itemId,
 	)
 }
+func DataItemTemplateIdNotFoundError(ctx context.Context, itemTemplateId uint64) *derr.ErrorResponse {
+	return derr.HTTPBadRequestError(ctx, nil, derr.C("data_item_template_id_not_found_error"), "This item template id does not exist at this block height.",
+		"item_template_id", itemTemplateId,
+	)
+}
 
 func DataTableNotFoundError(ctx context.Context, account zsw.AccountName, table zsw.TableName) *derr.ErrorResponse {
 	return derr.HTTPBadRequestError(ctx, nil, derr.C("data_table_not_found_error"), "Table does not exist in ABI at this block height.",

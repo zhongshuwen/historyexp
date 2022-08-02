@@ -48,9 +48,9 @@ func (srv *EOSServer) listItemTemplateOwnersHandler(w http.ResponseWriter, r *ht
 		writeError(ctx, w, fmt.Errorf("unable to prepare read: %w", err))
 		return
 	}
-	zlogger.Debug("block_num and item id", zap.Uint64("block_num", blockNum),zap.Uint64("item_id", request.ItemId))
+	zlogger.Debug("block_num and item id", zap.Uint64("block_num", blockNum),zap.Uint64("item_id", request.ItemTemplateId))
 
-	tablet := statedb.NewItemTemplateOwnerTablet(request.ItemId)
+	tablet := statedb.NewItemTemplateOwnerTablet(request.ItemTemplateId)
 	zlogger.Debug("got tablet in item template owners", zap.Reflect("tablet", tablet))
 
 	tabletRows, err := srv.db.ReadTabletAt(
@@ -75,12 +75,12 @@ func (srv *EOSServer) listItemTemplateOwnersHandler(w http.ResponseWriter, r *ht
 		zlogger.Debug("no item template owners found for request, checking if we ever seen this public key")
 		seen, err := srv.db.HasSeenAnyRowForTablet(ctx, tablet)
 		if err != nil {
-			writeError(ctx, w, fmt.Errorf("unable to know if item id was seen once in db: %w", err))
+			writeError(ctx, w, fmt.Errorf("unable to know if item template id was seen once in db: %w", err))
 			return
 		}
 
 		if !seen {
-			writeError(ctx, w, statedb.DataItemIdNotFoundError(ctx, request.ItemId))
+			writeError(ctx, w, statedb.DataItemTemplateIdNotFoundError(ctx, request.ItemTemplateId))
 			return
 		}
 	}
@@ -145,8 +145,8 @@ func sortedUniqueItemTemplateOwners(tabletRows []fluxdb.TabletRow) ([]*itemTempl
 		}
 		out[i] = &itemTemplateOwnerListItem{
 			ItemId: itemId,
-			Balance: accountNameSet[account],
-			AccountName: account,
+			Balance: balance,
+			AccountName: owner,
 		}
 		i++
 	}
