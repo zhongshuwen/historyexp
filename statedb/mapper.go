@@ -34,30 +34,50 @@ const (
 	ZswItemsMintAction = 0xfffffff0
 	ZswItemsTransferAction = 0xfffffff1
 )
+
+func uint64ValueForRawMessage(data []byte) (uint64, error) {
+	if data[0] == 34 {
+		return strconv.ParseUint(string(data[1:(len(data)-1)]), 10, 64)
+	} else {
+		return strconv.ParseUint(string(data[1:(len(data)-1)]), 10, 64)
+	}
+}
+func uint64ValueForRawMessageArray(data [][]byte) ([]uint64, error) {
+	arr := make([]uint64, len(data))
+
+	for i, raw := range data {
+		v, err := uint64ValueForRawMessage(raw)
+		if err != nil {
+			return arr, err
+		}
+		arr[i] = v
+	}
+	return arr, nil
+}
 type ItemLogTransferActionData struct {
 	Authorizer            zsw.AccountName `json:"authorizer"`
-	CollectionId               uint64        `json:"collection_id"`
+	CollectionId               *json.RawMessage        `json:"collection_id"`
 	CollectionIdAsName                  zsw.AccountName `json:"collection_id_as_name"`
 	From                  zsw.AccountName `json:"from"`
 	To                    zsw.AccountName `json:"to"`
 	FromCustodian         zsw.AccountName `json:"from_custodian"`
 	ToCustodian           zsw.AccountName `json:"to_custodian"`
-	ItemIds               []uint64        `json:"item_ids"`
-	ItemTemplateIds               []uint64        `json:"item_template_ids"`
-	Amounts               []uint64        `json:"amounts"`
+	ItemIds               []*json.RawMessage        `json:"item_ids"`
+	ItemTemplateIds               []*json.RawMessage        `json:"item_template_ids"`
+	Amounts               []*json.RawMessage        `json:"amounts"`
 	Memo                  string          `json:"memo"`
 }
 
 
 type ItemLogMintActionData struct {
 	Minter            zsw.AccountName `json:"minter"`
-	CollectionId               uint64        `json:"collection_id"`
+	CollectionId               *json.RawMessage        `json:"collection_id"`
 	CollectionIdAsName                  zsw.AccountName `json:"collection_id_as_name"`
 	To                    zsw.AccountName `json:"to"`
 	ToCustodian           zsw.AccountName `json:"to_custodian"`
-	ItemIds               []uint64        `json:"item_ids"`
-	ItemTemplateIds               []uint64        `json:"item_template_ids"`
-	Amounts               []uint64        `json:"amounts"`
+	ItemIds               []*json.RawMessage        `json:"item_ids"`
+	ItemTemplateIds               []*json.RawMessage        `json:"item_template_ids"`
+	Amounts               []*json.RawMessage        `json:"amounts"`
 	Memo                  string          `json:"memo"`
 }
 
@@ -108,10 +128,12 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							
 							zlog.Error("error unmarshalling itemLogTransferActionData ", zap.Error(err))
 						}else{
-							for itemIdInd, itemId := range itemLogTransferActionData.ItemIds {
-								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemLogTransferActionData.ItemTemplateIds[itemIdInd]))
+							itemIds := uint64ValueForRawMessageArray(itemLogTransferActionData.ItemIds)
+							itemTemplateIds := uint64ValueForRawMessageArray(itemLogTransferActionData.ItemTemplateIds)
+							for itemIdInd, itemId := range itemIds {
+								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
 
-								itemIdToItemTemplateId[itemId] = itemLogTransferActionData.ItemTemplateIds[itemIdInd];
+								itemIdToItemTemplateId[itemId] = itemTemplateIds[itemIdInd];
 							}
 						}
 					}
@@ -125,9 +147,12 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							zlog.Error("error unmarshalling itemLogMintActionData ", zap.Error(err))
 							
 						}else{
-							for itemIdInd, itemId := range itemLogMintActionData.ItemIds {
-								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemLogMintActionData.ItemTemplateIds[itemIdInd]))
-								itemIdToItemTemplateId[itemId] = itemLogMintActionData.ItemTemplateIds[itemIdInd];
+							itemIds := uint64ValueForRawMessageArray(itemLogMintActionData.ItemIds)
+							itemTemplateIds := uint64ValueForRawMessageArray(itemLogMintActionData.ItemTemplateIds)
+							for itemIdInd, itemId := range itemIds {
+								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
+
+								itemIdToItemTemplateId[itemId] = itemTemplateIds[itemIdInd];
 							}
 						}
 					}
