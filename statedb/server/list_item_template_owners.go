@@ -108,16 +108,21 @@ type itemTemplateOwnerListItem struct {
 
 func validateListItemTemplateOwnersRequest(r *http.Request) url.Values {
 	return validator.ValidateQueryParams(r, validator.Rules{
-		"item_template_id":  []string{"required", "numeric_between:0,"},
+		"item_template_id":  []string{"required", "numeric"},
 		"block_num":  []string{"fluxdb.eos.blockNum"},
 	})
 }
 
-func extractListItemTemplateOwnersRequest(r *http.Request) *listItemTemplateOwnersRequest {
-	blockNum64, _ := strconv.ParseInt(r.FormValue("block_num"), 10, 64)
-	itemTemplateId, _ := strconv.ParseInt(r.FormValue("item_template_id"), 10, 64)
-
-	return &listItemTemplateOwnersRequest{
+func extractListItemTemplateOwnersRequest(r *http.Request) (error, *listItemTemplateOwnersRequest) {
+	blockNum64, err := strconv.ParseInt(r.FormValue("block_num"), 10, 64)
+	if err != nil {
+		return err, nil
+	}
+	itemTemplateId, err := strconv.ParseInt(r.FormValue("item_template_id"), 10, 64)
+	if err != nil {
+		return err, nil
+	}
+	return nil, &listItemTemplateOwnersRequest{
 		ItemTemplateId: uint64(itemTemplateId),
 		BlockNum:  uint64(blockNum64),
 	}
