@@ -63,7 +63,7 @@ func (t ItemTemplateOwnerTablet) Row(height uint64, primaryKey []byte, data []by
 
 func (t ItemTemplateOwnerTablet) String() string {
 
-	return itownPrefix + ":" + strconv.FormatUint(binary.BigEndian.Uint64(t,10)
+	return itownPrefix + ":" + strconv.FormatUint(binary.BigEndian.Uint64(t),10)
 }
 
 type ItemTemplateOwnerRow struct {
@@ -87,10 +87,10 @@ func NewItemTemplateOwnerRow(blockNum uint64, item_template_id, item_id, balance
 }
 
 func (r *ItemTemplateOwnerRow) Owner() string {
-	return bytesToName(r.PrimaryKey()[[:8]])
+	return bytesToName(r.PrimaryKey()[:8])
 }
 func (r *ItemTemplateOwnerRow) ItemId() uint64 {
-	return bytesToName(r.PrimaryKey()[[8:]])
+	return bytesToName(r.PrimaryKey()[8:])
 }
 
 func (r *ItemTemplateOwnerRow) ItemIdAndOwner() (uint64, string) {
