@@ -101,24 +101,32 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 					itemsOrdinalToExecutionIndexMap[a.ActionOrdinal] = a.ExecutionIndex+1
 				}else if a.Name() == "logtransfer" && a.Receiver == "zsw.items"{
 					if itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal] != 0 {
-						itemsActTypeMap[itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal+1]] = a.ExecutionIndex+1
+						//itemsActTypeMap[itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal+1]] = a.ExecutionIndex+1
+						zlog.Debug("logtransfer action", zap.Reflect("a.Action", a.Action))
 						var itemLogTransferActionData *ItemLogTransferActionData
 						if err := a.Action.UnmarshalData(&itemLogTransferActionData); err != nil {
 							
+							zlog.Error("error unmarshalling itemLogTransferActionData ", zap.Error(err))
 						}else{
 							for itemIdInd, itemId := range itemLogTransferActionData.ItemIds {
+								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemLogMintActionData.ItemTemplateIds[itemIdInd]))
+
 								itemIdToItemTemplateId[itemId] = itemLogTransferActionData.ItemTemplateIds[itemIdInd];
 							}
 						}
 					}
 				}else if a.Name() == "logmint" && a.Receiver == "zsw.items"{
 					if itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal] != 0 {
-						itemsActTypeMap[itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal+1]] = a.ExecutionIndex+1
+						//itemsActTypeMap[itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal+1]] = a.ExecutionIndex+1
 						var itemLogMintActionData *ItemLogMintActionData
+						zlog.Debug("logmint action", zap.Reflect("a.Action", a.Action))
 						if err := a.Action.UnmarshalData(&itemLogMintActionData); err != nil {
+
+							zlog.Error("error unmarshalling itemLogMintActionData ", zap.Error(err))
 							
 						}else{
 							for itemIdInd, itemId := range itemLogMintActionData.ItemIds {
+								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemLogMintActionData.ItemTemplateIds[itemIdInd]))
 								itemIdToItemTemplateId[itemId] = itemLogMintActionData.ItemTemplateIds[itemIdInd];
 							}
 						}
@@ -147,7 +155,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 					zlog.Debug("db op items", zap.Reflect("op", dbOp))
 				}
 			}
-			actItemsType := itemsActTypeMap[dbOp.ActionIndex]
+			zlog.Debug("db op items", zap.Reflect("op", dbOp))
 			if dbOp.Code == "zsw.items" && dbOp.TableName == "itembalances" && (actItemsType == ZswItemsMintAction || actItemsType == ZswItemsTransferAction) && itemsActTypeMap[dbOp.ActionIndex] != 0{
 
 				zlog.Debug("db op items good", zap.Reflect("op", dbOp))
