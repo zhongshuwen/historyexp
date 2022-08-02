@@ -23,6 +23,10 @@ func bytesToName2(bytes []byte) (string, string) {
 	return zsw.NameToString(bigEndian.Uint64(bytes)), zsw.NameToString(bigEndian.Uint64(bytes[8:]))
 }
 
+func bytesToIdAndNameA(bytes []byte) (uint64, string){
+	return bigEndian.Uint64(bytes), zsw.NameToString(bigEndian.Uint64(bytes[8:]))
+
+}
 func bytesToName3(bytes []byte) (string, string, string) {
 	return zsw.NameToString(bigEndian.Uint64(bytes)),
 		zsw.NameToString(bigEndian.Uint64(bytes[8:])),
@@ -61,6 +65,12 @@ func nameToBytes(converter func(name string) uint64, names []string) (out []byte
 	return
 }
 
+func idAndNameAToBytes(id uint64, name zsw.AccountName) (out []byte) {
+	out = make([]byte, 16)
+	bigEndian.PutUint64(out, id))
+	bigEndian.PutUint64(out[8:], zsw.MustStringToName(string(name)))
+	return
+}
 func nameaToBytes(name zsw.AccountName) (out []byte) {
 	out = make([]byte, 8)
 	bigEndian.PutUint64(out, zsw.MustStringToName(string(name)))
