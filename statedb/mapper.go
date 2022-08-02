@@ -156,7 +156,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 						itemId := TableItemBalancesRow(dbOp.NewData).ItemId()
 						itemTemplateId := itemIdToItemTemplateId[itemId]
 						totalBalance := TableItemBalancesRow(dbOp.NewData).TotalBalance()
-						zlog.Debug("update_good", zap.Uint64("item_id", itemId), zap.Uint64("total_balance", totalBalance)
+						zlog.Debug("update_good", zap.Uint64("item_id", itemId), zap.Uint64("total_balance", totalBalance))
 						itemOwnerRow, err := NewItemOwnerRow(blockNum, itemId, totalBalance, dbOp.Scope, false)
 						if err != nil {
 							return nil, fmt.Errorf("unable to extract item owner: %w", err)
