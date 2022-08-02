@@ -37,14 +37,15 @@ const (
 	ZswItemsTransferAction = 0xfffffff1
 )
 
-func uint64ValueForRawMessage(data []byte) (uint64, error) {
+func uint64ValueForRawMessage(dt *json.RawMessage) (uint64, error) {
+	data:=[]byte(dt)
 	if data[0] == 34 {
 		return strconv.ParseUint(string(data[1:(len(data)-1)]), 10, 64)
 	} else {
 		return strconv.ParseUint(string(data[1:(len(data)-1)]), 10, 64)
 	}
 }
-func uint64ValueForRawMessageArray(data [][]byte) ([]uint64, error) {
+func uint64ValueForRawMessageArray(data []*json.RawMessage) ([]uint64, error) {
 	arr := make([]uint64, len(data))
 
 	for i, raw := range data {
