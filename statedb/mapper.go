@@ -109,7 +109,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							zlog.Error("error unmarshalling itemLogTransferActionData ", zap.Error(err))
 						}else{
 							for itemIdInd, itemId := range itemLogTransferActionData.ItemIds {
-								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemLogMintActionData.ItemTemplateIds[itemIdInd]))
+								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemLogTransferActionData.ItemTemplateIds[itemIdInd]))
 
 								itemIdToItemTemplateId[itemId] = itemLogTransferActionData.ItemTemplateIds[itemIdInd];
 							}
@@ -156,6 +156,8 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 				}
 			}
 			zlog.Debug("db op items", zap.Reflect("op", dbOp))
+
+			actItemsType := itemsActTypeMap[dbOp.ActionIndex]
 			if dbOp.Code == "zsw.items" && dbOp.TableName == "itembalances" && (actItemsType == ZswItemsMintAction || actItemsType == ZswItemsTransferAction) && itemsActTypeMap[dbOp.ActionIndex] != 0{
 
 				zlog.Debug("db op items good", zap.Reflect("op", dbOp))
