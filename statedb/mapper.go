@@ -22,6 +22,7 @@ import (
 	pbcodec "github.com/zhongshuwen/historyexp/pb/dfuse/eosio/codec/v1"
 	"github.com/dfuse-io/fluxdb"
 	"go.uber.org/zap"
+	zsw "github.com/zhongshuwen/zswchain-go"
 
 )
 
