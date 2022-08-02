@@ -130,8 +130,14 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							
 							zlog.Error("error unmarshalling itemLogTransferActionData ", zap.Error(err))
 						}else{
-							itemIds := uint64ValueForRawMessageArray(itemLogTransferActionData.ItemIds)
-							itemTemplateIds := uint64ValueForRawMessageArray(itemLogTransferActionData.ItemTemplateIds)
+							itemIds, err := uint64ValueForRawMessageArray(itemLogTransferActionData.ItemIds)
+							if err != nil {
+								zlog.Error("error unmarshalling itemIds ", zap.Error(err))
+							}
+							itemTemplateIds, err := uint64ValueForRawMessageArray(itemLogTransferActionData.ItemTemplateIds)
+							if err != nil {
+								zlog.Error("error unmarshalling itemTemplateIds ", zap.Error(err))
+							}
 							for itemIdInd, itemId := range itemIds {
 								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
 
@@ -149,8 +155,14 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							zlog.Error("error unmarshalling itemLogMintActionData ", zap.Error(err))
 							
 						}else{
-							itemIds := uint64ValueForRawMessageArray(itemLogMintActionData.ItemIds)
-							itemTemplateIds := uint64ValueForRawMessageArray(itemLogMintActionData.ItemTemplateIds)
+							itemIds,err := uint64ValueForRawMessageArray(itemLogMintActionData.ItemIds)
+							if err != nil {
+								zlog.Error("error unmarshalling itemIds ", zap.Error(err))
+							}
+							itemTemplateIds,err := uint64ValueForRawMessageArray(itemLogMintActionData.ItemTemplateIds)
+							if err != nil {
+								zlog.Error("error unmarshalling itemTemplateIds ", zap.Error(err))
+							}
 							for itemIdInd, itemId := range itemIds {
 								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
 
