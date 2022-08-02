@@ -90,7 +90,7 @@ func (r *ItemTemplateOwnerRow) Owner() string {
 	return bytesToName(r.PrimaryKey()[:8])
 }
 func (r *ItemTemplateOwnerRow) ItemId() uint64 {
-	return bytesToName(r.PrimaryKey()[8:])
+	return binary.BigEndian.Uint64(r.PrimaryKey()[8:])
 }
 
 func (r *ItemTemplateOwnerRow) ItemIdAndOwner() (uint64, string) {

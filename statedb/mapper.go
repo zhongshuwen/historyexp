@@ -163,7 +163,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							return nil, fmt.Errorf("unable to extract item owner: %w", err)
 						}
 
-						zlog.Debug("db op items good update", zap.Reflect("op", itemTemplateOwnerRow), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
+						zlog.Debug("db op items good update", zap.Reflect("op", itemOwnerRow), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
 						lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
 
 						if itemTemplateId!=0 {
