@@ -67,7 +67,7 @@ func nameToBytes(converter func(name string) uint64, names []string) (out []byte
 
 func idAndNameAToBytes(id uint64, name zsw.AccountName) (out []byte) {
 	out = make([]byte, 16)
-	bigEndian.PutUint64(out, id))
+	bigEndian.PutUint64(out, id)
 	bigEndian.PutUint64(out[8:], zsw.MustStringToName(string(name)))
 	return
 }
