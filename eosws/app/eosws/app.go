@@ -466,6 +466,7 @@ func (a *App) Run() error {
 	statedbRestRouter.Path("/v0/state/permission_links").Handler(statedbProxy)
 	statedbRestRouter.Path("/v0/state/key_accounts").Handler(statedbProxy)
 	statedbRestRouter.Path("/v0/state/item_owners").Handler(statedbProxy)
+	statedbRestRouter.Path("/v0/state/item_template_owners").Handler(statedbProxy)
 	statedbRestRouter.Path("/v0/state/table").Handler(statedbProxy)
 	statedbRestRouter.Path("/v0/state/table/row").Handler(statedbProxy)
 	statedbRestRouter.Path("/v0/state/table_scopes").Handler(statedbProxy)
