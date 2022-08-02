@@ -152,7 +152,7 @@ func sortedUniqueItemTemplateOwners(tabletRows []fluxdb.TabletRow) ([]*itemTempl
 		if balance != 0{
 			out[i] = &itemTemplateOwnerListItem{
 				ItemId: strconv.FormatUint(itemId, 10),
-				Balance: strconv.FormatUint(balance, 10)
+				Balance: strconv.FormatUint(balance, 10),
 				AccountName: owner,
 			}
 			i++
