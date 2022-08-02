@@ -113,8 +113,8 @@ func validateListItemOwnersRequest(r *http.Request) url.Values {
 }
 
 func extractListItemOwnersRequest(r *http.Request) *listItemOwnersRequest {
-	blockNum64, _ := strconv.ParseInt(r.FormValue("block_num"), 10, 64)
-	itemId, _ := strconv.ParseInt(r.FormValue("item_id"), 10, 64)
+	blockNum64, _ := strconv.ParseUint(r.FormValue("block_num"), 10, 64)
+	itemId, _ := strconv.ParseUint(r.FormValue("item_id"), 10, 64)
 
 	return &listItemOwnersRequest{
 		ItemId: uint64(itemId),

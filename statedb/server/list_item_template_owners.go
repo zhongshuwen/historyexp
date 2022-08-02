@@ -118,11 +118,11 @@ func validateListItemTemplateOwnersRequest(r *http.Request) url.Values {
 }
 
 func extractListItemTemplateOwnersRequest(r *http.Request) (error, *listItemTemplateOwnersRequest) {
-	blockNum64, err := strconv.ParseInt(r.FormValue("block_num"), 10, 64)
+	blockNum64, err := strconv.ParseUint(r.FormValue("block_num"), 10, 64)
 	if err != nil {
 		return err, nil
 	}
-	itemTemplateId, err := strconv.ParseInt(r.FormValue("item_template_id"), 10, 64)
+	itemTemplateId, err := strconv.ParseUint(r.FormValue("item_template_id"), 10, 64)
 	if err != nil {
 		return err, nil
 	}
