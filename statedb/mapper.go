@@ -38,7 +38,7 @@ const (
 )
 
 func uint64ValueForRawMessage(dt *json.RawMessage) (uint64, error) {
-	data:=[]byte(dt)
+	data:=[]byte(*dt)
 	if data[0] == 34 {
 		return strconv.ParseUint(string(data[1:(len(data)-1)]), 10, 64)
 	} else {
