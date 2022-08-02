@@ -101,7 +101,7 @@ type listItemOwnersResponse struct {
 	ItemOwners []*itemOwnerListItem `json:"item_owners"`
 }
 type itemOwnerListItem struct {
-	Balance     uint64 `json:"balance"`
+	Balance     string `json:"balance"`
 	AccountName string `json:"account_name"`
 }
 
@@ -141,14 +141,17 @@ func sortedUniqueItemOwners(tabletRows []fluxdb.TabletRow) ([]*itemOwnerListItem
 		if err != nil {
 			return emptyItemOwners, err
 		}
-		accountNameSet[owner] = balance
+		if balance != 0{
+			accountNameSet[owner] = balance
+		}
 	}
 
 	i := 0
 	out := make([]*itemOwnerListItem, len(accountNameSet))
 	for account := range accountNameSet {
+		
 		out[i] = &itemOwnerListItem{
-			Balance: accountNameSet[account],
+			Balance: strconv.FormatUint( accountNameSet[account], 10),
 			AccountName: account,
 		}
 		i++

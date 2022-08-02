@@ -125,7 +125,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 				}else if a.Name() == "logtransfer" && a.Receiver == "zsw.items"{
 					if itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal] != 0 {
 						//itemsActTypeMap[itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal+1]] = a.ExecutionIndex+1
-						zlog.Debug("logtransfer action", zap.Reflect("a.Action", a.Action))
+						//zlog.Debug("logtransfer action", zap.Reflect("a.Action", a.Action))
 						var itemLogTransferActionData *ItemLogTransferActionData
 						if err := a.Action.UnmarshalData(&itemLogTransferActionData); err != nil {
 							
@@ -140,7 +140,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 								zlog.Error("error unmarshalling itemTemplateIds ", zap.Error(err))
 							}
 							for itemIdInd, itemId := range itemIds {
-								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
+								//zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
 
 								itemIdToItemTemplateId[itemId] = itemTemplateIds[itemIdInd];
 							}
@@ -150,7 +150,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 					if itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal] != 0 {
 						//itemsActTypeMap[itemsOrdinalToExecutionIndexMap[a.CreatorActionOrdinal+1]] = a.ExecutionIndex+1
 						var itemLogMintActionData *ItemLogMintActionData
-						zlog.Debug("logmint action", zap.Reflect("a.Action", a.Action))
+						//zlog.Debug("logmint action", zap.Reflect("a.Action", a.Action))
 						if err := a.Action.UnmarshalData(&itemLogMintActionData); err != nil {
 
 							zlog.Error("error unmarshalling itemLogMintActionData ", zap.Error(err))
@@ -165,7 +165,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 								zlog.Error("error unmarshalling itemTemplateIds ", zap.Error(err))
 							}
 							for itemIdInd, itemId := range itemIds {
-								zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
+								//zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
 
 								itemIdToItemTemplateId[itemId] = itemTemplateIds[itemIdInd];
 							}
@@ -179,6 +179,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 		for _, dbOp := range trx.DbOps {
 			if traceEnabled {
 				zlog.Debug("db op", zap.Reflect("op", dbOp))
+				/*
 				if dbOp.Code == "zsw.items" && dbOp.TableName == "itembalances" {
 
 					actItemsType2 := itemsActTypeMap[dbOp.ActionIndex]
@@ -193,27 +194,29 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 						
 					)
 					zlog.Debug("db op items", zap.Reflect("op", dbOp))
+					
 				}
+				*/
 			}
-			zlog.Debug("db op items", zap.Reflect("op", dbOp))
+			//zlog.Debug("db op items", zap.Reflect("op", dbOp))
 
 			actItemsType := itemsActTypeMap[dbOp.ActionIndex]
 			if dbOp.Code == "zsw.items" && dbOp.TableName == "itembalances" && (actItemsType == ZswItemsMintAction || actItemsType == ZswItemsTransferAction) && itemsActTypeMap[dbOp.ActionIndex] != 0{
 
-				zlog.Debug("db op items good", zap.Reflect("op", dbOp))
+				//zlog.Debug("db op items good", zap.Reflect("op", dbOp))
 				//logActionIndex := itemsActTypeMap[dbOp.ActionIndex] - 1
 				if dbOp.Operation == pbcodec.DBOp_OPERATION_UPDATE {
 					if !bytes.Equal(dbOp.OldData, dbOp.NewData) {
 						itemId := TableItemBalancesRow(dbOp.NewData).ItemId()
 						itemTemplateId := itemIdToItemTemplateId[itemId]
 						totalBalance := TableItemBalancesRow(dbOp.NewData).TotalBalance()
-						zlog.Debug("update_good", zap.Uint64("item_id", itemId), zap.Uint64("total_balance", totalBalance))
+						//zlog.Debug("update_good", zap.Uint64("item_id", itemId), zap.Uint64("total_balance", totalBalance))
 						itemOwnerRow, err := NewItemOwnerRow(blockNum, itemId, totalBalance, dbOp.Scope, false)
 						if err != nil {
 							return nil, fmt.Errorf("unable to extract item owner: %w", err)
 						}
 
-						zlog.Debug("db op items good update", zap.Reflect("op", itemOwnerRow), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
+						//zlog.Debug("db op items good update", zap.Reflect("op", itemOwnerRow), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
 						lastTabletRowMap[keyForRow(itemOwnerRow)] = itemOwnerRow
 
 						if itemTemplateId!=0 {
@@ -222,10 +225,10 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 								return nil, fmt.Errorf("unable to extract item owner: %w", err)
 							}
 
-							zlog.Debug("db op items tpl good update", zap.Reflect("op", itemTemplateOwnerRow), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
+							//zlog.Debug("db op items tpl good update", zap.Reflect("op", itemTemplateOwnerRow), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
 							lastTabletRowMap[keyForRow(itemTemplateOwnerRow)] = itemTemplateOwnerRow
 						}else{
-							zlog.Debug("item template not found in log!", zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
+							//zlog.Debug("item template not found in log!", zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
 						}
 						
 					}
@@ -237,7 +240,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 						return nil, fmt.Errorf("unable to extract item owner: %w", err)
 					}
 					rowKey := keyForRow(itemOwnerRow)
-					zlog.Debug("db op items good remove", zap.Reflect("op", itemOwnerRow))
+					//zlog.Debug("db op items good remove", zap.Reflect("op", itemOwnerRow))
 					if firstDbOpWasInsert[rowKey] {
 						delete(firstDbOpWasInsert, rowKey)
 						delete(lastTabletRowMap, rowKey)
@@ -251,7 +254,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							return nil, fmt.Errorf("unable to extract item template owner: %w", err)
 						}
 						rowKeyTpl := keyForRow(itemTemplateOwnerRow)
-						zlog.Debug("db op item tpls good remove", zap.Reflect("op", itemTemplateOwnerRow))
+						//zlog.Debug("db op item tpls good remove", zap.Reflect("op", itemTemplateOwnerRow))
 						if firstDbOpWasInsert[rowKeyTpl] {
 							delete(firstDbOpWasInsert, rowKeyTpl)
 							delete(lastTabletRowMap, rowKeyTpl)
@@ -259,14 +262,14 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							lastTabletRowMap[rowKeyTpl] = itemTemplateOwnerRow
 						}
 					}else{
-						zlog.Debug("item template not found in log!", zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
+						//zlog.Debug("item template not found in log!", zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("item_id", itemId))
 					}
 				}else if dbOp.Operation == pbcodec.DBOp_OPERATION_INSERT {
 
 					itemId := TableItemBalancesRow(dbOp.NewData).ItemId()
 					itemTemplateId := itemIdToItemTemplateId[itemId]
 					totalBalance := TableItemBalancesRow(dbOp.NewData).TotalBalance()
-					zlog.Debug("insert_good", zap.Uint64("item_id", itemId), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("total_balance", TableItemBalancesRow(dbOp.NewData).TotalBalance()))
+					//zlog.Debug("insert_good", zap.Uint64("item_id", itemId), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("total_balance", TableItemBalancesRow(dbOp.NewData).TotalBalance()))
 					itemOwnerRow, err := NewItemOwnerRow(blockNum, itemId,totalBalance, dbOp.Scope, false)
 					if err != nil {
 						return nil, fmt.Errorf("unable to extract item owner: %w", err)
@@ -276,11 +279,11 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 					if lastOp == nil {
 						firstDbOpWasInsert[rowKey] = true
 					}
-					zlog.Debug("db op items good insert", zap.Reflect("op", itemOwnerRow))
+					//zlog.Debug("db op items good insert", zap.Reflect("op", itemOwnerRow))
 					lastTabletRowMap[rowKey] = itemOwnerRow
 
 					if itemTemplateId != 0{
-						zlog.Debug("insert_tpl_good", zap.Uint64("item_id", itemId), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("total_balance", TableItemBalancesRow(dbOp.NewData).TotalBalance()))
+						//zlog.Debug("insert_tpl_good", zap.Uint64("item_id", itemId), zap.Uint64("item_template_id", itemTemplateId), zap.Uint64("total_balance", TableItemBalancesRow(dbOp.NewData).TotalBalance()))
 						itemTemplateOwnerRow, err := NewItemTemplateOwnerRow(blockNum, itemTemplateId,itemId,totalBalance, dbOp.Scope, false)
 						if err != nil {
 							return nil, fmt.Errorf("unable to extract item template owner: %w", err)
@@ -290,7 +293,7 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 						if lastOp == nil {
 							firstDbOpWasInsert[rowKeyTpl] = true
 						}
-						zlog.Debug("db op items tpl good insert", zap.Reflect("op", itemTemplateOwnerRow))
+						//zlog.Debug("db op items tpl good insert", zap.Reflect("op", itemTemplateOwnerRow))
 						lastTabletRowMap[rowKeyTpl] = itemTemplateOwnerRow
 
 					}

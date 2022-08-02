@@ -105,8 +105,8 @@ type listItemTemplateOwnersResponse struct {
 	ItemTemplateOwners []*itemTemplateOwnerListItem `json:"item_owners"`
 }
 type itemTemplateOwnerListItem struct {
-	ItemId    uint64 `json:"item_id"`
-	Balance     uint64 `json:"balance"`
+	ItemId    string `json:"item_id"`
+	Balance     string `json:"balance"`
 	AccountName string `json:"account_name"`
 }
 
@@ -119,9 +119,6 @@ func validateListItemTemplateOwnersRequest(r *http.Request) url.Values {
 
 func extractListItemTemplateOwnersRequest(r *http.Request) (error, *listItemTemplateOwnersRequest) {
 	blockNum64, err := strconv.ParseUint(r.FormValue("block_num"), 10, 64)
-	if err != nil {
-		return err, nil
-	}
 	itemTemplateId, err := strconv.ParseUint(r.FormValue("item_template_id"), 10, 64)
 	if err != nil {
 		return err, nil
@@ -152,12 +149,14 @@ func sortedUniqueItemTemplateOwners(tabletRows []fluxdb.TabletRow) ([]*itemTempl
 		if err != nil {
 			return emptyItemTemplateOwners, err
 		}
-		out[i] = &itemTemplateOwnerListItem{
-			ItemId: itemId,
-			Balance: balance,
-			AccountName: owner,
+		if balance != 0{
+			out[i] = &itemTemplateOwnerListItem{
+				ItemId: strconv.FormatUint(itemId, 10),
+				Balance: strconv.FormatUint(balance, 10)
+				AccountName: owner,
+			}
+			i++
 		}
-		i++
 	}
 
 
