@@ -42,7 +42,7 @@ func uint64ValueForRawMessage(dt *json.RawMessage) (uint64, error) {
 	if data[0] == 34 {
 		return strconv.ParseUint(string(data[1:(len(data)-1)]), 10, 64)
 	} else {
-		return strconv.ParseUint(string(data[1:(len(data)-1)]), 10, 64)
+		return strconv.ParseUint(string(data), 10, 64)
 	}
 }
 func uint64ValueForRawMessageArray(data []*json.RawMessage) ([]uint64, error) {
