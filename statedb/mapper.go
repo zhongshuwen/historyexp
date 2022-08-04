@@ -139,10 +139,14 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							if err != nil {
 								zlog.Error("error unmarshalling itemTemplateIds ", zap.Error(err))
 							}
-							for itemIdInd, itemId := range itemIds {
-								//zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
+							if len(itemTemplateIds) != len(itemIds){
+								//handle old contracts here
+							}else{
+								for itemIdInd, itemId := range itemIds {
+									//zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
 
-								itemIdToItemTemplateId[itemId] = itemTemplateIds[itemIdInd];
+									itemIdToItemTemplateId[itemId] = itemTemplateIds[itemIdInd];
+								}
 							}
 						}
 					}
@@ -164,10 +168,14 @@ func (m *BlockMapper) Map(rawBlk *bstream.Block) (*fluxdb.WriteRequest, error) {
 							if err != nil {
 								zlog.Error("error unmarshalling itemTemplateIds ", zap.Error(err))
 							}
-							for itemIdInd, itemId := range itemIds {
-								//zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
+							if len(itemTemplateIds) != len(itemIds){
 
-								itemIdToItemTemplateId[itemId] = itemTemplateIds[itemIdInd];
+							}else{
+								for itemIdInd, itemId := range itemIds {
+									//zlog.Debug("got item tpl pair", zap.Uint64("itemId", itemId), zap.Uint64("itemTemplateId", itemTemplateIds[itemIdInd]))
+
+									itemIdToItemTemplateId[itemId] = itemTemplateIds[itemIdInd];
+								}
 							}
 						}
 					}
